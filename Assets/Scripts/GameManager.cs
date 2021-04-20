@@ -29,4 +29,9 @@ public class GameManager : MonoBehaviour
     {
         lives--;
     }
+
+    public void EatSandwich()
+    {
+        lives++;
+    }
 }
