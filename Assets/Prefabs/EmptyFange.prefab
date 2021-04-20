@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 5987134724130359096}
   - component: {fileID: 5987134724130359094}
   - component: {fileID: 5987134724130359095}
+  - component: {fileID: 6579004303100968881}
   m_Layer: 9
   m_Name: EmptyFange
   m_TagString: Untagged
@@ -247,5 +248,17 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8e2865de251cc54c8ee776c453be6ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6579004303100968881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5987134724130359097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 660a836c4b97d7a40ad91d5c522a3932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

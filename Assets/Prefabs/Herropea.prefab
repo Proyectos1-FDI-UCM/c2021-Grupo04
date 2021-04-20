@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6585507325675437249}
   - component: {fileID: 3182241352040356413}
   - component: {fileID: 8309018066186077107}
+  - component: {fileID: 2981934255619878750}
   m_Layer: 10
   m_Name: Herropea
   m_TagString: Untagged
@@ -134,3 +135,15 @@ MonoBehaviour:
   gravity: 20
   pickUpPosition: {fileID: 0}
   scenario: {fileID: 0}
+--- !u!114 &2981934255619878750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6585507325675437251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 660a836c4b97d7a40ad91d5c522a3932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
