@@ -14,7 +14,7 @@ public class Policeman : MonoBehaviour
         {
             transform.right = Vector2.left;
         }
-        if (Player.transform.position.x > transform.position.x)
+        else
         {
             transform.right = Vector2.right;
         }
