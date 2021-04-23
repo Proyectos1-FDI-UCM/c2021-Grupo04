@@ -809,7 +809,7 @@ GameObject:
   - component: {fileID: 601084945}
   - component: {fileID: 601084944}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: VoidHerropea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4327,6 +4327,11 @@ PrefabInstance:
         type: 3}
       propertyPath: velLanzamiento
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8309018066186077107, guid: fb7f82022fcfd1d4da6c9d8bf8307dad,
+        type: 3}
+      propertyPath: damage
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}

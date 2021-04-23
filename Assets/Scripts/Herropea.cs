@@ -7,6 +7,7 @@ public class Herropea : MonoBehaviour
     public float velLanzamiento = 5;
     public float gravity = 1;
     public float maxDistance;
+    public int damage;
     public Transform pickUpPosition;
     public Transform chainZone;
     public Transform scenario;
@@ -36,11 +37,13 @@ public class Herropea : MonoBehaviour
             transform.SetParent(pickUpPosition);
             transform.rotation = transform.parent.rotation;
         }
+        // El jugador deja de agarrar la herropea con shift
         else if (Input.GetButton("Fire3"))
         {
             agarrando = false;
             transform.SetParent(scenario);
         }
+        //El jugador lanza si está agarrando y pulsa ctrl
         else if (Input.GetButton("Fire1") && agarrando)
         {
             Debug.Log("Lanzamiento");                   
@@ -70,28 +73,7 @@ public class Herropea : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<CompositeCollider2D>() != null)
-        {
-            floating = false; //Deja de afectarle la gravedad
-            Debug.Log("Suelo");
-            //Si además la bola ha sido lanzada por MaktFange, se queda clavada en la pared
-            if (lanzamiento)
-            {
-                lanzamiento = false;
-                agarrando = false;
-                floating = false;
-            }
-        } 
-        else if (collision.GetComponent<Policeman>() != null)
-        {
-            if (lanzamiento)
-            {
-                
-                Debug.Log("Enemigo Impactado");
-                lanzamiento = false;
-                agarrando = false;
-            }           
-        }
+                 
     }
 
     /// <summary>
@@ -114,5 +96,33 @@ public class Herropea : MonoBehaviour
             floating = true;
         }
         
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        //Guardamos la referencia del enemigo en una variable para acceder luego a un método suyo
+        EnemyDamageable enemigo = collision.GetComponent<EnemyDamageable>();
+
+        if (collision.GetComponent<CompositeCollider2D>() != null)
+        {
+            floating = false; //Deja de afectarle la gravedad
+            Debug.Log("Suelo");
+            //Si además la bola ha sido lanzada por MaktFange, se queda clavada en la pared
+            if (lanzamiento)
+            {
+                lanzamiento = false;
+                agarrando = false;
+                floating = false;
+            }
+        }
+        else if (enemigo)
+        {
+            if (lanzamiento)
+            {
+                enemigo.GetDamage(damage);
+                lanzamiento = false;
+                agarrando = false;
+            }
+        }
     }
 }

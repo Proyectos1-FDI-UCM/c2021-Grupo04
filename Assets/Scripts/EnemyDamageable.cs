@@ -22,4 +22,14 @@ public class EnemyDamageable : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// El enemigo sufre daño cuando la herropea colisiona con él
+    /// este daño viene marcado por la variable damage
+    /// </summary>
+    /// <param name="damage">Daño actual que realiza le herropea</param>
+    public void GetDamage(int damage)
+    {
+        Debug.Log("Daño sufrido: " + damage);
+    }
+
 }

@@ -13,7 +13,6 @@ public class ExtraVelocity : MonoBehaviour
     void Tiempo()
     {
         this.enabled = false;
-
     }
 
     private void OnDisable()
