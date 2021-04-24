@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class ExtraVelocity : MonoBehaviour
 {
-    
+    public float mulVelocity = 2;
+
+    PlayerController playerController;
+    private float orVelocity;
     private void OnEnable()
     {
+        playerController = GetComponent<PlayerController>();
+        orVelocity = GetComponent<PlayerController>().vRun;
+
         //cuando se activa accedemos al float vRun del jugador y lo duplicamos
-        GetComponent<PlayerController>().vRun = 8;
+        GetComponent<PlayerController>().vRun = orVelocity * mulVelocity;
         //invocamos durante 10 secs
         Invoke("Tiempo", 10f);
     }
@@ -20,7 +26,7 @@ public class ExtraVelocity : MonoBehaviour
     private void OnDisable()
     {
         //al desactivarse restablecemos el valor de vRun
-        GetComponent<PlayerController>().vRun = 4;
+        GetComponent<PlayerController>().vRun = orVelocity;
     }
 }
 

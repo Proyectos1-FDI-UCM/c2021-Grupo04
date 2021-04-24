@@ -8,8 +8,8 @@ public class PlayerController : MonoBehaviour
     //definimos variables
     public float vRun = 4;
     public float vJump = 5;
-    public float vRunReduction;
-    public float vJumpReduction;
+    public float vRunReduction = 0.8f;
+    public float vJumpReduction = 0.8f;
     public GameObject herropea;
 
     Rigidbody2D rb;
@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     bool contact;
     private float fRun;
     private float fJump;
+    private float distance;
+    private float maxDistance;
 
     void Start()
     {
@@ -44,16 +46,25 @@ public class PlayerController : MonoBehaviour
         float jump = Input.GetAxis("Vertical");
         float run = Input.GetAxis("Horizontal");
 
+        distance = scriptHerropea.GetDistanceHerropea();
+        maxDistance = scriptHerropea.GetMaxDistance();
+
         if (scriptHerropea.AgarrandoHerropea())
         {
             fRun = vRun;
             fJump = vJump * vJumpReduction;
         }
-        else
+        else if (!scriptHerropea.AgarrandoHerropea() && distance >= (maxDistance - 0.1f))
         {
             fRun = vRun * vRunReduction;
             fJump = vJump;
         }
+        else
+        {
+            fRun = vRun;
+            fJump = vJump;
+        }
+
         rb.velocity = new Vector2(run*fRun, rb.velocity.y); //movimiento por el eje X
         if (run != 0)
         {
@@ -62,7 +73,6 @@ public class PlayerController : MonoBehaviour
             else if (run > 0) transform.right = Vector2.right;
         }
         else walk.SetBool("Running", false);
-
 
         if (contact) //si existe contacto, podemos saltar
         {

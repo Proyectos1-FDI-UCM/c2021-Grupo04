@@ -127,4 +127,13 @@ public class Herropea : MonoBehaviour
         return agarrando;
     }
     
+    public float GetDistanceHerropea()
+    {
+        return distance;
+    }
+
+    public float GetMaxDistance()
+    {
+        return maxDistance;
+    }
 }
