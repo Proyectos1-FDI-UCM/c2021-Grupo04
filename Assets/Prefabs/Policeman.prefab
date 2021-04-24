@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0112d6a408c27ed479f16bd3bfb568e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 5987134724130359097, guid: 900830ef84c8c1749bbe4741f1954146, type: 3}
 --- !u!50 &3953425564893960546
 Rigidbody2D:
   serializedVersion: 4
@@ -188,6 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 478b916bfab21e34d921c99dce9c712a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  shoot: 1
+  Player: {fileID: 5987134724130359097, guid: 900830ef84c8c1749bbe4741f1954146, type: 3}
   Policeman: {fileID: 3953425564893960544}
   Bullet: {fileID: 4221295601115640191, guid: e3861d455e284c644bd76c84bc400d17, type: 3}

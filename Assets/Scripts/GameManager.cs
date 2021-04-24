@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
+    private UIManager theUIManager;
     public int lives = 3;
     private static GameManager instance;
     public static GameManager GetInstance()
@@ -25,9 +25,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SetUIManager(UIManager uim)
+    {
+        theUIManager = uim;
+
+       
+    }
+
     public void LoseHearts()
     {
         lives--;
+       
     }
 
     public void EatSandwich()

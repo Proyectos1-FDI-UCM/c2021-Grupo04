@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
         if(collision.GetComponent<CompositeCollider2D>() || collision.GetComponent<DestroyFakeHerropea>())
             contact = true;
     }
+    //detectamos salida
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.GetComponent<CompositeCollider2D>() || collision.GetComponent<DestroyFakeHerropea>())
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        //variables para correr y saltar
         float jump = Input.GetAxis("Vertical");
         float run = Input.GetAxis("Horizontal");
 
