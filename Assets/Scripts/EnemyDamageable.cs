@@ -10,18 +10,6 @@ public class EnemyDamageable : MonoBehaviour
      */
     // Start is called before the first frame update
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Herropea herropea = collision.GetComponent<Herropea>();
-        if (herropea != null)
-        {
-            if (herropea.LanzamientoForzoso())
-            {
-                Debug.Log("Enemigo dañado por la herropea");
-            }
-        }
-    }
-
     /// <summary>
     /// El enemigo sufre daño cuando la herropea colisiona con él
     /// este daño viene marcado por la variable damage

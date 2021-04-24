@@ -17,7 +17,13 @@ public class Herropea : MonoBehaviour
     private bool agarrando = false; //Si Makt Fange esta agarrando la bola
     private bool floating = true; //True si es afectada por la gravedad
     private bool lanzamiento = false; //Si la bola está viajando por un lanzamento de Makt Fange
-    
+    private bool clavado = false; //True cuando hay una herropea falsa instanciada a la que subirse
+    private DestroyFakeHerropea scriptFakeHerropea;
+
+    private void Start()
+    {
+        scriptFakeHerropea = GetComponentInChildren<DestroyFakeHerropea>();
+    }
 
     void Update()
     {
@@ -26,6 +32,7 @@ public class Herropea : MonoBehaviour
         distance = Vector2.Distance(chainZone.transform.position, transform.position);
         if (distance >= maxDistance)
         {
+            //La herropea se mueve hacia el jugador a la misma velocidad que él
             transform.position = Vector2.MoveTowards(transform.position, chainZone.transform.position, step);
         }
 
@@ -70,23 +77,6 @@ public class Herropea : MonoBehaviour
         }
     }
 
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-                 
-    }
-
-    /// <summary>
-    /// Devuelve true si MaktFange ha usado Lanzamiento Forzoso
-    /// </summary>
-    /// <returns></returns>
-    public bool LanzamientoForzoso()
-    {
-        if (lanzamiento)
-            return true;
-        else return false;
-    }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
         //La gravedad vuelve a afectar a la herropea al colisionar con el tilemap o con el policía
@@ -94,8 +84,12 @@ public class Herropea : MonoBehaviour
         {
             Debug.Log("Flotando");
             floating = true;
-        }
-        
+            if (clavado)
+            {
+                clavado = false;
+                scriptFakeHerropea.SetCollider();
+            }
+        }      
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -113,6 +107,8 @@ public class Herropea : MonoBehaviour
                 lanzamiento = false;
                 agarrando = false;
                 floating = false;
+                clavado = true;
+                scriptFakeHerropea.SetCollider();
             }
         }
         else if (enemigo)
@@ -125,4 +121,7 @@ public class Herropea : MonoBehaviour
             }
         }
     }
+
+    
+    
 }
