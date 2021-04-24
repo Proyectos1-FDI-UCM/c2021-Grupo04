@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
-<<<<<<< HEAD
+
     //variables
-=======
+
     public bool shoot = true; //Dispara si está a true
->>>>>>> 1cedaf5fd15a52030e0dfc07fa735b026b2b94d8
+
     public GameObject Player;
     public GameObject Policeman;
     public GameObject Bullet;
