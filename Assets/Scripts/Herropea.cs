@@ -122,6 +122,9 @@ public class Herropea : MonoBehaviour
         }
     }
 
-    
+    public bool AgarrandoHerropea()
+    {
+        return agarrando;
+    }
     
 }

@@ -8,15 +8,22 @@ public class PlayerController : MonoBehaviour
     //definimos variables
     public float vRun = 4;
     public float vJump = 5;
+    public float vRunReduction;
+    public float vJumpReduction;
+    public GameObject herropea;
+
     Rigidbody2D rb;
     Animator walk;
+    Herropea scriptHerropea;
     bool contact;
-
+    private float fRun;
+    private float fJump;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         walk = GetComponentInChildren<Animator>();
+        scriptHerropea = herropea.GetComponent<Herropea>();
     }
     //detectamos cuando entra en contacto el collider de los pies de Maktfange con el escenario 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -31,14 +38,23 @@ public class PlayerController : MonoBehaviour
             contact = false;
     }
 
-
     void Update()
     {
         //variables para correr y saltar
         float jump = Input.GetAxis("Vertical");
         float run = Input.GetAxis("Horizontal");
 
-        rb.velocity = new Vector2(run*vRun, rb.velocity.y); //movimiento por el eje X
+        if (scriptHerropea.AgarrandoHerropea())
+        {
+            fRun = vRun;
+            fJump = vJump * vJumpReduction;
+        }
+        else
+        {
+            fRun = vRun * vRunReduction;
+            fJump = vJump;
+        }
+        rb.velocity = new Vector2(run*fRun, rb.velocity.y); //movimiento por el eje X
         if (run != 0)
         {
             walk.SetBool("Running", true);
@@ -50,8 +66,9 @@ public class PlayerController : MonoBehaviour
 
         if (contact) //si existe contacto, podemos saltar
         {
-            rb.velocity = new Vector2(rb.velocity.x, jump * vJump);
+            rb.velocity = new Vector2(rb.velocity.x, jump * fJump);
         }
 
+ 
     }
 }

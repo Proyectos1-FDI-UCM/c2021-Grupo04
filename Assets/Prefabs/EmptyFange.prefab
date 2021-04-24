@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vRun: 4
-  vJump: 7
+  vJump: 7.5
 --- !u!50 &5987134724130359098
 Rigidbody2D:
   serializedVersion: 4
