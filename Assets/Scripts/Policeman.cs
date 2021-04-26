@@ -6,12 +6,12 @@ public class Policeman : MonoBehaviour
 {
 
     
-    public GameObject Player;
+    public Transform Player;
     
     void Update()
     {
         //dependiendo de la posición del jugador respecto al policía, este último girará su transform right a derecha o izquierda
-        if (Player.transform.position.x < transform.position.x)
+        if (Player.position.x < transform.position.x)
         {
             transform.right = Vector2.left;
         }

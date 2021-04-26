@@ -19,10 +19,12 @@ public class Herropea : MonoBehaviour
     private bool lanzamiento = false; //Si la bola está viajando por un lanzamento de Makt Fange
     private bool clavado = false; //True cuando hay una herropea falsa instanciada a la que subirse
     private DestroyFakeHerropea scriptFakeHerropea;
+    private Rigidbody2D rb2D;
 
     private void Start()
     {
         scriptFakeHerropea = GetComponentInChildren<DestroyFakeHerropea>();
+        rb2D = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -43,19 +45,21 @@ public class Herropea : MonoBehaviour
             transform.position = new Vector3(pickUpPosition.position.x, pickUpPosition.position.y);
             transform.SetParent(pickUpPosition);
             transform.rotation = transform.parent.rotation;
+            
         }
         // El jugador deja de agarrar la herropea con shift
         else if (Input.GetButton("Fire3"))
-        {
+        {           
             agarrando = false;
             transform.SetParent(scenario);
         }
         //El jugador lanza si está agarrando y pulsa ctrl
         else if (Input.GetButton("Fire1") && agarrando)
         {
+            
             Debug.Log("Lanzamiento");                   
             lanzamiento = true;
-            transform.SetParent(scenario);
+            transform.SetParent(scenario);           
         }
 
         //Siempre que no esté agarrando Fange la bola y que el bool floating sea true, le afecta la gravedad
@@ -86,8 +90,8 @@ public class Herropea : MonoBehaviour
             floating = true;
             if (clavado)
             {
-                clavado = false;
                 scriptFakeHerropea.SetCollider();
+                clavado = false;              
             }
         }      
     }
@@ -99,17 +103,17 @@ public class Herropea : MonoBehaviour
 
         if (collision.GetComponent<CompositeCollider2D>() != null)
         {
-            floating = false; //Deja de afectarle la gravedad
-            Debug.Log("Suelo");
-            //Si además la bola ha sido lanzada por MaktFange, se queda clavada en la pared
             if (lanzamiento)
             {
+                scriptFakeHerropea.SetCollider();
                 lanzamiento = false;
                 agarrando = false;
                 floating = false;
                 clavado = true;
-                scriptFakeHerropea.SetCollider();
             }
+            floating = false; //Deja de afectarle la gravedad
+            Debug.Log("Suelo");
+            //Si además la bola ha sido lanzada por MaktFange, se queda clavada en la pared          
         }
         else if (enemigo)
         {

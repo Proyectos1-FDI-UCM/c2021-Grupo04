@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     private float fJump;
     private float distance;
     private float maxDistance;
+    private float jumpPressTime;
+    private bool jump = false;
+
 
     void Start()
     {
@@ -42,9 +45,9 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        //variables para correr y saltar
-        float jump = Input.GetAxis("Vertical");
+       
         float run = Input.GetAxis("Horizontal");
+        jump = Input.GetKey(KeyCode.UpArrow);
 
         distance = scriptHerropea.GetDistanceHerropea();
         maxDistance = scriptHerropea.GetMaxDistance();
@@ -74,11 +77,13 @@ public class PlayerController : MonoBehaviour
         }
         else walk.SetBool("Running", false);
 
-        if (contact) //si existe contacto, podemos saltar
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jump * fJump);
-        }
+    }
 
- 
+    private void FixedUpdate()
+    {
+        if (contact && jump) //si existe contacto, podemos saltar
+        {
+            rb.velocity = new Vector2(rb.velocity.x, fJump);
+        }
     }
 }
