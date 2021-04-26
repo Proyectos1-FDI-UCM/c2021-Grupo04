@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    
+    public int lives = 8;
+    public int sandwich = 2;
+
     private UIManager theUIManager;
-    public int lives = 3;
     private static GameManager instance;
+
     public static GameManager GetInstance()
     {
         return instance;
@@ -32,14 +36,13 @@ public class GameManager : MonoBehaviour
        
     }
 
-    public void LoseHearts()
+    public void LoseHearts(int damage)
     {
-        lives--;
-       
+        lives -= damage;       
     }
 
     public void EatSandwich()
     {
-        lives++;
+        lives += sandwich;
     }
 }

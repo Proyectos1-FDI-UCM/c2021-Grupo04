@@ -8,13 +8,14 @@ public class Shooter : MonoBehaviour
     //variables
 
     public bool shoot = true; //Dispara si está a true
+    public float coolingDownSecs = 0.4f;
+    public float distanceToShoot = 8f;
 
     public GameObject Player;
     public GameObject Policeman;
     public GameObject Bullet;
 
-    private float lastShoot;
-    private float coolingDownSecs=0.4f;
+    private float lastShoot = 0;
 
     private void Update()
     {
@@ -23,8 +24,9 @@ public class Shooter : MonoBehaviour
         //si dicha distancia es menor de 8 y el tiempo de ejecución es mayor que el tiempo que ha pasado desde el último disparo + el tiempo de cool down, 
         //invocamos el método y actualizamos el ultimo disparo
 
-        if(distance <8.0f && Time.time > lastShoot + coolingDownSecs)
+        if(distance < distanceToShoot && Time.time > lastShoot + coolingDownSecs)
         {
+            Debug.Log("Policia ");
             if (shoot)
             {
                 Shoot();

@@ -30,8 +30,10 @@ public class Herropea : MonoBehaviour
     void Update()
     {
         float step = rbMakt.velocity.sqrMagnitude * Time.deltaTime;
+
         //Guardamos la distancia entre Makt y la herropea
         distance = Vector2.Distance(chainZone.transform.position, transform.position);
+
         if (distance >= maxDistance)
         {
             //La herropea se mueve hacia el jugador a la misma velocidad que él
