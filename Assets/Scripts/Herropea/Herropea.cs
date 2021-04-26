@@ -79,6 +79,13 @@ public class Herropea : MonoBehaviour
                 agarrando = false;             
             }
         }
+
+        //Codigo defensivo para evitar que el collider esté activo cuando la herropea no esté clavada
+        if (scriptFakeHerropea.IsColliderSet() && !clavado)
+        {
+            Debug.LogWarning("Bug del collider FakeHerropea salvado");
+            scriptFakeHerropea.SetCollider(false);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -90,7 +97,7 @@ public class Herropea : MonoBehaviour
             floating = true;
             if (clavado)
             {
-                scriptFakeHerropea.SetCollider();
+                scriptFakeHerropea.SetCollider(false);
                 clavado = false;              
             }
         }      
@@ -105,7 +112,7 @@ public class Herropea : MonoBehaviour
         {
             if (lanzamiento)
             {
-                scriptFakeHerropea.SetCollider();
+                scriptFakeHerropea.SetCollider(true);
                 lanzamiento = false;
                 agarrando = false;
                 floating = false;
