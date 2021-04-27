@@ -15,7 +15,7 @@ public class EnemyDamageable : MonoBehaviour
     /// este daño viene marcado por la variable damage
     /// </summary>
     /// <param name="damage">Daño actual que realiza le herropea</param>
-    public void GetDamage(int damage)
+    public void GetDamage(float damage)
     {
         Debug.Log("Daño sufrido: " + damage);
     }
