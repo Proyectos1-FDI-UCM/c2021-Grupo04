@@ -177,6 +177,7 @@ GameObject:
   - component: {fileID: 5987134724130359094}
   - component: {fileID: 5987134724130359095}
   - component: {fileID: 6579004303100968881}
+  - component: {fileID: -6996569664634752650}
   m_Layer: 9
   m_Name: EmptyFange
   m_TagString: Untagged
@@ -214,7 +215,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vRun: 4
-  vJump: 7
+  vJump: 7.5
+  vRunReduction: 0.8
+  vJumpReduction: 0.8
+  herropea: {fileID: 0}
 --- !u!50 &5987134724130359098
 Rigidbody2D:
   serializedVersion: 4
@@ -249,7 +253,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.034201294, y: 0.022394836}
+  m_Offset: {x: 2.262301, y: 1.8343325}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -260,7 +264,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.63518685, y: 1.5021845}
+  m_Size: {x: 0.8562517, y: 1.5549666}
   m_EdgeRadius: 0
 --- !u!61 &5987134724130359096
 BoxCollider2D:
@@ -275,7 +279,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06878415, y: -0.7335955}
+  m_Offset: {x: 2.2794304, y: 1.0507301}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -286,7 +290,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15342444, y: 0.006398976}
+  m_Size: {x: 0.7817135, y: 0.013256788}
   m_EdgeRadius: 0
 --- !u!114 &5987134724130359094
 MonoBehaviour:
@@ -312,6 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8e2865de251cc54c8ee776c453be6ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mulVelocity: 2
 --- !u!114 &6579004303100968881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,3 +329,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660a836c4b97d7a40ad91d5c522a3932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6996569664634752650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5987134724130359097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6613d72620e1e39458c36f5518245e0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mediumJumpForce: 1.34
+  fastDescending: 2.12
