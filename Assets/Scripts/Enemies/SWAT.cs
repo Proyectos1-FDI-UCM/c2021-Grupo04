@@ -8,6 +8,7 @@ public class SWAT : MonoBehaviour
     private int i = 0;
     public GameObject player;
     [SerializeField] private float enemyVelocity = 1.5f;
+    [SerializeField] private float delayToChangeDirection = 1f;
 
     private Vector3 iniScale, tempScale, movement;
     private float right = 1;
@@ -37,15 +38,22 @@ public class SWAT : MonoBehaviour
             transform.localScale = new Vector2(-1f, 1f);
         }*/
 
-        if(agressive == false)
+        if (agressive == false && !charging)
         {
             transform.position = Vector2.MoveTowards(transform.position, movPoints[i].transform.position, enemyVelocity * Time.deltaTime);
         }
-        else
+        else if(agressive == true && charging)
         {
-            transform.position = transform.position;
+            transform.position = transform.position;             
+            if (transform.right == Vector3.left && player.transform.position.x > transform.position.x)
+            {
+                Invoke("ChangeDirection", delayToChangeDirection);
+            }
+            else if (transform.right == Vector3.right && player.transform.position.x < transform.position.x)
+            {
+                Invoke("ChangeDirection", delayToChangeDirection);
+            }
         }
-
         if (Vector2.Distance(transform.position, movPoints[i].transform.position) < 0.5f)
         {
             if (movPoints[i] != movPoints[movPoints.Length - 1]) i++;
@@ -53,6 +61,8 @@ public class SWAT : MonoBehaviour
             right = Mathf.Sign(movPoints[i].transform.position.x - transform.position.x);
             Turn(right);
         }
+        
+
     }
 
     private void Charge(ref bool agressive)
@@ -60,11 +70,12 @@ public class SWAT : MonoBehaviour
         agressive = !agressive;
         if(agressive == true)
         {
-            Invoke("Wait", 2);
+            Invoke("Wait", 3);
+            charging = !charging;
         }
         else
         {
-            Update();
+            
         }
     }
 
@@ -119,10 +130,41 @@ public class SWAT : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<PlayerController>())
+        if (!charging)
         {
-            Charge(ref agressive);
+            if (collision.gameObject.GetComponent<PlayerController>())
+            {
+                Charge(ref agressive);
+            }
         }
-        
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (Vector2.Distance(this.transform.position, player.transform.position) < 3f)
+        {
+            
+        }
+        else
+        {
+            agressive = false;
+            charging = !charging;
+        }
+    }
+
+    /// <summary>
+    /// El GO asociado cambia su dirección hacia la del GO asociado
+    /// </summary>
+    private void ChangeDirection()
+    {
+        //Dependiendo de la posición del jugador respecto al SWAT, este último girará su transform right a derecha o izquierda
+        if (player.transform.position.x < transform.position.x)
+        {
+            transform.right = Vector3.right;
+        }
+        else
+        {
+            transform.right = Vector3.left;
+        }
     }
 }
