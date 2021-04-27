@@ -44,16 +44,4 @@ public class EnemyDamageable : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.GetComponent<PlayerController>())
-        {
-            rb.velocity = new Vector2(0, 0);
-        }
-    }
-
-    private void Stop ()
-    { 
-        rb.velocity = new Vector2(0, 0);
-    }
 }
