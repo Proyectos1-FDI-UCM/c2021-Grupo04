@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6239826637728058879}
   - component: {fileID: 3925692512131658113}
   - component: {fileID: 8575661643765221182}
-  - component: {fileID: 2769605925825259551}
   - component: {fileID: 86745565262967246}
   m_Layer: 8
   m_Name: FakeHerropea
@@ -95,23 +94,6 @@ CircleCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6174904917312748788}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.49999997
---- !u!58 &2769605925825259551
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1782766849, guid: 16fc17d4a35d7364f83ed0286056e1c7,
-    type: 3}
-  m_PrefabInstance: {fileID: 6698083214791436961}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6174904917312748788}
-  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -293,6 +275,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6585507325675437117}
     m_Modifications:
+    - target: {fileID: 153971616610777321, guid: 16fc17d4a35d7364f83ed0286056e1c7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 153971616610777321, guid: 16fc17d4a35d7364f83ed0286056e1c7,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 723428520520767812, guid: 16fc17d4a35d7364f83ed0286056e1c7,
         type: 3}
       propertyPath: m_Name
@@ -360,4 +352,5 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1782766847, guid: 16fc17d4a35d7364f83ed0286056e1c7, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 16fc17d4a35d7364f83ed0286056e1c7, type: 3}
