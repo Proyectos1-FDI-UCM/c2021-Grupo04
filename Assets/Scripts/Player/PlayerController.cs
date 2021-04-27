@@ -77,6 +77,11 @@ public class PlayerController : MonoBehaviour
         }
         else walk.SetBool("Running", false);
 
+        if(Input.GetButtonDown("Fire2"))
+        {
+            GameManager.GetInstance().ActivatePowerUp();
+        }
+
     }
 
     private void FixedUpdate()
