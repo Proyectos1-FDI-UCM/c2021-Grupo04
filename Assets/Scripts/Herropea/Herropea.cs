@@ -7,7 +7,7 @@ public class Herropea : MonoBehaviour
     public float velLanzamiento = 5;
     public float gravity = 1;
     public float maxDistance;
-    public int damage;
+    public float damage;
     public Transform pickUpPosition;
     public Transform chainZone;
     public Transform scenario;

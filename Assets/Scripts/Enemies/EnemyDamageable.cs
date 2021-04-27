@@ -13,7 +13,7 @@ public class EnemyDamageable : MonoBehaviour
     public float impulseAfterDamageX = 0.2f;
     public float impulseAfterDamageY = 0.2f;
 
-    private int health;
+    private float health;
     Rigidbody2D rb;
 
     private void Start()
@@ -34,7 +34,7 @@ public class EnemyDamageable : MonoBehaviour
     /// este daño viene marcado por la variable damage
     /// </summary>
     /// <param name="damage">Daño actual que realiza le herropea</param>
-    public void GetDamage(int damage)
+    public void GetDamage(float damage)
     {
         health -= damage;
         rb.AddForce(new Vector2(impulseAfterDamageX, impulseAfterDamageY));

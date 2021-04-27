@@ -7,10 +7,11 @@ public class GameManager : MonoBehaviour
     
     public int lives = 8;
     public int sandwich = 2;
-
+    public enum powerUp { IncreaseDamage, Sandwich, ExtraVelocity, Empty }
+    public powerUp myPowerUp = powerUp.Empty;
     private UIManager theUIManager;
     private static GameManager instance;
-
+    PowerUpManager pum;
     public static GameManager GetInstance()
     {
         return instance;
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
         }
+        
     }
 
     public void SetUIManager(UIManager uim)
@@ -46,4 +48,53 @@ public class GameManager : MonoBehaviour
     {
         lives += sandwich;
     }
+
+    public void ChangePowerUp(string newPowerUp, PowerUpManager pum1)
+    {
+        pum = pum1;
+        if (myPowerUp == powerUp.Empty)
+        {
+            if (newPowerUp == "IncreaseDamage")
+                myPowerUp = powerUp.IncreaseDamage;
+            else if (newPowerUp == "Sandwich")
+                myPowerUp = powerUp.Sandwich;
+            else if (newPowerUp == "ExtraVelocity")
+                myPowerUp = powerUp.ExtraVelocity;
+            else Debug.Log("nombre erroneo de power up");
+
+        }
+        else Debug.Log("no hay hueco en el inventario");
+
+        Debug.Log(myPowerUp);
+    }
+    public void ActivatePowerUp()
+    {
+        string newPowerUp = "Empty";
+        if (myPowerUp == powerUp.Empty)
+        {
+            Debug.Log("no hay power up");
+        }
+        else
+        {
+            if (myPowerUp == powerUp.IncreaseDamage)
+                newPowerUp = "IncreaseDamage";
+            else if (myPowerUp == powerUp.Sandwich)
+                newPowerUp = "Sandwich";
+            else if (myPowerUp == powerUp.ExtraVelocity)
+                newPowerUp = "ExtraVelocity";
+
+            myPowerUp = powerUp.Empty;
+            pum.ActivatePowerUp(newPowerUp);
+        }
+    }
+    public bool IsEmpty()
+    {
+        bool empty;
+        if (myPowerUp == powerUp.Empty)
+            empty = true;
+        else empty = false;
+        return (empty);
+    }
+
+
 }

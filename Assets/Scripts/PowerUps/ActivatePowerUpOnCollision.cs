@@ -59,16 +59,23 @@ public class ActivatePowerUpOnCollision : MonoBehaviour
 
         PowerUpManager pum = other.GetComponent<PowerUpManager>();
 
-        if (pum == null)
+        if (GameManager.GetInstance().IsEmpty())
         {
-            Debug.Log("Jugador sin gestor de power-ups."
+
+
+            if (pum == null)
+            {
+                Debug.Log("Jugador sin gestor de power-ups."
                 + " Se ignora el power-up conseguido.");
+            }
+            else
+            {
+            GameManager.GetInstance().ChangePowerUp(powerUpName, pum);
+
+            }
+            this.gameObject.SetActive(false);
+            
         }
-        else
-        {
-            pum.ActivatePowerUp(powerUpName);
-        }
-        this.gameObject.SetActive(false);
     }
 
 }
