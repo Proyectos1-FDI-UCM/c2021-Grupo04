@@ -14,10 +14,20 @@ public class EnemyDamageable : MonoBehaviour
     public float impulseAfterDamageY = 0.2f;
 
     private int health;
+    Rigidbody2D rb;
 
     private void Start()
     {
         health = life;
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        if(rb.velocity.x > 0)
+        {
+            Invoke("Stop", 0.2f);
+        }
     }
     /// <summary>
     /// El enemigo sufre daño cuando la herropea colisiona con él
@@ -26,11 +36,24 @@ public class EnemyDamageable : MonoBehaviour
     /// <param name="damage">Daño actual que realiza le herropea</param>
     public void GetDamage(int damage)
     {
-        health -= damage;        
+        health -= damage;
+        rb.AddForce(new Vector2(impulseAfterDamageX, impulseAfterDamageY));
         if (health <= 0)
         {
             Destroy(this.gameObject);
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.GetComponent<PlayerController>())
+        {
+            rb.velocity = new Vector2(0, 0);
+        }
+    }
+
+    private void Stop ()
+    { 
+        rb.velocity = new Vector2(0, 0);
+    }
 }

@@ -3518,12 +3518,12 @@ PrefabInstance:
     - target: {fileID: -4271807190694371583, guid: accaa7c6f684bd74c980271b4c745b81,
         type: 3}
       propertyPath: impulseAfterDamageX
-      value: 1
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: -4271807190694371583, guid: accaa7c6f684bd74c980271b4c745b81,
         type: 3}
       propertyPath: impulseAfterDamageY
-      value: 2
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 3953425564893960544, guid: accaa7c6f684bd74c980271b4c745b81,
         type: 3}
@@ -3533,7 +3533,7 @@ PrefabInstance:
     - target: {fileID: 3953425564893960546, guid: accaa7c6f684bd74c980271b4c745b81,
         type: 3}
       propertyPath: m_BodyType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3953425564893960547, guid: accaa7c6f684bd74c980271b4c745b81,
         type: 3}
