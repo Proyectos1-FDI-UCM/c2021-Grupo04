@@ -9,7 +9,16 @@ public class EnemyDamageable : MonoBehaviour
      * ataque solo sea posible cuando Makt Fange lanza la bola
      */
     // Start is called before the first frame update
+    public int life = 30;
+    public float impulseAfterDamageX = 0.2f;
+    public float impulseAfterDamageY = 0.2f;
 
+    private int health;
+
+    private void Start()
+    {
+        health = life;
+    }
     /// <summary>
     /// El enemigo sufre daño cuando la herropea colisiona con él
     /// este daño viene marcado por la variable damage
@@ -17,7 +26,11 @@ public class EnemyDamageable : MonoBehaviour
     /// <param name="damage">Daño actual que realiza le herropea</param>
     public void GetDamage(int damage)
     {
-        Debug.Log("Daño sufrido: " + damage);
+        health -= damage;        
+        if (health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
 }
