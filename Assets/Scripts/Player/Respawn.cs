@@ -7,16 +7,28 @@ public class Respawn : MonoBehaviour
     private float posicionColchonX, posicionColchonY;
     void Start()
     {
-        if (PlayerPrefs.GetFloat("posicionColchonX") != 0)
-        {
-            transform.position = new Vector2(PlayerPrefs.GetFloat("posicionColchonX"), PlayerPrefs.GetFloat("posicionColchonY"));
-        }
+        Spawn();
     }
 
+    /*void Update()
+    {
+        if (lives == 0)
+        {
+            Spawn();
+        }
+    }*/
     public void Llegado(float x, float y)
     {
         PlayerPrefs.SetFloat("posicionColchonX", x);
         PlayerPrefs.SetFloat("posicionColchonY", y);
+    }
+
+    private void Spawn()
+    {
+        if (PlayerPrefs.GetFloat("posicionColchonX") != 0)
+        {
+            transform.position = new Vector2(PlayerPrefs.GetFloat("posicionColchonX"), PlayerPrefs.GetFloat("posicionColchonY"));
+        }
     }
 }
 
