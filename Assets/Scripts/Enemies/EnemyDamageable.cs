@@ -13,7 +13,7 @@ public class EnemyDamageable : MonoBehaviour
     public float impulseAfterDamageX = 0.2f;
     public float impulseAfterDamageY = 0.2f;
 
-    private int health;
+    private float health;
     Rigidbody2D rb;
 
     private void Start()
