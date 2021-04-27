@@ -7,10 +7,10 @@ public class GameManager : MonoBehaviour
     
     public int lives = 8;
     public int sandwich = 2;
+    public enum powerUp { IncreaseDamage, Sandwich, ExtraVelocity, Empty }
+    public powerUp myPowerUp = powerUp.Empty;
     private UIManager theUIManager;
     private static GameManager instance;
-    enum powerUp { IncreaseDamage, Sandwich, ExtraVelocity, Empty }
-    powerUp myPowerUp = powerUp.Empty;
     PowerUpManager pum;
     public static GameManager GetInstance()
     {
@@ -86,6 +86,14 @@ public class GameManager : MonoBehaviour
             myPowerUp = powerUp.Empty;
             pum.ActivatePowerUp(newPowerUp);
         }
+    }
+    public bool IsEmpty()
+    {
+        bool empty;
+        if (myPowerUp == powerUp.Empty)
+            empty = true;
+        else empty = false;
+        return (empty);
     }
 
 
