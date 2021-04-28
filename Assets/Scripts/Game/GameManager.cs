@@ -38,12 +38,6 @@ public class GameManager : MonoBehaviour
        
     }
 
-    public void LoseHearts(int damage)
-    {
-        Debug.Log("Daño sufrido por el jugador " + damage);              
-        lives -= damage;       
-    }
-
     public void EatSandwich()
     {
         lives += sandwich;

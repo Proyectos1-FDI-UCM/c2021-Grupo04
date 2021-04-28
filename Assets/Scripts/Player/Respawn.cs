@@ -23,7 +23,7 @@ public class Respawn : MonoBehaviour
         PlayerPrefs.SetFloat("posicionColchonY", y);
     }
 
-    private void Spawn()
+    public void Spawn()
     {
         if (PlayerPrefs.GetFloat("posicionColchonX") != 0)
         {

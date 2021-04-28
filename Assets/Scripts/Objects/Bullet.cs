@@ -16,10 +16,11 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Destroy(this.gameObject, 0);
+        HealthPlayer player = other.GetComponent<HealthPlayer>();
         //Si colisiona con el jugador
-        if (other.GetComponent<PlayerController>())
+        if (player != null)
         {
-            GameManager.GetInstance().LoseHearts(damage);
+            player.LoseHearts(damage);
         }
     }
 }

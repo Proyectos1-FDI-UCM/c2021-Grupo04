@@ -12,6 +12,7 @@ public class EnemyDamageable : MonoBehaviour
     public int life = 30;
     public float impulseAfterDamageX = 0.2f;
     public float impulseAfterDamageY = 0.2f;
+    public GameObject powerUp;
 
     private float health;
     Rigidbody2D rb;
@@ -41,6 +42,7 @@ public class EnemyDamageable : MonoBehaviour
         if (health <= 0)
         {
             Destroy(this.gameObject);
+            Instantiate(powerUp, transform.position, transform.rotation);
         }
     }
 
