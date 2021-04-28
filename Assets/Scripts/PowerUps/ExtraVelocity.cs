@@ -13,6 +13,8 @@ public class ExtraVelocity : MonoBehaviour
         playerController = GetComponent<PlayerController>();
         orVelocity = GetComponent<PlayerController>().vRun;
 
+        GameManager.GetInstance().RefrescoAppears(true);
+
         //cuando se activa accedemos al float vRun del jugador y lo duplicamos
         GetComponent<PlayerController>().vRun = orVelocity * mulVelocity;
         //invocamos durante 10 secs
@@ -27,6 +29,8 @@ public class ExtraVelocity : MonoBehaviour
     {
         //al desactivarse restablecemos el valor de vRun
         GetComponent<PlayerController>().vRun = orVelocity;
+
+        GameManager.GetInstance().RefrescoAppears(false);
     }
 }
 

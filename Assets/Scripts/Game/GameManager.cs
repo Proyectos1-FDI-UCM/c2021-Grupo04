@@ -96,5 +96,21 @@ public class GameManager : MonoBehaviour
         return (empty);
     }
 
+    public void RefrescoAppears(bool active)
+    {
+        theUIManager.PanelRefesco(active);
+
+    }
+    public void SandwichAppears(bool active)
+    {
+        theUIManager.PanelSandwich(active);
+
+    }
+    public void WhetstoneAppears(bool active)
+    {
+        theUIManager.PanelWhetstone(active);
+
+    }
+
 
 }
