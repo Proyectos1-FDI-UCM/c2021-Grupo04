@@ -131,6 +131,8 @@ public class Herropea : MonoBehaviour
                 enemigo.GetDamage(damage);
                 lanzamiento = false;
                 agarrando = false;
+                
+
             }
         }
     }
