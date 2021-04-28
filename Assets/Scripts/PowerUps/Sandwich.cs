@@ -7,7 +7,11 @@ public class Sandwich : MonoBehaviour
     private void OnEnable()
     {
         GameManager.GetInstance().EatSandwich();
+ 
+    }
 
-        
+    private void OnDisable()
+    {
+        GameManager.GetInstance().SandwichAppears(false);
     }
 }

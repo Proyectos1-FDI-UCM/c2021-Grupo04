@@ -51,6 +51,8 @@ public class PowerUpManager : MonoBehaviour
         currentPowerUp = powerUp;
 
         Debug.Log("Componente power-up " + powerUpName + " activado.");
+
+        
     }
 }
 

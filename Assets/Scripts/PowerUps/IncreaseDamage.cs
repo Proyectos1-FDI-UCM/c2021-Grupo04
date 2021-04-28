@@ -27,5 +27,6 @@ public class IncreaseDamage : MonoBehaviour
     private void OnDisable()
     {
        herropea.damage = orDamage;
+        GameManager.GetInstance().WhetstoneAppears(false);
     }
 }

@@ -2409,6 +2409,11 @@ PrefabInstance:
       propertyPath: panelSandwich
       value: 
       objectReference: {fileID: 877466132}
+    - target: {fileID: 171015369964426702, guid: fc44c54606ac13e49ad5d9607f86234e,
+        type: 3}
+      propertyPath: panelWhetstone
+      value: 
+      objectReference: {fileID: 1896585454}
     - target: {fileID: 501831415780238612, guid: fc44c54606ac13e49ad5d9607f86234e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3034,17 +3039,17 @@ PrefabInstance:
     - target: {fileID: 1182880292938331589, guid: 87cbb151722acca48b07be302760b5c1,
         type: 3}
       propertyPath: m_BackGroundColor.r
-      value: 0.9137255
+      value: 0.15699536
       objectReference: {fileID: 0}
     - target: {fileID: 1182880292938331589, guid: 87cbb151722acca48b07be302760b5c1,
         type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 0.56078434
+      value: 0.5943396
       objectReference: {fileID: 0}
     - target: {fileID: 1182880292938331589, guid: 87cbb151722acca48b07be302760b5c1,
         type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 0.8363587
+      value: 0.58516306
       objectReference: {fileID: 0}
     - target: {fileID: 1182880292938331590, guid: 87cbb151722acca48b07be302760b5c1,
         type: 3}
