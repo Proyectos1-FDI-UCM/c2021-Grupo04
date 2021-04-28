@@ -30,7 +30,7 @@ public class ExtraVelocity : MonoBehaviour
         //al desactivarse restablecemos el valor de vRun
         GetComponent<PlayerController>().vRun = orVelocity;
 
-        GameManager.GetInstance().RefrescoAppears(false);
+      
     }
 }
 
