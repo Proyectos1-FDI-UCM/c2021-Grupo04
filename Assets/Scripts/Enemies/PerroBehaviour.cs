@@ -79,7 +79,7 @@ public class PerroBehaviour : MonoBehaviour
         if (atacar && Time.time > initCooldown + lastbite)
         {
             Debug.Log("Ataque");
-            GameManager.GetInstance().LoseHearts(damage);
+            
             
             lastbite = Time.time;           
             
