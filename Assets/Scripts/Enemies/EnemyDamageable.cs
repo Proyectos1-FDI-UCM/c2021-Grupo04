@@ -37,11 +37,13 @@ public class EnemyDamageable : MonoBehaviour
     public void GetDamage(float damage)
     {
         health -= damage;
-        rb.AddForce(new Vector2(impulseAfterDamageX, impulseAfterDamageY));
+        //rb.AddForce(new Vector2(impulseAfterDamageX, impulseAfterDamageY));
         if (health <= 0)
         {
             Destroy(this.gameObject);
         }
     }
+
+  
 
 }

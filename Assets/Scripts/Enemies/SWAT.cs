@@ -13,7 +13,7 @@ public class SWAT : MonoBehaviour
     private Vector3 iniScale, tempScale, movement;
     private float right = 1;
 
-    Rigidbody2D rb;
+    Rigidbody2D rb, rbplayer;
     bool charging = false, chargeLeft = false, chargeRight = false;
     bool moveRight;
     bool agressive = false;
@@ -21,7 +21,7 @@ public class SWAT : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        rbplayer = player.GetComponent<Rigidbody2D>();
         iniScale = transform.localScale;
     }
 
@@ -70,8 +70,8 @@ public class SWAT : MonoBehaviour
         agressive = !agressive;
         if(agressive == true)
         {
-            Invoke("Wait", 3);
             charging = !charging;
+            Invoke("Attack", 3);
         }
         else
         {
@@ -79,9 +79,18 @@ public class SWAT : MonoBehaviour
         }
     }
 
-    private void Wait()
+    private void Attack()
     {
-        Invoke("Charge", 0);
+        rb.AddForce(new Vector2(enemyVelocity * Time.deltaTime * 3, 0), ForceMode2D.Force);
+
+        /*if (Vector2.Distance(transform.position, movPoints[i].transform.position) < 0.5f)
+        {
+            if (movPoints[i] != movPoints[movPoints.Length - 1]) i++;
+            else i = 0;
+            right = Mathf.Sign(movPoints[i].transform.position.x - transform.position.x);
+            Turn(right);
+        }*/
+
     }
 
     private void Turn(float right)
@@ -141,7 +150,7 @@ public class SWAT : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (Vector2.Distance(this.transform.position, player.transform.position) < 3f)
+        if (Vector2.Distance(this.transform.position, player.transform.position) <= 3f)
         {
             
         }
@@ -167,4 +176,9 @@ public class SWAT : MonoBehaviour
             transform.right = Vector3.left;
         }
     }
+
+    /*private void OnCollisionEnter2D(Collision2D collision)
+    {
+        rbplayer.AddForce(new Vector2(5, 0), ForceMode2D.Impulse);
+    }*/
 }
