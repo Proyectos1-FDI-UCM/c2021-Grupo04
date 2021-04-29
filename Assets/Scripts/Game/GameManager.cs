@@ -51,21 +51,21 @@ public class GameManager : MonoBehaviour
             if (newPowerUp == "IncreaseDamage")
             {
                 myPowerUp = powerUp.IncreaseDamage;
-                WhetstoneAppears(true);
+                //WhetstoneAppears(true);
 
             }
             else if (newPowerUp == "Sandwich")
             {
                 myPowerUp = powerUp.Sandwich;
-                SandwichAppears(true);
+                //SandwichAppears(true);
             }
             else if (newPowerUp == "ExtraVelocity")
             {
                 myPowerUp = powerUp.ExtraVelocity;
-                RefrescoAppears(true);
+                //RefrescoAppears(true);
             }
             else Debug.Log("nombre erroneo de power up");
-
+            PowerUpAppears(true);
         }
         else Debug.Log("no hay hueco en el inventario");
 
@@ -83,22 +83,25 @@ public class GameManager : MonoBehaviour
             if (myPowerUp == powerUp.IncreaseDamage)
             {
                 newPowerUp = "IncreaseDamage";
-                WhetstoneAppears(false);
+                //WhetstoneAppears(false);
             }
             else if (myPowerUp == powerUp.Sandwich)
             {
                 newPowerUp = "Sandwich";
-                SandwichAppears(false);
+                //SandwichAppears(false);
             }
             else if (myPowerUp == powerUp.ExtraVelocity)
             {
                 newPowerUp = "ExtraVelocity";
-                RefrescoAppears(false);
+                //RefrescoAppears(false);
             }
-
+            PowerUpAppears(false);
+            pum.ActivatePowerUp(myPowerUp, newPowerUp);
             myPowerUp = powerUp.Empty;
-            pum.ActivatePowerUp(newPowerUp);
         }
+           
+        Debug.Log("g");
+        
     }
     public bool IsEmpty()
     {
@@ -123,6 +126,26 @@ public class GameManager : MonoBehaviour
         theUIManager.PanelWhetstone(active);
 
     }
+    public void PowerUpAppears(bool active)
+    {
+        if (myPowerUp == powerUp.IncreaseDamage)
+        {
+            theUIManager.PanelWhetstone(active);
+            
+        }
+        else if (myPowerUp == powerUp.Sandwich)
+        {
+            theUIManager.PanelSandwich(active);
+        }
+        else if (myPowerUp == powerUp.ExtraVelocity)
+        {
+            theUIManager.PanelRefesco(active);
+        }
+        Debug.Log(active);
+        Debug.Log(myPowerUp);
+
+    }
+
 
 
 }
