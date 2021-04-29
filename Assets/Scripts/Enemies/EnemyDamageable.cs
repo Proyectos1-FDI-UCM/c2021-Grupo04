@@ -12,7 +12,10 @@ public class EnemyDamageable : MonoBehaviour
     public int life = 30;
     public float impulseAfterDamageX = 0.2f;
     public float impulseAfterDamageY = 0.2f;
-    public GameObject powerUp;
+    public GameObject whetstone;
+    public GameObject sandwich;
+    public GameObject refresco;
+    public int probDrop = 7;
 
     private float health;
     Rigidbody2D rb;
@@ -42,10 +45,28 @@ public class EnemyDamageable : MonoBehaviour
         if (health <= 0)
         {
             Destroy(this.gameObject);
-            Instantiate(powerUp, transform.position, transform.rotation);
+
+            SpawnPowerUp();
         }
     }
+    public void SpawnPowerUp()
+    {    
+        // numero aleatorio que determina las probabilidades de que el enemigo suelte un drop
+        int drop = Random.Range(1, 10);
 
-  
-
+        if(drop<probDrop)
+        {
+            // numero aleatorio que determina que drop va a soltar el enemigo
+            int whatDrop = Random.Range(1, 9);
+            if(whatDrop<=3)
+            {
+                Instantiate(refresco, transform.position, transform.rotation);
+            }
+            else if(whatDrop<=6)
+            {
+                Instantiate(whetstone, transform.position, transform.rotation);
+            }
+            else Instantiate(sandwich, transform.position, transform.rotation);
+        }
+    }
 }
