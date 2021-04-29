@@ -57,12 +57,13 @@ public class EnemyDamageable : MonoBehaviour
         if(drop<probDrop)
         {
             // numero aleatorio que determina que drop va a soltar el enemigo
-            int whatDrop = Random.Range(1, 9);
-            if(whatDrop<=3)
+            int whatDrop = 1;//Random.Range(1, 3);
+            Debug.Log(whatDrop);
+            if (whatDrop == 1)
             {
                 Instantiate(refresco, transform.position, transform.rotation);
             }
-            else if(whatDrop<=6)
+            else if (whatDrop == 2) 
             {
                 Instantiate(whetstone, transform.position, transform.rotation);
             }
