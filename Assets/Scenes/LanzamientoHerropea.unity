@@ -4234,6 +4234,31 @@ PrefabInstance:
       propertyPath: rbMakt
       value: 
       objectReference: {fileID: 541277687}
+    - target: {fileID: 1957414244645280989, guid: fb7f82022fcfd1d4da6c9d8bf8307dad,
+        type: 3}
+      propertyPath: emergeVelocity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957414244645280989, guid: fb7f82022fcfd1d4da6c9d8bf8307dad,
+        type: 3}
+      propertyPath: velocidadRecogida
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957414244645280989, guid: fb7f82022fcfd1d4da6c9d8bf8307dad,
+        type: 3}
+      propertyPath: approachingVelocity
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957414244645280989, guid: fb7f82022fcfd1d4da6c9d8bf8307dad,
+        type: 3}
+      propertyPath: maktFange
+      value: 
+      objectReference: {fileID: 1728082926}
+    - target: {fileID: 1957414244645281056, guid: fb7f82022fcfd1d4da6c9d8bf8307dad,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1957414244645281057, guid: fb7f82022fcfd1d4da6c9d8bf8307dad,
         type: 3}
       propertyPath: m_Name
@@ -4345,6 +4370,11 @@ PrefabInstance:
         type: 3}
       propertyPath: vRun
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987134724130359093, guid: 900830ef84c8c1749bbe4741f1954146,
+        type: 3}
+      propertyPath: jump
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5987134724130359095, guid: 900830ef84c8c1749bbe4741f1954146,
         type: 3}

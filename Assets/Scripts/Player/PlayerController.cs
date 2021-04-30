@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     private float fJump;
     private float distance;
     private float maxDistance;
-    private float jumpPressTime;
     private bool jump = false;
 
 
@@ -52,11 +51,13 @@ public class PlayerController : MonoBehaviour
         distance = scriptHerropea.GetDistanceHerropea();
         maxDistance = scriptHerropea.GetMaxDistance();
 
+        //Reducción de salto
         if (scriptHerropea.AgarrandoHerropea())
         {
             fRun = vRun;
             fJump = vJump * vJumpReduction;
         }
+        //Reduccion de carrera
         else if (!scriptHerropea.AgarrandoHerropea() && distance >= (maxDistance - 0.1f))
         {
             fRun = vRun * vRunReduction;
@@ -68,7 +69,12 @@ public class PlayerController : MonoBehaviour
             fJump = vJump;
         }
 
-        rb.velocity = new Vector2(run*fRun, rb.velocity.y); //movimiento por el eje X
+        if (!Input.GetButton("Jump"))
+        {
+            rb.velocity = new Vector2(run * fRun, rb.velocity.y); //movimiento por el eje X
+        }
+        else rb.velocity = new Vector2(0, rb.velocity.y);
+
         if (run != 0)
         {
             walk.SetBool("Running", true);
@@ -86,9 +92,14 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (contact && jump) //si existe contacto, podemos saltar
+        if (contact && jump && !Input.GetButton("Jump")) //si existe contacto, podemos saltar
         {
             rb.velocity = new Vector2(rb.velocity.x, fJump);
         }
+    }
+
+    public bool Salto()
+    {
+        return contact;
     }
 }
