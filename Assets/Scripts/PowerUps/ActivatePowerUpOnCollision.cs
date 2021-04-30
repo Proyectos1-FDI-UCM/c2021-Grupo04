@@ -45,7 +45,7 @@ public class ActivatePowerUpOnCollision : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D info)
+    void OnTriggerEnter2D(Collider2D info)
     {
 
         GameObject other = info.gameObject;
