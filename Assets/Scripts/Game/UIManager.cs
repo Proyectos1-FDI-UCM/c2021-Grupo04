@@ -10,10 +10,23 @@ public class UIManager : MonoBehaviour
     public GameObject panelRefresco;
     public GameObject panelSandwich;
     public GameObject panelWhetstone;
+    private int heartsLeft;
+    public RectTransform panelHearts;
+    public Image heartsFange;
    
     void Start()
     {
         GameManager.GetInstance().SetUIManager(this);
+    }
+
+    public void Init(int numHearts)
+    {
+        heartsLeft = numHearts;
+        int cont = 0;
+        while (cont < numHearts)
+        {
+            Instantiate(heartsFange, panelHearts);
+        }
     }
 
     public void LoseHeart()
@@ -29,11 +42,10 @@ public class UIManager : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetButton("Cancel"))
-        {
-            LoseHeart();
-        }
+        
     }
+
+   
 
     public void PanelRefesco(bool active)
     {
