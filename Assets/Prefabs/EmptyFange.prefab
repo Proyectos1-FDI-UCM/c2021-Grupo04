@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 5987134724130359095}
   - component: {fileID: 6579004303100968881}
   - component: {fileID: -6996569664634752650}
+  - component: {fileID: 7907508211236104130}
   m_Layer: 9
   m_Name: EmptyFange
   m_TagString: Untagged
@@ -343,3 +344,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mediumJumpForce: 1.34
   fastDescending: 2.12
+--- !u!114 &7907508211236104130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5987134724130359097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47076ba25e085fa42a2fcc6da9db0b5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 4
+  inmunityCooldown: 0.77

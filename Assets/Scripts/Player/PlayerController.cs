@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody2D rb;
     Animator walk;
+    Animator pickingUp;
     Herropea scriptHerropea;
     bool contact;
     private float fRun;
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         walk = GetComponentInChildren<Animator>();
+        pickingUp = GetComponentInChildren<Animator>();
         scriptHerropea = herropea.GetComponent<Herropea>();
     }
     //detectamos cuando entra en contacto el collider de los pies de Maktfange con el escenario 
@@ -88,6 +90,11 @@ public class PlayerController : MonoBehaviour
             GameManager.GetInstance().ActivatePowerUp();
         }
 
+    }
+
+    public void SetPickUpAnimation(bool anim) 
+    {             
+        pickingUp.SetBool("PickingUp", anim);       
     }
 
     private void FixedUpdate()

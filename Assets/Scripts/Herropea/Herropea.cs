@@ -45,10 +45,13 @@ public class Herropea : MonoBehaviour
     
         // El jugador agarra la herropea si no lo está haciendo ya y si el jugador está quieto
         if (Input.GetButton("Jump") && !agarrando && playerController.Salto())
-        {            
+        {
+            //Animamoss al personaje y recogemos herropea
+            playerController.SetPickUpAnimation(true);
             transform.position = Vector2.MoveTowards(transform.position, chainZone.transform.position, velocidadRecogida * Time.deltaTime);
             if (transform.position == chainZone.transform.position)
             {
+                playerController.SetPickUpAnimation(false);
                 agarrando = true;
                 transform.position = new Vector3(pickUpPosition.position.x, pickUpPosition.position.y);
                 transform.SetParent(pickUpPosition);
@@ -60,6 +63,7 @@ public class Herropea : MonoBehaviour
         {           
             agarrando = false;
             transform.SetParent(scenario);
+            playerController.SetPickUpAnimation(false);
         }
         //El jugador lanza si está agarrando y pulsa ctrl
         else if (Input.GetButton("Fire1") && agarrando)
@@ -67,7 +71,8 @@ public class Herropea : MonoBehaviour
             
             Debug.Log("Lanzamiento");                   
             lanzamiento = true;
-            transform.SetParent(scenario);           
+            transform.SetParent(scenario);
+            playerController.SetPickUpAnimation(false);
         }
         //Siempre que no esté agarrando Fange la bola y que el bool floating sea true, le afecta la gravedad
         if (!agarrando && flotando)
@@ -92,8 +97,7 @@ public class Herropea : MonoBehaviour
         {
             Debug.LogWarning("Bug del collider FakeHerropea salvado");
             scriptFakeHerropea.SetCollider(false);
-        }
-      
+        }     
     }
 
     
