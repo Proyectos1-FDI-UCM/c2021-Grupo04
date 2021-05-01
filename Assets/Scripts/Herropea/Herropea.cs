@@ -63,7 +63,6 @@ public class Herropea : MonoBehaviour
         {           
             agarrando = false;
             transform.SetParent(scenario);
-            playerController.SetPickUpAnimation(false);
         }
         //El jugador lanza si está agarrando y pulsa ctrl
         else if (Input.GetButton("Fire1") && agarrando)
@@ -72,8 +71,9 @@ public class Herropea : MonoBehaviour
             Debug.Log("Lanzamiento");                   
             lanzamiento = true;
             transform.SetParent(scenario);
-            playerController.SetPickUpAnimation(false);
         }
+        else playerController.SetPickUpAnimation(false);
+
         //Siempre que no esté agarrando Fange la bola y que el bool floating sea true, le afecta la gravedad
         if (!agarrando && flotando)
         {

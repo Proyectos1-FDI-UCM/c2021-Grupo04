@@ -13,8 +13,7 @@ public class PlayerController : MonoBehaviour
     public GameObject herropea;
 
     Rigidbody2D rb;
-    Animator walk;
-    Animator pickingUp;
+    Animator anim;
     Herropea scriptHerropea;
     bool contact;
     private float fRun;
@@ -27,21 +26,28 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        walk = GetComponentInChildren<Animator>();
-        pickingUp = GetComponentInChildren<Animator>();
+        anim = GetComponentInChildren<Animator>();
         scriptHerropea = herropea.GetComponent<Herropea>();
     }
     //detectamos cuando entra en contacto el collider de los pies de Maktfange con el escenario 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.GetComponent<CompositeCollider2D>() || collision.GetComponent<DestroyFakeHerropea>())
+        {
             contact = true;
+            anim.SetBool("Floating", !contact);
+        }
+            
     }
     //detectamos salida
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.GetComponent<CompositeCollider2D>() || collision.GetComponent<DestroyFakeHerropea>())
+        {
             contact = false;
+            anim.SetBool("Floating", !contact);
+        }
+            
     }
 
     void Update()
@@ -79,11 +85,11 @@ public class PlayerController : MonoBehaviour
 
         if (run != 0)
         {
-            walk.SetBool("Running", true);
+            anim.SetBool("Running", true);
             if (run < 0) transform.right = Vector2.left;
             else if (run > 0) transform.right = Vector2.right;
         }
-        else walk.SetBool("Running", false);
+        else anim.SetBool("Running", false);
 
         if(Input.GetButtonDown("Fire2"))
         {
@@ -92,17 +98,29 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void SetPickUpAnimation(bool anim) 
+    public void SetPickUpAnimation(bool animation) 
     {             
-        pickingUp.SetBool("PickingUp", anim);       
+        anim.SetBool("PickingUp", animation);       
     }
 
     private void FixedUpdate()
     {
         if (contact && jump && !Input.GetButton("Jump")) //si existe contacto, podemos saltar
         {
-            rb.velocity = new Vector2(rb.velocity.x, fJump);
+            anim.SetBool("Jump", true);
+            Invoke("PlayerJumps", 0.1f);
+            Invoke("SetFalseJump", 0.2f);
         }
+    }
+
+    private void PlayerJumps()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, fJump);
+    }
+
+    private void SetFalseJump()
+    {
+        anim.SetBool("Jump", false);
     }
 
     public bool Salto()
