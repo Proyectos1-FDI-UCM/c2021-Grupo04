@@ -7,24 +7,27 @@ public class Herropea : MonoBehaviour
     public float velLanzamiento = 5;
     public float gravity = 1;
     public float maxDistance;
-    public float damage;
+    public float damage = 15;
+    public float emergeVelocity = 1;
+    public float velocidadRecogida = 0.3f;
     public Transform pickUpPosition;
     public Transform chainZone;
     public Transform scenario;
     public Rigidbody2D rbMakt;
+    public GameObject maktFange;
 
     private float distance; //Distancia bola jugador
     private bool agarrando = false; //Si Makt Fange esta agarrando la bola
-    private bool floating = true; //True si es afectada por la gravedad
+    private bool flotando = true; //True si es afectada por la gravedad
     private bool lanzamiento = false; //Si la bola está viajando por un lanzamento de Makt Fange
     private bool clavado = false; //True cuando hay una herropea falsa instanciada a la que subirse
+    private PlayerController playerController;
     private DestroyFakeHerropea scriptFakeHerropea;
-    private Rigidbody2D rb2D;
 
     private void Start()
     {
         scriptFakeHerropea = GetComponentInChildren<DestroyFakeHerropea>();
-        rb2D = GetComponent<Rigidbody2D>();
+        playerController = maktFange.GetComponent<PlayerController>();
     }
 
     void Update()
@@ -39,15 +42,21 @@ public class Herropea : MonoBehaviour
             //La herropea se mueve hacia el jugador a la misma velocidad que él
             transform.position = Vector2.MoveTowards(transform.position, chainZone.transform.position, step);
         }
-
-        // El jugador agarra la herropea si no lo está haciendo ya
-        if (Input.GetButton("Jump") && !agarrando)
+    
+        // El jugador agarra la herropea si no lo está haciendo ya y si el jugador está quieto
+        if (Input.GetButton("Jump") && !agarrando && playerController.Salto())
         {
-            agarrando = true;
-            transform.position = new Vector3(pickUpPosition.position.x, pickUpPosition.position.y);
-            transform.SetParent(pickUpPosition);
-            transform.rotation = transform.parent.rotation;
-            
+            //Animamoss al personaje y recogemos herropea
+            playerController.SetPickUpAnimation(true);
+            transform.position = Vector2.MoveTowards(transform.position, chainZone.transform.position, velocidadRecogida * Time.deltaTime);
+            if (transform.position == chainZone.transform.position)
+            {
+                playerController.SetPickUpAnimation(false);
+                agarrando = true;
+                transform.position = new Vector3(pickUpPosition.position.x, pickUpPosition.position.y);
+                transform.SetParent(pickUpPosition);
+                transform.rotation = transform.parent.rotation;              
+            }
         }
         // El jugador deja de agarrar la herropea con shift
         else if (Input.GetButton("Fire3"))
@@ -61,11 +70,12 @@ public class Herropea : MonoBehaviour
             
             Debug.Log("Lanzamiento");                   
             lanzamiento = true;
-            transform.SetParent(scenario);           
+            transform.SetParent(scenario);
         }
+        else playerController.SetPickUpAnimation(false);
 
         //Siempre que no esté agarrando Fange la bola y que el bool floating sea true, le afecta la gravedad
-        if (!agarrando && floating)
+        if (!agarrando && flotando)
         {
             transform.Translate(Vector2.down * gravity * Time.deltaTime);
         }       
@@ -87,8 +97,10 @@ public class Herropea : MonoBehaviour
         {
             Debug.LogWarning("Bug del collider FakeHerropea salvado");
             scriptFakeHerropea.SetCollider(false);
-        }
+        }     
     }
+
+    
 
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -96,12 +108,12 @@ public class Herropea : MonoBehaviour
         if(collision.GetComponent<CompositeCollider2D>() != null)
         {
             Debug.Log("Flotando");
-            floating = true;
+            flotando = true;
             if (clavado)
             {
                 scriptFakeHerropea.SetCollider(false);
-                clavado = false;              
-            }
+                clavado = false;
+            }           
         }      
     }
 
@@ -117,12 +129,13 @@ public class Herropea : MonoBehaviour
                 scriptFakeHerropea.SetCollider(true);
                 lanzamiento = false;
                 agarrando = false;
-                floating = false;
+                flotando = false;
                 clavado = true;
             }
-            floating = false; //Deja de afectarle la gravedad
+            flotando = false; //Deja de afectarle la gravedad
             Debug.Log("Suelo");
-            //Si además la bola ha sido lanzada por MaktFange, se queda clavada en la pared          
+            //Si además la bola ha sido lanzada por MaktFange, se queda clavada en la pared   
+            
         }
         else if (enemigo)
         {
@@ -131,8 +144,6 @@ public class Herropea : MonoBehaviour
                 enemigo.GetDamage(damage);
                 lanzamiento = false;
                 agarrando = false;
-                
-
             }
         }
     }
