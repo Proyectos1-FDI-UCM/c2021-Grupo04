@@ -5,18 +5,17 @@ using UnityEngine;
 public class Respawn : MonoBehaviour
 {
     private float posicionColchonX, posicionColchonY;
+    int lives;
     void Start()
     {
+       
         Spawn();
     }
 
-    /*void Update()
+    void Update()
     {
-        if (lives == 0)
-        {
-            Spawn();
-        }
-    }*/
+        
+    }
     public void Llegado(float x, float y)
     {
         PlayerPrefs.SetFloat("posicionColchonX", x);

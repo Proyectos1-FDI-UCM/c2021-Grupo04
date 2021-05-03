@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     
-    public int lives = 8;
+    
     public int sandwich = 2;
     public enum powerUp { IncreaseDamage, Sandwich, ExtraVelocity, Empty }
     public powerUp myPowerUp = powerUp.Empty;
@@ -34,11 +34,16 @@ public class GameManager : MonoBehaviour
     public void SetUIManager(UIManager uim)
     {
         theUIManager = uim;
-
+        
        
     }
-
-    public void EatSandwich()
+    
+    public void ReDrawHearts(int lives)
+    {
+        
+        theUIManager.DrawHearts(lives);
+    }
+    public void EatSandwich(int lives)
     {
         lives += sandwich;
     }
@@ -146,6 +151,39 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void HeartDestroyed()
+    {
+        theUIManager.RemoveHeart();
+        
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //para detener ejecución de Unity
+    public void ExitGame()
+    {
+     #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+     #else
+        Application.Quit();
+     #endif
+    }
 
 
 

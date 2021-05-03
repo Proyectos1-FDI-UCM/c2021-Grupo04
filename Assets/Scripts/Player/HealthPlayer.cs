@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class HealthPlayer : MonoBehaviour
 {
-    public int lives = 8;
+    public int maxHealth = 4;
     public float inmunityCooldown = 1f;
 
     private float time = 0;
     private int health;
     Respawn spawn;
+    
+    
 
     private void Start()
     {
+       
         spawn = GetComponent<Respawn>();
-        health = lives;
+        health = maxHealth;
+        GameManager.GetInstance().ReDrawHearts(health);
     } 
 
     public void LoseHearts(int damage)
@@ -24,14 +28,19 @@ public class HealthPlayer : MonoBehaviour
             health -= damage;
             Debug.Log("Vidas restante del jugador " + health);
             time = Time.time;
+            GameManager.GetInstance().HeartDestroyed();
+            
         }
 
-        if (health <= 0)
-        {           
-            spawn.Spawn();
-            health = lives;
+        else if (health <= 0)
+        {
+            GameManager.GetInstance().ExitGame();
+            
+            
+
         }
+
     }
-
+  
    
 }
