@@ -5,35 +5,52 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public int heartsRemaining;
-    public Image[] hearts;
+    //relativo a inventario
+    
     public GameObject panelRefresco;
     public GameObject panelSandwich;
     public GameObject panelWhetstone;
    
+    //relativo a corazones
+    private int heartsLeft;
+    public RectTransform panelHearts;
+    public Image heartsIconPrefab;
+   
     void Start()
     {
         GameManager.GetInstance().SetUIManager(this);
+        
     }
 
-    public void LoseHeart()
+    public void DrawHearts(int numHearts)
     {
-        heartsRemaining--;
-
-        hearts[heartsRemaining].enabled = false;
-
-        if (heartsRemaining == 0)
+        heartsLeft = numHearts;
+        
+       for (int cont=0; cont < numHearts;cont++)
         {
-            Debug.Log("Has perdido");
+            Instantiate(heartsIconPrefab, panelHearts);
+            
+        }
+    }
+
+    public void RemoveHeart()
+    {
+        if (heartsLeft >= 0)
+        {
+            if (panelHearts != null)
+            {
+                panelHearts.GetChild(heartsLeft - 1).gameObject.SetActive(false);
+                heartsLeft--;
+            }
+                
         }
     }
     private void Update()
     {
-        if (Input.GetButton("Cancel"))
-        {
-            LoseHeart();
-        }
+        
     }
+
+   
 
     public void PanelRefesco(bool active)
     {

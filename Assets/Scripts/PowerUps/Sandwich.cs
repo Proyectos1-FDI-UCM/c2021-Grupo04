@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Sandwich : MonoBehaviour
 {
+    public int extraHeart = 2;
     private void OnEnable()
     {
-        GameManager.GetInstance().EatSandwich();
+        GameManager.GetInstance().EatSandwich(extraHeart);
  
     }
 
