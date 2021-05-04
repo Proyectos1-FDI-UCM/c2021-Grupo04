@@ -3,7 +3,13 @@ guid: 478b916bfab21e34d921c99dce9c712a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Player: {fileID: 5987134724130359097, guid: 900830ef84c8c1749bbe4741f1954146,
+      type: 3}
+  - Policeman: {fileID: 4972793974964828772, guid: accaa7c6f684bd74c980271b4c745b81,
+      type: 3}
+  - Bullet: {fileID: 4221295601115640191, guid: e3861d455e284c644bd76c84bc400d17,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

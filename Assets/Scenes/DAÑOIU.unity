@@ -2951,6 +2951,11 @@ PrefabInstance:
       propertyPath: rbMakt
       value: 
       objectReference: {fileID: 541277687}
+    - target: {fileID: 1957414244645280989, guid: fb7f82022fcfd1d4da6c9d8bf8307dad,
+        type: 3}
+      propertyPath: maktFange
+      value: 
+      objectReference: {fileID: 5987134723597630158}
     - target: {fileID: 6585507325675437117, guid: fb7f82022fcfd1d4da6c9d8bf8307dad,
         type: 3}
       propertyPath: m_LocalPosition.x

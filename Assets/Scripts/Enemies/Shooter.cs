@@ -11,8 +11,8 @@ public class Shooter : MonoBehaviour
     public float coolingDownSecs = 0.4f;
     public float distanceToShoot = 8f;
 
-    public GameObject Player;
-    public GameObject Policeman;
+    public Transform Player;
+    public Transform Policeman;
     public GameObject Bullet;
 
     private float lastShoot = 0;
