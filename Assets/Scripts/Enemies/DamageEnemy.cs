@@ -15,5 +15,4 @@ public class DamageEnemy : MonoBehaviour
             player.LoseHearts(damage);
         }
     }
-
 }

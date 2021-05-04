@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +10,6 @@ public class Preso : MonoBehaviour
     public float initCooldown = 100;
     float cooldown;
     int movementDir = 1;
-    bool cooling = false;
     bool agresivo = false;
     Rigidbody2D rb;
 
@@ -29,8 +28,6 @@ public class Preso : MonoBehaviour
         {
             EncontrarJugador();
         }
-        if (cooling)
-            Debug.Log("cooldown");
 
     }
     //triggers para el control del enemigo
@@ -40,32 +37,28 @@ public class Preso : MonoBehaviour
         if (!collision.gameObject.GetComponent<PlayerController>())
         {
             CambioDir();
+            agresivo = false;
         }
         // trigger que funciona como campo de visión
         if (collision.gameObject.GetComponent<PlayerController>())
         {
-            velocityScale = velocityScale * 1.5f;
             agresivo = true;
             Debug.Log("He visto al jugador");
         }
-
-
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<PlayerController>())
         {
             agresivo = false;
-            velocityScale = velocityScale / 1.5f;
         }
     }
     //Determina si el enemigo entra en contacto con el jugador y le quita vida
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<PlayerController>())
+        if (collision.gameObject.GetComponent<Herropea>())
         {
             agresivo = true;
-            Atacar();
             Debug.Log("He visto al jugador");
         }
     }
@@ -95,26 +88,7 @@ public class Preso : MonoBehaviour
         else if (movementDir == 1)
             transform.right = Vector2.right;
     }
-    public void Atacar()
-    {
-        if (agresivo && !cooling)
-        {
-            //GameManager.GetInstance().MakeDamage(damage);
-            cooling = true;
-            Cooldown();
-        }
-    }
-    public void Cooldown()
-    {
-        while (cooling)
-        {
-            cooldown -= Time.deltaTime;
-            if (cooldown <= 0 && agresivo && cooling)
-            {
-                cooling = false;
-                cooldown = initCooldown;
-            }
-        }
-    }
+
+
     //original(unity)
 }
