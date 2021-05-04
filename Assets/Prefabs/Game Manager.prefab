@@ -43,4 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f0fa47c8db8e3545b3b0351f9a08bfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 3
+  menu: MENU
+  sandwich: 1
+  myPowerUp: 3

@@ -19,12 +19,15 @@ public class HealthPlayer : MonoBehaviour
        
         spawn = GetComponent<Respawn>();
         health = maxHealth;
-        
 
-        GameManager.GetInstance().ReDrawHearts(health);
+        Invoke("InstanceHearts", 0.1f);
+       
     }
    
-    
+    public void InstanceHearts()
+    {
+        GameManager.GetInstance().ReDrawHearts(health);
+    }
         
     
     public void LoseHearts(int damage)
@@ -40,7 +43,7 @@ public class HealthPlayer : MonoBehaviour
 
         else if (health <= 0)
         {
-            GameManager.GetInstance().ExitGame();
+            GameManager.GetInstance().ChargeMenu();
             
             
 

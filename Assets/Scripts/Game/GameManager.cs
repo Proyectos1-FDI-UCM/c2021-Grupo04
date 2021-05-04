@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    
+    public string menu;
     
     public int sandwich = 1;
     public enum powerUp { IncreaseDamage, Sandwich, ExtraVelocity, Empty }
@@ -168,9 +169,15 @@ public class GameManager : MonoBehaviour
 
 
 
+    public void ChangeScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
 
-
-
+    public void ChargeMenu()
+    {
+        ChangeScene(menu);
+    }
 
 
 
