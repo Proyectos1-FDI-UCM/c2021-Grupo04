@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8897540229583292526}
   - component: {fileID: 8897540229583292527}
   - component: {fileID: 8897540229583292520}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Whetstone
   m_TagString: Untagged
   m_Icon: {fileID: 0}

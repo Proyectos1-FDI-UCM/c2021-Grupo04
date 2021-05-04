@@ -5,15 +5,11 @@ using UnityEngine;
 public class Respawn : MonoBehaviour
 {
     private float posicionColchonX, posicionColchonY;
-    public bool respawn;
     int lives;
     void Start()
     {
-        if (respawn)
-        {
-            Spawn();
-        }
-        
+       
+        Spawn();
     }
 
     void Update()
