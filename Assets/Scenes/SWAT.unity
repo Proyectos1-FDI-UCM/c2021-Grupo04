@@ -3517,6 +3517,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2086919387256931928, guid: 9b14b98cedf5c2449ac3a7e7228dbe11,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ac238c91174bf9f4685aaec8928c7a6f,
+        type: 3}
+    - target: {fileID: 2086919387256931928, guid: 9b14b98cedf5c2449ac3a7e7228dbe11,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2086919387912324299, guid: 9b14b98cedf5c2449ac3a7e7228dbe11,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a02bd5ff30c142e45a2293b983d560af, type: 2}
     - target: {fileID: 2086919388492084466, guid: 9b14b98cedf5c2449ac3a7e7228dbe11,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3572,10 +3588,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2086919388492084467, guid: 9b14b98cedf5c2449ac3a7e7228dbe11,
+        type: 3}
+      propertyPath: damage
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2086919388492084472, guid: 9b14b98cedf5c2449ac3a7e7228dbe11,
         type: 3}
       propertyPath: m_Name
       value: SWAT
+      objectReference: {fileID: 0}
+    - target: {fileID: 2086919388492084476, guid: 9b14b98cedf5c2449ac3a7e7228dbe11,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2086919388492084479, guid: 9b14b98cedf5c2449ac3a7e7228dbe11,
         type: 3}
