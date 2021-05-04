@@ -2108,13 +2108,17 @@ CompositeCollider2D:
     m_ColliderPaths:
     - - X: 260000064
         Y: -20000000
-      - X: 20000004
+      - X: 20000104
         Y: -20000000
-      - X: 20000004
-        Y: -30000000
-      - X: -30000008
-        Y: -30000000
-      - X: -30000008
+      - X: 20000104
+        Y: -30000041
+      - X: 20000045
+        Y: -30000100
+      - X: -30000049
+        Y: -30000100
+      - X: -30000108
+        Y: -30000041
+      - X: -30000108
         Y: -20000000
       - X: -50000008
         Y: -20000000
@@ -2170,10 +2174,10 @@ CompositeCollider2D:
     m_Paths:
     - - {x: 25.999977, y: -5}
       - {x: 25.999977, y: -2}
-      - {x: 2.0000005, y: -2.0000293}
-      - {x: 1.999971, y: -3}
-      - {x: -3.000001, y: -2.9999707}
-      - {x: -3.00003, y: -2}
+      - {x: 2.0000105, y: -2.0000293}
+      - {x: 1.9999752, y: -3.00001}
+      - {x: -3.0000107, y: -2.9999747}
+      - {x: -3.00004, y: -2}
       - {x: -5.000001, y: -1.9999707}
       - {x: -5.00003, y: 0}
       - {x: -7.000002, y: 0.0000294}
@@ -2601,7 +2605,7 @@ PrefabInstance:
     - target: {fileID: 6837381461029677043, guid: 58ab4bd44f6381d4c8268985a591918a,
         type: 3}
       propertyPath: m_Constraints
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6837381461029677043, guid: 58ab4bd44f6381d4c8268985a591918a,
         type: 3}
@@ -2617,6 +2621,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_CollisionDetection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9146594856408221500, guid: 58ab4bd44f6381d4c8268985a591918a,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.8323982
+      objectReference: {fileID: 0}
+    - target: {fileID: 9146594856408221500, guid: 58ab4bd44f6381d4c8268985a591918a,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3.6233878
+      objectReference: {fileID: 0}
+    - target: {fileID: 9146594856408221500, guid: 58ab4bd44f6381d4c8268985a591918a,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.80332184
+      objectReference: {fileID: 0}
+    - target: {fileID: 9146594856408221500, guid: 58ab4bd44f6381d4c8268985a591918a,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 6.151905
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 415798124558962623, guid: 58ab4bd44f6381d4c8268985a591918a, type: 3}
@@ -2761,6 +2785,11 @@ PrefabInstance:
       propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5987134724130359098, guid: 900830ef84c8c1749bbe4741f1954146,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5987134724130359099, guid: 900830ef84c8c1749bbe4741f1954146,
         type: 3}
       propertyPath: m_Offset.y
@@ -2780,6 +2809,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.x
       value: 0.90579176
+      objectReference: {fileID: 0}
+    - target: {fileID: 6579004303100968881, guid: 900830ef84c8c1749bbe4741f1954146,
+        type: 3}
+      propertyPath: respawn
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 900830ef84c8c1749bbe4741f1954146, type: 3}
@@ -2820,6 +2854,11 @@ PrefabInstance:
       propertyPath: maktFange
       value: 
       objectReference: {fileID: 638601005}
+    - target: {fileID: 1957414244645280990, guid: fb7f82022fcfd1d4da6c9d8bf8307dad,
+        type: 3}
+      propertyPath: respawn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6585507325675437117, guid: fb7f82022fcfd1d4da6c9d8bf8307dad,
         type: 3}
       propertyPath: m_LocalPosition.x
