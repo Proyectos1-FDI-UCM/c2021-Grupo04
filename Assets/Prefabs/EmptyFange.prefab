@@ -330,6 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660a836c4b97d7a40ad91d5c522a3932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  respawn: 1
 --- !u!114 &-6996569664634752650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,5 +357,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47076ba25e085fa42a2fcc6da9db0b5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 4
+  maxHealth: 8
   inmunityCooldown: 0.77
