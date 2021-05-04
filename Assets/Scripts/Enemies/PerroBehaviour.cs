@@ -4,20 +4,19 @@ using UnityEngine;
 public class PerroBehaviour : MonoBehaviour
 {
     //Declaración de variables (las variables públicas son temporales, son para modificar el código más fácilmente
+    public float distanciaAtaque;
     public float velocidad;
+    public int damage;
 
     private GameObject objetivo;
-    DañoADistancia dañaradistancia;
     private float distancia;
+    private float initCooldown = 2;
 
+    private bool atacar;
+    private float lastbite;
     private bool detectado = false;
 
     //Mira si el objetivo ha sido detectado y si ha cambiado de lado
-    private void Start()
-    {
-        dañaradistancia = GetComponent<DañoADistancia>();
-
-    }
     void Update()
     {
 
@@ -44,6 +43,8 @@ public class PerroBehaviour : MonoBehaviour
             Debug.Log("Jugador detectado");
             detectado = true;
             objetivo = collider.gameObject;
+
+
         }
     }
 
@@ -53,11 +54,17 @@ public class PerroBehaviour : MonoBehaviour
     {
         distancia = Vector2.Distance(transform.position, objetivo.transform.position);
 
-        if (distancia > dañaradistancia.distanciaAtaque)
+        if (distancia > distanciaAtaque)
         {
             Mover2();
+            atacar = false;
         }
-        Debug.Log("He visto al jugador");
+        else if (distanciaAtaque >= distancia)
+        {
+            atacar = true;
+            Atacar();
+            Debug.Log("He visto al jugador");
+        }
     }
 
     //Mueve al enemigo hacia el objetivo a una velocidad determinada
@@ -66,5 +73,16 @@ public class PerroBehaviour : MonoBehaviour
         Vector2 posicionObjetivo = new Vector2(objetivo.transform.position.x, transform.position.y);
         transform.position = Vector2.MoveTowards(transform.position, posicionObjetivo, velocidad * Time.deltaTime);
 
+    }
+    public void Atacar()
+    {
+        if (atacar && Time.time > initCooldown + lastbite)
+        {
+            Debug.Log("Ataque");
+            
+            
+            lastbite = Time.time;           
+            
+        }
     }
 }
