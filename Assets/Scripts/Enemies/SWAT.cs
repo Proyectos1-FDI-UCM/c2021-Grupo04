@@ -38,7 +38,11 @@ public class SWAT : MonoBehaviour
             parent.transform.GetChild(3).gameObject.SetActive(true);
             transform.position = Vector2.MoveTowards(transform.position, movPoints[i].transform.position, enemyVelocity * Time.deltaTime);
         }
+
         if (agressive == true && charging == true && attack == false)
+
+        if(agressive == true && charging == true && attack == false)
+
         {
             transform.position = transform.position;
             if (transform.right == Vector3.left && player.transform.position.x > transform.position.x)
@@ -54,8 +58,7 @@ public class SWAT : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, playerPos, enemyVelocity * 3 * Time.deltaTime);
         }
-        //if(playerPos.x <= transform.position.x)
-
+ 
         if (Vector2.Distance(transform.position, movPoints[i].transform.position) < 0.5f)
         {
             if (movPoints[i] != movPoints[movPoints.Length - 1]) i++;
