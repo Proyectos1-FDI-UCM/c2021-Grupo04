@@ -56,18 +56,14 @@ public class GameManager : MonoBehaviour
             if (newPowerUp == "IncreaseDamage")
             {
                 myPowerUp = powerUp.IncreaseDamage;
-                //WhetstoneAppears(true);
-
             }
             else if (newPowerUp == "Sandwich")
             {
                 myPowerUp = powerUp.Sandwich;
-                //SandwichAppears(true);
             }
             else if (newPowerUp == "ExtraVelocity")
             {
                 myPowerUp = powerUp.ExtraVelocity;
-                //RefrescoAppears(true);
             }
             else Debug.Log("nombre erroneo de power up");
             PowerUpAppears(true);
@@ -78,28 +74,15 @@ public class GameManager : MonoBehaviour
     }
     public void ActivatePowerUp()
     {
-        string newPowerUp = "Empty";
+        string newPowerUp = myPowerUp.ToString();
         if (myPowerUp == powerUp.Empty)
         {
             Debug.Log("no hay power up");
         }
         else
         {
-            if (myPowerUp == powerUp.IncreaseDamage)
-            {
-                newPowerUp = "IncreaseDamage";
-                //WhetstoneAppears(false);
-            }
-            else if (myPowerUp == powerUp.Sandwich)
-            {
-                newPowerUp = "Sandwich";
-                //SandwichAppears(false);
-            }
-            else if (myPowerUp == powerUp.ExtraVelocity)
-            {
-                newPowerUp = "ExtraVelocity";
-                //RefrescoAppears(false);
-            }
+            
+            
             PowerUpAppears(false);
             pum.ActivatePowerUp(myPowerUp, newPowerUp);
             myPowerUp = powerUp.Empty;
