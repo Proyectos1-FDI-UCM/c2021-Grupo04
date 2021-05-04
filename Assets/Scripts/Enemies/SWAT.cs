@@ -76,7 +76,7 @@ public class SWAT : MonoBehaviour
         agressive = true;
         charging = true;
         attack = false;
-        Invoke("Attack", 2);
+        Invoke("Attack", 1.5f);
 
         /*if(agressive == true)
         {
