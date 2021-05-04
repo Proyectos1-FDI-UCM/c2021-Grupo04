@@ -57,7 +57,7 @@ public class EnemyDamageable : MonoBehaviour
         if(drop<probDrop)
         {
             // numero aleatorio que determina que drop va a soltar el enemigo
-            int whatDrop = 1;//Random.Range(1, 3);
+            int whatDrop = Random.Range(1, 3);
             Debug.Log(whatDrop);
             if (whatDrop == 1)
             {

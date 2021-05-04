@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class Respawn : MonoBehaviour
 {
+    public bool respawn=true;
     private float posicionColchonX, posicionColchonY;
     int lives;
     void Start()
     {
+        if (respawn)
+        {
+            Spawn();
+        }
        
-        Spawn();
     }
 
     void Update()
