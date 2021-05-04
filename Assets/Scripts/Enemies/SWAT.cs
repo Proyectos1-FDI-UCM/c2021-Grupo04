@@ -7,6 +7,7 @@ public class SWAT : MonoBehaviour
     [SerializeField] private Transform[] movPoints;
     private int i = 0;
     public GameObject player;
+    public GameObject parent;
     [SerializeField] private float enemyVelocity = 1.5f;
     [SerializeField] private float delayToChangeDirection = 1f;
     [SerializeField] private float distance;
@@ -33,6 +34,8 @@ public class SWAT : MonoBehaviour
 
         if (agressive == false && charging == false && attack == false)
         {
+            parent.transform.GetChild(0).gameObject.SetActive(false);
+            parent.transform.GetChild(3).gameObject.SetActive(true);
             transform.position = Vector2.MoveTowards(transform.position, movPoints[i].transform.position, enemyVelocity * Time.deltaTime);
         }
         if(agressive == true && charging == true && attack == false)
@@ -64,11 +67,12 @@ public class SWAT : MonoBehaviour
             charging = false;
         }
         
-        
     }
 
     private void Charge(ref bool agressive)
     {
+        parent.transform.GetChild(3).gameObject.SetActive(false);
+        parent.transform.GetChild(0).gameObject.SetActive(true);
         agressive = true;
         charging = true;
         attack = false;
