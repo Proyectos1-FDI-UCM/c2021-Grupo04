@@ -10,12 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 9172402182872378271}
   - component: {fileID: 9172402182872378240}
-  - component: {fileID: 8945811760960248509}
   - component: {fileID: 9172402182872378241}
-  - component: {fileID: 2983412629219495479}
   - component: {fileID: 9172402182872378243}
   - component: {fileID: 8217834603269798170}
   - component: {fileID: 829714726191456372}
+  - component: {fileID: 834335341356380545}
   m_Layer: 13
   m_Name: Preso
   m_TagString: Untagged
@@ -59,22 +58,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8945811760960248509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9172402182872378268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d51652376aff474fa748be5cdb21c8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  velocityScale: 3
-  damage: 2
-  initCooldown: 100
 --- !u!61 &9172402182872378241
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -101,24 +84,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3592529, y: 1.803241}
   m_EdgeRadius: 0
---- !u!114 &2983412629219495479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9172402182872378268}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ef8bbdcc76c63147b102a4c94517a7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  velocityScale: 3
-  damage: 2
-  initCooldown: 100
-  attackDistance: 0
-  undetected: 1
 --- !u!212 &9172402182872378243
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -204,6 +169,22 @@ MonoBehaviour:
   refresco: {fileID: 8606084057748724069, guid: a62a4558eab982e4f92610d92c6fd981,
     type: 3}
   probDrop: 7
+--- !u!114 &834335341356380545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9172402182872378268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d51652376aff474fa748be5cdb21c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 5987134724130359097, guid: 900830ef84c8c1749bbe4741f1954146, type: 3}
+  velocityScale: 3
+  damage: 2
+  initCooldown: 100
 --- !u!1 &9172402183889764170
 GameObject:
   m_ObjectHideFlags: 0

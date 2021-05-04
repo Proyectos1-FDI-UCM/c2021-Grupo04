@@ -131,9 +131,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 270b964a232e7b647b68d2b29c8ec83f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 4
+  velocity: 2.8
   maxDistanceToChase: 8
-  objetivo: {fileID: 0}
+  objetivo: {fileID: 5987134724130359092, guid: 900830ef84c8c1749bbe4741f1954146,
+    type: 3}
 --- !u!1 &5582351490568045971
 GameObject:
   m_ObjectHideFlags: 0

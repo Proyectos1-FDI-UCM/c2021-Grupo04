@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     
     
-    public int sandwich = 2;
+    public int sandwich = 1;
     public enum powerUp { IncreaseDamage, Sandwich, ExtraVelocity, Empty }
     public powerUp myPowerUp = powerUp.Empty;
     private UIManager theUIManager;
@@ -43,9 +43,10 @@ public class GameManager : MonoBehaviour
         
         theUIManager.DrawHearts(lives);
     }
-    public void EatSandwich(int lives)
+    
+    public void AddOneHeartBySandwich()
     {
-        lives += sandwich;
+        theUIManager.DrawHeartBySandwich();
     }
 
     public void ChangePowerUp(string newPowerUp, PowerUpManager pum1)

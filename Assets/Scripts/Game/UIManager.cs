@@ -32,6 +32,10 @@ public class UIManager : MonoBehaviour
             
         }
     }
+    public void DrawHeartBySandwich()
+    {
+        Instantiate(heartsIconPrefab, panelHearts);
+    }
 
     public void RemoveHeart()
     {
