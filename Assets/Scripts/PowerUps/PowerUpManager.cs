@@ -25,7 +25,7 @@ public class PowerUpManager : MonoBehaviour
 
     MonoBehaviour currentPowerUp;
 
-    public void ActivatePowerUp(GameManager.powerUp myPowerUp, string powerUpName)
+    public void ActivatePowerUp(string powerUpName)
     {
 
         // Localiza el componente powerUpName asociado 

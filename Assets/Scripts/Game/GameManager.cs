@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    
+    public string menu;
     
     public int sandwich = 1;
     public enum powerUp { IncreaseDamage, Sandwich, ExtraVelocity, Empty }
@@ -57,18 +58,18 @@ public class GameManager : MonoBehaviour
             if (newPowerUp == "IncreaseDamage")
             {
                 myPowerUp = powerUp.IncreaseDamage;
-                //WhetstoneAppears(true);
+               
 
             }
             else if (newPowerUp == "Sandwich")
             {
                 myPowerUp = powerUp.Sandwich;
-                //SandwichAppears(true);
+                
             }
             else if (newPowerUp == "ExtraVelocity")
             {
                 myPowerUp = powerUp.ExtraVelocity;
-                //RefrescoAppears(true);
+                
             }
             else Debug.Log("nombre erroneo de power up");
             PowerUpAppears(true);
@@ -86,23 +87,10 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            if (myPowerUp == powerUp.IncreaseDamage)
-            {
-                newPowerUp = "IncreaseDamage";
-                //WhetstoneAppears(false);
-            }
-            else if (myPowerUp == powerUp.Sandwich)
-            {
-                newPowerUp = "Sandwich";
-                //SandwichAppears(false);
-            }
-            else if (myPowerUp == powerUp.ExtraVelocity)
-            {
-                newPowerUp = "ExtraVelocity";
-                //RefrescoAppears(false);
-            }
+            
+            newPowerUp = myPowerUp.ToString();
             PowerUpAppears(false);
-            pum.ActivatePowerUp(myPowerUp, newPowerUp);
+            pum.ActivatePowerUp(newPowerUp);
             myPowerUp = powerUp.Empty;
         }
            
@@ -168,9 +156,15 @@ public class GameManager : MonoBehaviour
 
 
 
+    public void ChangeScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
 
-
-
+    public void ChargeMenu()
+    {
+        ChangeScene(menu);
+    }
 
 
 
