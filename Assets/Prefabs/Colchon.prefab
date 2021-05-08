@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6448604024548535254}
   - component: {fileID: 2819211337298356619}
   - component: {fileID: -8018841382854406115}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Colchon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,6 +81,10 @@ PrefabInstance:
     - target: {fileID: 1888605178837268, guid: 72fbaef77546dd1498e07955db8bc4b3, type: 3}
       propertyPath: m_Name
       value: Medieval_props_free_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888605178837268, guid: 72fbaef77546dd1498e07955db8bc4b3, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4552130958034244, guid: 72fbaef77546dd1498e07955db8bc4b3, type: 3}
       propertyPath: m_LocalPosition.x

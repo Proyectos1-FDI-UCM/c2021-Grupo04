@@ -7,6 +7,7 @@
 // ----------------------------------------------------------
 
 using UnityEngine;
+using UnityEngine.Audio;
 
 /// <summary>
 /// Componente utilizado para activar power-ups del jugador
@@ -29,6 +30,7 @@ public class ActivatePowerUpOnCollision : MonoBehaviour
     string powerUpName = null;
 
     int playerLayer;
+    public AudioSource audioSource;
 
     void Start()
     {
@@ -43,6 +45,7 @@ public class ActivatePowerUpOnCollision : MonoBehaviour
             // Identificador de la capa física "Player"
             playerLayer = LayerMask.NameToLayer("Player");
         }
+        
     }
 
     void OnTriggerEnter2D(Collider2D info)
@@ -71,7 +74,7 @@ public class ActivatePowerUpOnCollision : MonoBehaviour
             else
             {
             GameManager.GetInstance().ChangePowerUp(powerUpName, pum);
-
+                audioSource.Play();
             }
             this.gameObject.SetActive(false);
             

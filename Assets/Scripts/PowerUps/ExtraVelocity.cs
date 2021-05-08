@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ExtraVelocity : MonoBehaviour
 {
     public float mulVelocity = 2;
 
     PlayerController playerController;
     private float orVelocity;
+   
     private void OnEnable()
     {
         playerController = GetComponent<PlayerController>();
@@ -19,6 +21,7 @@ public class ExtraVelocity : MonoBehaviour
         GetComponent<PlayerController>().vRun = orVelocity * mulVelocity;
         //invocamos durante 10 secs
         Invoke("Tiempo", 10f);
+        
     }
     void Tiempo()
     {
