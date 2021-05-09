@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class GameManager : MonoBehaviour
 {
     public string menu;
@@ -13,6 +14,7 @@ public class GameManager : MonoBehaviour
     private UIManager theUIManager;
     private static GameManager instance;
     PowerUpManager pum;
+
     public static GameManager GetInstance()
     {
         return instance;

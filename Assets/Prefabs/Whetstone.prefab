@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8897540229583292527}
   - component: {fileID: 8897540229583292520}
   - component: {fileID: 4680475663644452870}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Whetstone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpName: IncreaseDamage
-  audioSource: {fileID: 4680475663644452870}
 --- !u!82 &4680475663644452870
 AudioSource:
   m_ObjectHideFlags: 0

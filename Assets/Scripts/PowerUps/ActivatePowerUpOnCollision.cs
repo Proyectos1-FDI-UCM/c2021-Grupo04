@@ -30,7 +30,7 @@ public class ActivatePowerUpOnCollision : MonoBehaviour
     string powerUpName = null;
 
     int playerLayer;
-    public AudioSource audioSource;
+    
 
     void Start()
     {
@@ -50,7 +50,7 @@ public class ActivatePowerUpOnCollision : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D info)
     {
-
+        
         GameObject other = info.gameObject;
 
         if (other.layer != playerLayer)
@@ -61,10 +61,10 @@ public class ActivatePowerUpOnCollision : MonoBehaviour
         }
 
         PowerUpManager pum = other.GetComponent<PowerUpManager>();
-
+       
         if (GameManager.GetInstance().IsEmpty())
         {
-
+            
 
             if (pum == null)
             {
@@ -74,8 +74,9 @@ public class ActivatePowerUpOnCollision : MonoBehaviour
             else
             {
             GameManager.GetInstance().ChangePowerUp(powerUpName, pum);
-                audioSource.Play();
+                 
             }
+            
             this.gameObject.SetActive(false);
             
         }
