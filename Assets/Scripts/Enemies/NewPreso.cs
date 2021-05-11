@@ -5,7 +5,7 @@ using UnityEngine;
 public class NewPreso : MonoBehaviour
 {
     public float velocity = 3f;
-    public float VisionDisctance = 1f;
+    public float visionDistance = 1f;
     public Transform objetivo;
 
     Rigidbody2D rb;
@@ -23,15 +23,18 @@ public class NewPreso : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distance = Vector2.Distance(transform.position, objetivo.transform.position);
-    }
-    void FixedUpdate()
-    {
-        if (Mathf.Abs(distance) > VisionDisctance)
+        if (distance < visionDistance)
         {
             follow = true;
 
+            Debug.Log("vision distance: " + visionDistance);
+            Debug.Log("Distance: " + distance);
+            Debug.Log("follow: " + follow);
         }
+    }
+    void FixedUpdate()
+    {
+        distance = Vector2.Distance(transform.position, objetivo.transform.position);
 
         if (follow)
         {
