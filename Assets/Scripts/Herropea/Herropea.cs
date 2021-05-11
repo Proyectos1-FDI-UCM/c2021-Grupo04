@@ -15,6 +15,8 @@ public class Herropea : MonoBehaviour
     public Transform scenario;
     public Rigidbody2D rbMakt;
     public GameObject maktFange;
+    public GameObject recogerCadena;
+    public GameObject soltarHerropea;
 
     [SerializeField] private float distance; //Distancia bola jugador
     private bool agarrando = false; //Si Makt Fange esta agarrando la bola
@@ -47,6 +49,7 @@ public class Herropea : MonoBehaviour
         // El jugador agarra la herropea si no lo está haciendo ya y si el jugador está quieto
         if (Input.GetButton("Jump") && !agarrando && playerController.Salto())
         {
+            Instantiate(recogerCadena);
             //Animamoss al personaje y recogemos herropea
             playerController.SetPickUpAnimation(true);
             transform.position = Vector2.MoveTowards(transform.position, chainZone.transform.position, velocidadRecogida * Time.deltaTime);
@@ -63,7 +66,8 @@ public class Herropea : MonoBehaviour
         }
         // El jugador deja de agarrar la herropea con shift
         else if (Input.GetButton("Fire3"))
-        {           
+        {
+            Instantiate(soltarHerropea);
             agarrando = false;
             transform.SetParent(scenario);
         }

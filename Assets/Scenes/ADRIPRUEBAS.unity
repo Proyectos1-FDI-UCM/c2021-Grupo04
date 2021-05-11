@@ -930,8 +930,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 010fcbadbd331db48bfd983a3655badd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  origin: {fileID: 547886215}
-  destination: {fileID: 777362973}
 --- !u!1001 &551491858
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1290,8 +1288,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 010fcbadbd331db48bfd983a3655badd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  origin: {fileID: 547886215}
-  destination: {fileID: 777362973}
 --- !u!1 &1005648242
 GameObject:
   m_ObjectHideFlags: 0
