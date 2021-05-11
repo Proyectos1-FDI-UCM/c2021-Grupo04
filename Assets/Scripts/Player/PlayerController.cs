@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     Animator anim;
     Herropea scriptHerropea;
-    bool contact;
+    public bool contact;
     private float fRun;
     private float fJump;
     private float distance;

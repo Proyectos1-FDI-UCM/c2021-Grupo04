@@ -15,19 +15,21 @@ public class SWAT : MonoBehaviour
     [SerializeField] bool attack = false;
     [SerializeField] bool agressive = false;
 
-    private Vector3 iniScale, tempScale, movement;
+    private Vector3 iniScale, tempScale;
     Vector2 playerPos;
     private float right = 1;
     float timer = 0.0f;
     float offset = 0.2f;
 
     Rigidbody2D rb, rbplayer;
+    PlayerController playerController;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rbplayer = player.GetComponent<Rigidbody2D>();
         iniScale = transform.localScale;
+        playerController = GetComponent<PlayerController>();
     }
 
     void Update()
@@ -36,16 +38,17 @@ public class SWAT : MonoBehaviour
 
         distance = Vector2.Distance(transform.position, player.transform.position);
 
-        if (agressive == false && charging == false && attack == false)
+        if ((agressive == false && charging == false && attack == false) || (distance > 4))
         {
             parent.transform.GetChild(0).gameObject.SetActive(false);
-            parent.transform.GetChild(3).gameObject.SetActive(true);
+            parent.transform.GetChild(2).gameObject.SetActive(true);
             transform.position = Vector2.MoveTowards(transform.position, movPoints[i].transform.position, enemyVelocity * Time.deltaTime);
         }
 
-        if(agressive == true && charging == true && attack == false)
+        if (agressive == true && charging == true && attack == false)
         {
             transform.position = transform.position;
+            
             /*if (transform.right == Vector3.left && player.transform.position.x > transform.position.x)
             {
                 Invoke("ChangeDirection", delayToChangeDirection);
@@ -55,74 +58,70 @@ public class SWAT : MonoBehaviour
                 Invoke("ChangeDirection", delayToChangeDirection);
             }*/
         }
-        if (attack == true && charging == false && agressive == false)
+
+        if (attack == true && charging == false && agressive == false && distance <= 4)
         {
-            transform.position = Vector2.MoveTowards(transform.position, playerPos, enemyVelocity * 3 * Time.deltaTime);
-            if(transform.position.x == playerPos.x)
+            if((playerPos.x > transform.position.x && transform.localScale.x == 1) || (playerPos.x < transform.position.x && transform.localScale.x == -1))
             {
-                attack = false;
-                charging = false;
-                agressive = false;
+                transform.position = Vector2.MoveTowards(transform.position, playerPos, enemyVelocity * 3 * Time.deltaTime);
+                if (transform.position.x == playerPos.x)
+                {
+                    attack = false;
+                    agressive = charging = true;
+                }
             }
-        }
- 
-        if (Vector2.Distance(transform.position, movPoints[i].transform.position) < 0.5f)
-        {
-            if (movPoints[i] != movPoints[movPoints.Length - 1]) i++;
-            else i = 0;
-            right = Mathf.Sign(movPoints[i].transform.position.x - transform.position.x);
-            Turn(right);
-            agressive = false;
-            attack = false;
-            charging = false;
+            else
+            {
+                attack = charging = agressive = false;
+            }
+            
         }
 
-        if (timer <= 0 && distance <= 4 && (player.transform.position.y <= transform.position.y + offset 
-            && player.transform.position.y >= transform.position.y - offset) && ((player.transform.position.x > transform.position.x
-            && transform.localScale.x == 1) || (player.transform.position.x < transform.position.x && transform.localScale.x == -1)))
+        if (timer <= 0 && distance <= 4 && distance > 1f)
         {
-            Charge();
-            timer = 3.0f;
+            if(player.transform.position.y <= transform.position.y + offset && player.transform.position.y >= transform.position.y - offset)
+            {
+                if((player.transform.position.x > transform.position.x && transform.localScale.x == 1) 
+                    || (player.transform.position.x < transform.position.x && transform.localScale.x == -1))
+                {
+                    Invoke("Charge", 0f);
+                    timer = 3.0f;
+                }
+            }
         }
-        /*else
+
+        if (Vector2.Distance(transform.position, movPoints[i].transform.position) < 0.1f)
         {
-            agressive = false;
-            charging = false;
-            attack = false;
-        }*/
-        
-        Debug.Log(playerPos);
-        //Debug.Log(timer);
+            if (movPoints[i] != movPoints[movPoints.Length - 1])
+            {
+                i++;
+            }
+            else
+            {
+                i = 0;
+            }
+            right = Mathf.Sign(movPoints[i].transform.position.x - transform.position.x);
+            Turn(right);
+        }
     }
 
     private void Charge()
     {
-        parent.transform.GetChild(3).gameObject.SetActive(false);
+        //Cambio de sprites
+        parent.transform.GetChild(2).gameObject.SetActive(false);
         parent.transform.GetChild(0).gameObject.SetActive(true);
-        agressive = true;
-        charging = true;
+
+        agressive = charging = true;
         attack = false;
+        
         Invoke("Attack", 1.5f);
-        Debug.Log(agressive);
-        Debug.Log(charging);
-        Debug.Log(attack);
-        /*if(agressive == true)
-        {
-            charging = true;
-            Invoke("Attack", 3);
-        }
-        else
-        {
-            
-        }*/
+        
     }
 
     private void Attack()
     {
-        Debug.Log("Ataque");
         attack = true;
-        charging = false;
-        agressive = false;
+        charging = agressive = false;
         playerPos = new Vector2(player.transform.position.x, transform.position.y);
 
         /*if (Vector2.Distance(transform.position, movPoints[i].transform.position) < 0.5f)
@@ -133,7 +132,8 @@ public class SWAT : MonoBehaviour
             Turn(right);
         }*/
     }
-
+    
+    //Cambiar de dirección
     private void Turn(float right)
     {
         if (right == -1)
@@ -143,30 +143,6 @@ public class SWAT : MonoBehaviour
         }
         else tempScale = iniScale;
         transform.localScale = tempScale;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        /*rbplayer.AddForce(new Vector2(5, 0), ForceMode2D.Impulse);
-        attack = false;
-        charging = false;
-        agressive = true;*/
-
-        /*if (charging == false)
-        {
-            if (collision.gameObject.GetComponent<PlayerController>())
-            {
-                Charge(ref agressive);
-            }
-        }*/
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        attack = false;
-        charging = false;
-        agressive = false;
-        CancelInvoke();
     }
 
     /// El GO asociado cambia su dirección hacia la del GO asociado
@@ -185,9 +161,30 @@ public class SWAT : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        rbplayer.AddForce(new Vector2(10, 4), ForceMode2D.Impulse);
-        attack = false;
-        charging = false;
-        agressive = true;
+        //Puntos específicos de colisión
+        Vector2 hitSide = collision.contacts[0].normal;
+
+        //Ángulo de colisión
+        float angle = Vector2.Angle(hitSide, Vector3.up);
+
+        //Colisión en el eje X
+        if(Mathf.Approximately(angle, 90))
+        {
+            Vector3 side = Vector3.Cross(Vector3.forward, hitSide);
+
+            //Colisión frontal
+            if((side.y < 0 && transform.localScale.x == 1) || (side.y > 0 && transform.localScale.x == -1))
+            {
+                rbplayer.AddForce(new Vector2(0, 4), ForceMode2D.Impulse);
+
+                attack = false;
+                charging = agressive = true;
+            }
+        }  
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        attack = charging = agressive = false;
     }
 }

@@ -6,14 +6,38 @@ public class DamageEnemy : MonoBehaviour
 {
     public int damage = 1;
 
-    private void OnTriggerStay2D(Collider2D collision)
+    SWAT swat;
+    Shield shield;
+
+    private void Start()
     {
-        HealthPlayer player = collision.GetComponent<HealthPlayer>();
-        //Si colisiona con el jugador
-        if (player != null)
-        {
-            player.LoseHearts(damage);
-        }
+        swat = GetComponent<SWAT>();
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        shield = GetComponent<Shield>();
+
+        HealthPlayer player = collision.GetComponent<HealthPlayer>();
+        if (swat != null)
+        {
+            if(shield != null && player != null)
+            {
+                player.LoseHearts(damage * 2);
+            }
+            else if(shield == null && player != null)
+            {
+                player.LoseHearts(damage);
+            }
+        }
+        else
+        {
+            //Si colisiona con el jugador
+            if (player != null)
+            {
+                player.LoseHearts(damage);
+            }
+        }
+        
+    }
 }
