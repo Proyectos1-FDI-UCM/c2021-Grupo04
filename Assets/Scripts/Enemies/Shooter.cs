@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Audio;
 public class Shooter : MonoBehaviour
 {
 
@@ -14,9 +14,10 @@ public class Shooter : MonoBehaviour
     public Transform Player;
     public Transform Policeman;
     public GameObject Bullet;
-
+    public GameObject shootSound;
     private float lastShoot = 0;
 
+    
     private void Update()
     {
         //distancia (en valor absoluto) entre jugador y policía
@@ -27,11 +28,14 @@ public class Shooter : MonoBehaviour
         if(distance < distanceToShoot && Time.time > lastShoot + coolingDownSecs)
         {
             Debug.Log("Policia ");
+           
             if (shoot)
             {
                 Shoot();
                 lastShoot = Time.time;
+
             }
+            
         }
     }
     private void Shoot()
@@ -39,8 +43,9 @@ public class Shooter : MonoBehaviour
         //guardamos rotación y dirección del  policía e instanciamos la bala
         Vector3 direction = transform.position;
         Quaternion rotation = transform.rotation;
-
+        Instantiate(shootSound);
         Instantiate(Bullet, direction, rotation);
+        
     }
 
 }

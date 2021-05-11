@@ -49,6 +49,8 @@ MonoBehaviour:
   Player: {fileID: 5987134724130359092, guid: 900830ef84c8c1749bbe4741f1954146, type: 3}
   Policeman: {fileID: 4972793974569073940}
   Bullet: {fileID: 4221295601115640191, guid: e3861d455e284c644bd76c84bc400d17, type: 3}
+  shootSound: {fileID: 8160439583943126523, guid: b925253dc5feb6a488af82aef9551e16,
+    type: 3}
 --- !u!1 &4972793974964828772
 GameObject:
   m_ObjectHideFlags: 0
