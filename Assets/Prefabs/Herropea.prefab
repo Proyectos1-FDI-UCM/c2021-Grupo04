@@ -218,6 +218,10 @@ MonoBehaviour:
   scenario: {fileID: 0}
   rbMakt: {fileID: 0}
   maktFange: {fileID: 0}
+  recogerCadena: {fileID: 9139255584393859251, guid: 6d5642efba82d184489a6430100f3adc,
+    type: 3}
+  soltarHerropea: {fileID: 699107528270218951, guid: e00364451d6bdb94fa95f1deaeb2eb24,
+    type: 3}
   distance: 0
 --- !u!114 &1957414244645280990
 MonoBehaviour:
