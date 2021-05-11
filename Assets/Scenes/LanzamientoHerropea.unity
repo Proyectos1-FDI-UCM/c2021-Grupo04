@@ -2761,12 +2761,12 @@ PrefabInstance:
     - target: {fileID: 2626728432134457924, guid: 907afae1e04988f4ebb270282f7d98ad,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6
+      value: 8.4
       objectReference: {fileID: 0}
     - target: {fileID: 2626728432134457924, guid: 907afae1e04988f4ebb270282f7d98ad,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.4484575
+      value: 9.98
       objectReference: {fileID: 0}
     - target: {fileID: 2626728432134457924, guid: 907afae1e04988f4ebb270282f7d98ad,
         type: 3}
@@ -4302,6 +4302,11 @@ PrefabInstance:
       propertyPath: maktFange
       value: 
       objectReference: {fileID: 1728082926}
+    - target: {fileID: 1957414244645280989, guid: fb7f82022fcfd1d4da6c9d8bf8307dad,
+        type: 3}
+      propertyPath: maxDistance
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1957414244645281056, guid: fb7f82022fcfd1d4da6c9d8bf8307dad,
         type: 3}
       propertyPath: m_Constraints
