@@ -10,6 +10,8 @@ MonoImporter:
       type: 3}
   - Bullet: {fileID: 4221295601115640191, guid: e3861d455e284c644bd76c84bc400d17,
       type: 3}
+  - shootSound: {fileID: 4644746063381752643, guid: fd41247eb0926db4c9917403cc1b68ee,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
