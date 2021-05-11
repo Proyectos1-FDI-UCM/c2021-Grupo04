@@ -15,12 +15,15 @@ public class Herropea : MonoBehaviour
     public Transform scenario;
     public Rigidbody2D rbMakt;
     public GameObject maktFange;
+    public GameObject recogerCadena;
+    public GameObject soltarHerropea;
 
-    private float distance; //Distancia bola jugador
+    [SerializeField] private float distance; //Distancia bola jugador
     private bool agarrando = false; //Si Makt Fange esta agarrando la bola
     private bool flotando = true; //True si es afectada por la gravedad
     private bool lanzamiento = false; //Si la bola está viajando por un lanzamento de Makt Fange
     private bool clavado = false; //True cuando hay una herropea falsa instanciada a la que subirse
+    private bool wallContact = false;
     private PlayerController playerController;
     private DestroyFakeHerropea scriptFakeHerropea;
 
@@ -46,6 +49,7 @@ public class Herropea : MonoBehaviour
         // El jugador agarra la herropea si no lo está haciendo ya y si el jugador está quieto
         if (Input.GetButton("Jump") && !agarrando && playerController.Salto())
         {
+            Instantiate(recogerCadena);
             //Animamoss al personaje y recogemos herropea
             playerController.SetPickUpAnimation(true);
             transform.position = Vector2.MoveTowards(transform.position, chainZone.transform.position, velocidadRecogida * Time.deltaTime);
@@ -55,12 +59,15 @@ public class Herropea : MonoBehaviour
                 agarrando = true;
                 transform.position = new Vector3(pickUpPosition.position.x, pickUpPosition.position.y);
                 transform.SetParent(pickUpPosition);
-                transform.rotation = transform.parent.rotation;              
+                transform.rotation = transform.parent.rotation;
+                playerController.SetMovRight(true);
+                playerController.SetMovLeft(true);
             }
         }
         // El jugador deja de agarrar la herropea con shift
         else if (Input.GetButton("Fire3"))
-        {           
+        {
+            Instantiate(soltarHerropea);
             agarrando = false;
             transform.SetParent(scenario);
         }
@@ -97,7 +104,31 @@ public class Herropea : MonoBehaviour
         {
             Debug.LogWarning("Bug del collider FakeHerropea salvado");
             scriptFakeHerropea.SetCollider(false);
-        }     
+        }
+
+        if (wallContact && distance > (maxDistance - 0.36f))
+        {
+            //Si el jugador está a la derecha de la herropea
+            if (chainZone.position.x > transform.position.x)
+            {
+                //Impide al jugador moverse hacia la derecha
+                playerController.SetMovRight(false);
+                //Permite al jugador moverse hacia la izquierda
+                playerController.SetMovLeft(true);
+            }
+            else
+            {
+                //Permite al jugador moverse hacia la derecha
+                playerController.SetMovRight(true);
+                //Impide al jugador moverse hacia la izquierda
+                playerController.SetMovLeft(false);
+            }
+        }
+        else
+        {
+            playerController.SetMovRight(true);
+            playerController.SetMovLeft(true);
+        }
     }
 
     
@@ -146,6 +177,12 @@ public class Herropea : MonoBehaviour
                 agarrando = false;
             }
         }
+    }
+
+    public void SetWallContact(bool triggered)
+    {
+        wallContact = triggered;
+        
     }
 
     public bool AgarrandoHerropea()

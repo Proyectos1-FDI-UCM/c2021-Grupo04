@@ -21,7 +21,9 @@ public class PlayerController : MonoBehaviour
     private float distance;
     private float maxDistance;
     private bool jump = false;
-
+    //Variables para delimitar el movimiento en el eje x
+    private bool movRight = true;
+    private bool movLeft = true; 
 
     void Start()
     {
@@ -52,7 +54,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-       
+
         float run = Input.GetAxis("Horizontal");
         jump = Input.GetKey(KeyCode.UpArrow);
 
@@ -75,23 +77,38 @@ public class PlayerController : MonoBehaviour
         {
             fRun = vRun;
             fJump = vJump;
-        }
-
-        if (!Input.GetButton("Jump"))
-        {
-            rb.velocity = new Vector2(run * fRun, rb.velocity.y); //movimiento por el eje X
-        }
-        else rb.velocity = new Vector2(0, rb.velocity.y);
+        }       
 
         if (run != 0)
         {
             anim.SetBool("Running", true);
-            if (run < 0) transform.right = Vector2.left;
-            else if (run > 0) transform.right = Vector2.right;
+            if (run < 0)
+            {
+                transform.right = Vector2.left;
+            }
+            else if (run > 0)
+            {
+                transform.right = Vector2.right;
+            }
         }
         else anim.SetBool("Running", false);
 
-        if(Input.GetButtonDown("Fire2"))
+        //Movimiento del jugador
+        if (!Input.GetButton("Jump"))
+        {
+            if (run > 0 && movRight)
+            {
+                rb.velocity = new Vector2(fRun, rb.velocity.y); //movimiento por el eje X en positivo
+            }
+            else if (run < 0 && movLeft)
+            {
+                rb.velocity = new Vector2(-fRun, rb.velocity.y); //movimiento por el eje X en negativo
+            }
+            else rb.velocity = new Vector2(0, rb.velocity.y);
+        }
+        else rb.velocity = new Vector2(0, rb.velocity.y);
+
+        if (Input.GetButtonDown("Fire2"))
         {
             GameManager.GetInstance().ActivatePowerUp();
         }
@@ -110,7 +127,7 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("Jump", true);
             Invoke("PlayerJumps", 0.1f);
             Invoke("SetFalseJump", 0.2f);
-        }
+        }       
     }
 
     private void PlayerJumps()
@@ -126,5 +143,23 @@ public class PlayerController : MonoBehaviour
     public bool Salto()
     {
         return contact;
+    }
+
+    /// <summary>
+    /// Habilita el movimiento hacia la derecha del jugador en función del parámetro move
+    /// </summary>
+    /// <param name="move"></param>
+    public void SetMovRight(bool move)
+    {
+        movRight = move;
+    }
+
+    /// <summary>
+    /// Habilita el movimiento hacia la izquierda del jugador en función del parámetro move
+    /// </summary>
+    /// <param name="move"></param>
+    public void SetMovLeft(bool move)
+    {
+        movLeft = move;
     }
 }

@@ -219,7 +219,8 @@ MonoBehaviour:
   vJump: 7.5
   vRunReduction: 0.8
   vJumpReduction: 0.8
-  herropea: {fileID: 0}
+  herropea: {fileID: 1957414244645281057, guid: fb7f82022fcfd1d4da6c9d8bf8307dad,
+    type: 3}
 --- !u!50 &5987134724130359098
 Rigidbody2D:
   serializedVersion: 4
@@ -305,6 +306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c574b83a75743754e9570237f67dfe2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundPowerUp: {fileID: 7288524147177790117, guid: 2c8a2a04e58ffba4f908f45372363e83,
+    type: 3}
 --- !u!114 &5987134724130359095
 MonoBehaviour:
   m_ObjectHideFlags: 0

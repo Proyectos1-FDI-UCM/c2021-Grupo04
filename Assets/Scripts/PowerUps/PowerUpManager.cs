@@ -7,7 +7,7 @@
 // ----------------------------------------------------------
 
 using UnityEngine;
-
+using UnityEngine.Audio;
 /// <summary>
 /// Componente pensado para ser añadido al jugador para gestionar
 /// sus power-ups.
@@ -24,7 +24,7 @@ public class PowerUpManager : MonoBehaviour
 {
 
     MonoBehaviour currentPowerUp;
-
+    public AudioSource soundPowerUp;
     public void ActivatePowerUp(string powerUpName)
     {
 
@@ -52,8 +52,8 @@ public class PowerUpManager : MonoBehaviour
         currentPowerUp = powerUp;
 
         Debug.Log("Componente power-up " + powerUpName + " activado.");
+        soundPowerUp.Play();
 
-        
     }
 }
 
