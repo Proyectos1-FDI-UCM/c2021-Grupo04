@@ -135,6 +135,8 @@ MonoBehaviour:
   maxDistanceToChase: 8
   objetivo: {fileID: 5987134724130359092, guid: 900830ef84c8c1749bbe4741f1954146,
     type: 3}
+  barkSound: {fileID: 6305700814409408336, guid: 7e92bb1a9c56628469f0868051928670,
+    type: 3}
 --- !u!1 &6115712152138043601
 GameObject:
   m_ObjectHideFlags: 0
