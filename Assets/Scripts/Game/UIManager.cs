@@ -46,8 +46,15 @@ public class UIManager : MonoBehaviour
     }
     public void DrawHeartBySandwich()
     {
-        Instantiate(leftHeartIcon, panelHearts);
-
+        if (heartsLeft % 2 != 0)
+        {
+            Instantiate(rightHeartIcon, panelHearts);
+        }
+        else
+        {
+            Instantiate(leftHeartIcon, panelHearts);
+        }
+        heartsLeft++;
     }
 
     public void RemoveHeart()
@@ -56,7 +63,7 @@ public class UIManager : MonoBehaviour
         {
             if (panelHearts != null)
             {
-                panelHearts.GetChild(heartsLeft - 1).gameObject.SetActive(false);
+                Destroy(panelHearts.GetChild(heartsLeft - 1).gameObject);
                 heartsLeft--;
             }
                 

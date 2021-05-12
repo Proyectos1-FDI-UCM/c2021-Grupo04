@@ -39,10 +39,6 @@ public class PowerUpManager : MonoBehaviour
             return;
         }
 
-        if (powerUp == currentPowerUp)
-            // Si ya está activo, no hace nada (termina la ejecución del método)
-            return;
-
         if (currentPowerUp != null)
             // Desactiva el power-up activo
             currentPowerUp.enabled = false;
