@@ -8,6 +8,7 @@ public class NewPerro : MonoBehaviour
     public float maxDistanceToChase = 8f;
     public Transform objetivo;
     public GameObject barkSound;
+    public Animator animator;
 
     Rigidbody2D rb;
     float distance;
@@ -28,27 +29,36 @@ public class NewPerro : MonoBehaviour
             //Si el jugador está demasiado cerca, lo persigue
             if (objetivo.position.x < transform.position.x)
             {
-                
+
                 transform.right = Vector2.left;
-                
+
                 if (distance <= maxDistanceToChase)
                 {
+                    animator.SetBool("Persiguiendo", true);
                     rb.velocity = new Vector2(-velocity, rb.velocity.y);
-                    
+
 
                 }
                 else
+                {
+                    animator.SetBool("Persiguiendo", false);
                     rb.velocity = new Vector2(0, 0);
+                }
             }
             else
             {
+
                 transform.right = Vector2.right;
                 if (distance <= maxDistanceToChase)
                 {
+                    animator.SetBool("Persiguiendo", true);
                     rb.velocity = new Vector2(velocity, 0);
                 }
                 else
+                {
+                    animator.SetBool("Persiguiendo", false);
                     rb.velocity = new Vector2(0, 0);
+                }
             }
         }
 

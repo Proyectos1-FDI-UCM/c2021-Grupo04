@@ -14,7 +14,7 @@ public class SWAT : MonoBehaviour
     [SerializeField] bool charging = false;
     [SerializeField] bool attack = false;
     [SerializeField] bool agressive = false;
-
+    public GameObject swatRadio;
     private Vector3 iniScale, tempScale;
     Vector2 playerPos;
     private float right = 1;
@@ -110,7 +110,7 @@ public class SWAT : MonoBehaviour
         //Cambio de sprites
         parent.transform.GetChild(2).gameObject.SetActive(false);
         parent.transform.GetChild(0).gameObject.SetActive(true);
-
+        Instantiate(swatRadio);
         agressive = charging = true;
         attack = false;
         
