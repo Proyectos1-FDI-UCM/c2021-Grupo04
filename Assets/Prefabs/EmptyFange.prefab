@@ -221,6 +221,9 @@ MonoBehaviour:
   vJumpReduction: 0.8
   herropea: {fileID: 1957414244645281057, guid: fb7f82022fcfd1d4da6c9d8bf8307dad,
     type: 3}
+  saltoFange: {fileID: 117706865629327899, guid: a01148f67789e7540ab56c64272c0203,
+    type: 3}
+  contact: 0
 --- !u!50 &5987134724130359098
 Rigidbody2D:
   serializedVersion: 4
