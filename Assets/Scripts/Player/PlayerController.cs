@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //Adrián,Miguel
+
     //definimos variables
     public float vRun = 4;
     public float vJump = 5;
