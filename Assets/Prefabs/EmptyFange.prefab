@@ -174,11 +174,13 @@ GameObject:
   - component: {fileID: 5987134724130359098}
   - component: {fileID: 5987134724130359099}
   - component: {fileID: 5987134724130359096}
+  - component: {fileID: 5960978713656299081}
   - component: {fileID: 5987134724130359094}
   - component: {fileID: 5987134724130359095}
   - component: {fileID: 6579004303100968881}
   - component: {fileID: -6996569664634752650}
   - component: {fileID: 7907508211236104130}
+  - component: {fileID: -5711700762162141271}
   m_Layer: 9
   m_Name: EmptyFange
   m_TagString: Untagged
@@ -222,8 +224,11 @@ MonoBehaviour:
   herropea: {fileID: 1957414244645281057, guid: fb7f82022fcfd1d4da6c9d8bf8307dad,
     type: 3}
   contact: 0
+<<<<<<< HEAD
   jumpSound: {fileID: 5396197423511641861, guid: fdd68aca830461e44a51b488f496550a,
     type: 3}
+=======
+>>>>>>> 22b87e6cf6e79ebd4f54cdfbe34fcdba7c4f9ba6
 --- !u!50 &5987134724130359098
 Rigidbody2D:
   serializedVersion: 4
@@ -297,6 +302,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7817135, y: 0.013256788}
   m_EdgeRadius: 0
+--- !u!114 &5960978713656299081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5987134724130359097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ebd91d8209de384aa14896cc9e4723c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5987134724130359094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,5 +382,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 8
   inmunityCooldown: 0.77
+<<<<<<< HEAD
   hurtFange: {fileID: 2422056209849442218, guid: 9453a8540615c8f4aaf09128623b11ac,
+=======
+--- !u!114 &-5711700762162141271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5987134724130359097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba01fe8f3df55e144a9282bc71298153, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mulDamage: 1.5
+  herropea: {fileID: 1957414244645280989, guid: fb7f82022fcfd1d4da6c9d8bf8307dad,
+>>>>>>> 22b87e6cf6e79ebd4f54cdfbe34fcdba7c4f9ba6
     type: 3}
