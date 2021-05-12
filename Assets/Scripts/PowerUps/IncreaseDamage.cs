@@ -5,6 +5,7 @@ using UnityEngine;
 public class IncreaseDamage : MonoBehaviour
 {
     public float mulDamage = 1.5f;
+    public float disableDelay = 3f;
      [SerializeField] Herropea herropea;
     private float orDamage;
     
@@ -12,9 +13,8 @@ public class IncreaseDamage : MonoBehaviour
     
     private void OnEnable()
     {
-        orDamage = herropea.damage;
-        herropea.damage = orDamage * mulDamage;
-        Invoke("AfilatedStone", 10f);
+        herropea.MulDamage(mulDamage);
+        Invoke("AfilatedStone", disableDelay);
        
         
     }
@@ -26,7 +26,7 @@ public class IncreaseDamage : MonoBehaviour
 
     private void OnDisable()
     {
-       herropea.damage = orDamage;
+        herropea.ResetDamage(mulDamage);
         GameManager.GetInstance().WhetstoneAppears(false);
     }
 }
