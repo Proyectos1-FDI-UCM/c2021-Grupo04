@@ -5,25 +5,28 @@ using UnityEngine;
 public class Sandwich : MonoBehaviour
 {
     HealthPlayer healthPlayer;
-    
-    private void OnEnable()
+    private int lives;
+
+    private void Start()
     {
         healthPlayer = GetComponent<HealthPlayer>();
+       
+    }
+    private void OnEnable()
+    {
         Debug.Log("vidas restantes "+healthPlayer.LivesRemaining());
         Debug.Log(healthPlayer.maxHealth);
         
-        if (healthPlayer.LivesRemaining() < healthPlayer.maxHealth)
+        if (healthPlayer.LivesRemaining() <healthPlayer.maxHealth)
         {
             healthPlayer.AddLife();
             GameManager.GetInstance().AddOneHeartBySandwich();
         }
-        Debug.Log("vidas after sandwich " + healthPlayer.LivesRemaining());
-
-        DisableThis();
+ 
     }
 
-    private void DisableThis()
+    private void OnDisable()
     {
-        this.enabled = false;
+       
     }
 }

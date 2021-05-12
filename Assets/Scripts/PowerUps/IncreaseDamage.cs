@@ -15,7 +15,7 @@ public class IncreaseDamage : MonoBehaviour
         orDamage = herropea.damage;
         herropea.damage = orDamage * mulDamage;
         Invoke("AfilatedStone", 10f);
-        Debug.Log("Daño actual de la herropea: " + herropea.damage);
+       
         
     }
 
