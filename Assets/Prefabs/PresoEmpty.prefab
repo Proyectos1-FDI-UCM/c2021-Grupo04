@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 9172402182872378243}
   - component: {fileID: 8217834603269798170}
   - component: {fileID: 829714726191456372}
-  - component: {fileID: 834335341356380545}
+  - component: {fileID: 4323602591988707931}
   m_Layer: 13
   m_Name: Preso
   m_TagString: Untagged
@@ -227,7 +227,7 @@ MonoBehaviour:
   refresco: {fileID: 8606084057748724069, guid: a62a4558eab982e4f92610d92c6fd981,
     type: 3}
   probDrop: 7
---- !u!114 &834335341356380545
+--- !u!114 &4323602591988707931
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -236,13 +236,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 9172402182872378268}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d51652376aff474fa748be5cdb21c8e, type: 3}
+  m_Script: {fileID: 11500000, guid: f056874dc5ec82e478afff7a222e9f4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 5987134724130359097, guid: 900830ef84c8c1749bbe4741f1954146, type: 3}
-  velocityScale: 3
-  damage: 2
-  initCooldown: 100
+  velocity: 3
+  visionDistance: 1
+  objetivo: {fileID: 5987134724130359092, guid: 900830ef84c8c1749bbe4741f1954146,
+    type: 3}
+  presoVoice: {fileID: 2036107353453695530, guid: c5e8e23ce873d5f40afa7a546296ba36,
+    type: 3}
+  follow: 0
 --- !u!1 &9172402184121003926
 GameObject:
   m_ObjectHideFlags: 0

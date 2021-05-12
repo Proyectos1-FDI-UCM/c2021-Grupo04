@@ -7,7 +7,7 @@ public class NewPreso : MonoBehaviour
     public float velocity = 3f;
     public float visionDistance = 1f;
     public Transform objetivo;
-
+    public GameObject presoVoice;
     Rigidbody2D rb;
     float distance;
     public bool follow = false;
@@ -63,11 +63,13 @@ public class NewPreso : MonoBehaviour
         if (collision.GetComponent<PlayerController>())
         {
             follow = false;
+            
         }
         else if (collision.GetComponent<Herropea>())
         {
             //if(!follow)
-                //follow = true;
+            //follow = true;
+            Instantiate(presoVoice);
         }
         else
         {
@@ -80,6 +82,7 @@ public class NewPreso : MonoBehaviour
         if (collision.GetComponent<PlayerController>())
         {
             follow = true;
+            
         }
     }
     public void ChangeDir()
