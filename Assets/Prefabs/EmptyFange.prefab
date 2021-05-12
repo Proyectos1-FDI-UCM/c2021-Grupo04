@@ -221,9 +221,6 @@ MonoBehaviour:
   vJumpReduction: 0.8
   herropea: {fileID: 1957414244645281057, guid: fb7f82022fcfd1d4da6c9d8bf8307dad,
     type: 3}
-  contact: 0
-  jumpSound: {fileID: 5396197423511641861, guid: fdd68aca830461e44a51b488f496550a,
-    type: 3}
 --- !u!50 &5987134724130359098
 Rigidbody2D:
   serializedVersion: 4
@@ -365,5 +362,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 8
   inmunityCooldown: 0.77
-  hurtFange: {fileID: 2422056209849442218, guid: 9453a8540615c8f4aaf09128623b11ac,
-    type: 3}

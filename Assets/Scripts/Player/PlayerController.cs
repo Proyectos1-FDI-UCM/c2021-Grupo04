@@ -23,8 +23,8 @@ public class PlayerController : MonoBehaviour
     private bool jump = false;
     //Variables para delimitar el movimiento en el eje x
     private bool movRight = true;
-    private bool movLeft = true;
-    public GameObject jumpSound;
+    private bool movLeft = true; 
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -112,13 +112,7 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.GetInstance().ActivatePowerUp();
         }
-        if (contact)
-        {
-            if (Input.GetKey(KeyCode.UpArrow))
-            {
-                Instantiate(jumpSound);
-            }
-        }
+
     }
 
     public void SetPickUpAnimation(bool animation) 
