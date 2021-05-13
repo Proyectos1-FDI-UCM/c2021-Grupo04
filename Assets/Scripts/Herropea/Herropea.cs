@@ -14,9 +14,9 @@ public class Herropea : MonoBehaviour
     public Transform chainZone;
     public Transform scenario;
     public Rigidbody2D rbMakt;
-    public GameObject maktFange;
-    public GameObject recogerCadena;
-    public GameObject soltarHerropea;
+    public UnityEngine.GameObject maktFange;
+    public UnityEngine.GameObject recogerCadena;
+    public UnityEngine.GameObject soltarHerropea;
 
     [SerializeField] private float distance; //Distancia bola jugador
     private bool agarrando = false; //Si Makt Fange esta agarrando la bola
@@ -198,5 +198,17 @@ public class Herropea : MonoBehaviour
     public float GetMaxDistance()
     {
         return maxDistance;
+    }
+
+    public void MulDamage(float mulDamage)
+    {
+        damage *= mulDamage;
+        Debug.Log("Daño actual de la herropea" + damage);
+    }
+
+    public void ResetDamage(float mulDamage)
+    {
+        damage /= mulDamage;
+        Debug.Log("Daño actual de la herropea" + damage);
     }
 }

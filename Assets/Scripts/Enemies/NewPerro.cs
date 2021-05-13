@@ -8,6 +8,7 @@ public class NewPerro : MonoBehaviour
     public float maxDistanceToChase = 8f;
     public Transform objetivo;
     public GameObject barkSound;
+    public Animator animator;
 
     Rigidbody2D rb;
     float distance;
@@ -33,22 +34,29 @@ public class NewPerro : MonoBehaviour
                 
                 if (distance <= maxDistanceToChase)
                 {
-                    rb.velocity = new Vector2(-velocity, rb.velocity.y);
-                    
-
+                    animator.SetBool("Perseguido", true);
+                    rb.velocity = new Vector2(-velocity, rb.velocity.y);                   
                 }
                 else
+                {
+                    animator.SetBool("Perseguido", false);
                     rb.velocity = new Vector2(0, 0);
+                }
+                    
             }
             else
             {
                 transform.right = Vector2.right;
                 if (distance <= maxDistanceToChase)
                 {
+                    animator.SetBool("Perseguido", true);
                     rb.velocity = new Vector2(velocity, 0);
                 }
                 else
+                {
+                    animator.SetBool("Perseguido", false);
                     rb.velocity = new Vector2(0, 0);
+                }
             }
         }
 

@@ -7,7 +7,7 @@ public class DañoADistancia : MonoBehaviour
     public int damage;
     public float distanciaAtaque;
     private float distancia;
-    GameObject objetivo;
+    UnityEngine.GameObject objetivo;
     HealthPlayer player;
 
     void Update()

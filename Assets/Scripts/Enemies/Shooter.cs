@@ -13,8 +13,8 @@ public class Shooter : MonoBehaviour
 
     public Transform Player;
     public Transform Policeman;
-    public GameObject Bullet;
-    public GameObject shootSound;
+    public UnityEngine.GameObject Bullet;
+    public UnityEngine.GameObject shootSound;
     private float lastShoot = 0;
 
     

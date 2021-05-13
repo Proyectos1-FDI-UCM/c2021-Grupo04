@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    //Adrián
+
     //relativo a inventario
     
     public GameObject panelRefresco;
@@ -15,6 +17,8 @@ public class UIManager : MonoBehaviour
     private int heartsLeft;
     public RectTransform panelHearts;
     public Image heartsIconPrefab;
+    public Image leftHeartIcon;
+    public Image rightHeartIcon;
    
     void Start()
     {
@@ -28,13 +32,29 @@ public class UIManager : MonoBehaviour
         
        for (int cont=0; cont < numHearts;cont++)
         {
-            Instantiate(heartsIconPrefab, panelHearts);
+            if (cont % 2 != 0)
+            {
+                Instantiate(rightHeartIcon, panelHearts);
+            }
+            else
+            {
+                Instantiate(leftHeartIcon, panelHearts);
+            }
+           
             
         }
     }
     public void DrawHeartBySandwich()
     {
-        Instantiate(heartsIconPrefab, panelHearts);
+        if (heartsLeft % 2 != 0)
+        {
+            Instantiate(rightHeartIcon, panelHearts);
+        }
+        else
+        {
+            Instantiate(leftHeartIcon, panelHearts);
+        }
+        heartsLeft++;
     }
 
     public void RemoveHeart()
@@ -43,7 +63,7 @@ public class UIManager : MonoBehaviour
         {
             if (panelHearts != null)
             {
-                panelHearts.GetChild(heartsLeft - 1).gameObject.SetActive(false);
+                Destroy(panelHearts.GetChild(heartsLeft - 1).gameObject);
                 heartsLeft--;
             }
                 

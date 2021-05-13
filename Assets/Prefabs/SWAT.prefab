@@ -423,7 +423,7 @@ MonoBehaviour:
   movPoints:
   - {fileID: 0}
   - {fileID: 0}
-  player: {fileID: 0}
+  player: {fileID: 5987134724130359097, guid: 900830ef84c8c1749bbe4741f1954146, type: 3}
   parent: {fileID: 2086919388492084472}
   enemyVelocity: 1.5
   delayToChangeDirection: 1
@@ -431,6 +431,8 @@ MonoBehaviour:
   charging: 0
   attack: 0
   agressive: 0
+  swatRadio: {fileID: 769288118426823841, guid: 41b31fec852c4bb44b03f1a725151b39,
+    type: 3}
 --- !u!114 &2086919388492084478
 MonoBehaviour:
   m_ObjectHideFlags: 0

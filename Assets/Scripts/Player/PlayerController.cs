@@ -5,13 +5,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //Adrián,Miguel
+
     //definimos variables
     public float vRun = 4;
     public float vJump = 5;
     public float vRunReduction = 0.8f;
     public float vJumpReduction = 0.8f;
     public GameObject herropea;
-
+    public GameObject saltoFange;
     Rigidbody2D rb;
     Animator anim;
     Herropea scriptHerropea;
@@ -111,6 +113,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire2"))
         {
             GameManager.GetInstance().ActivatePowerUp();
+        }
+        if (contact)
+        {
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                Instantiate(saltoFange);
+            }
         }
 
     }

@@ -27,6 +27,7 @@ public class HealthPlayer : MonoBehaviour
     public void InstanceHearts()
     {
         GameManager.GetInstance().ReDrawHearts(health);
+       
     }
         
     
@@ -37,7 +38,11 @@ public class HealthPlayer : MonoBehaviour
             health -= damage;
             Debug.Log("Vidas restante del jugador " + health);
             time = Time.time;
-            GameManager.GetInstance().HeartDestroyed();
+            for (int i = 0; i < damage; i++)
+            {
+                GameManager.GetInstance().HeartDestroyed();
+            }
+           
            
         }
 
