@@ -39,44 +39,64 @@ public class SWAT : MonoBehaviour
         distance = Vector2.Distance(transform.position, player.transform.position);
 
         //Movimiento
-        if ((agressive == false && charging == false && attack == false) || (distance > 4))
+        if ((agressive == false && charging == false && attack == false))//distance
         {
             parent.transform.GetChild(0).gameObject.SetActive(false);
             parent.transform.GetChild(2).gameObject.SetActive(true);
+            if(((i == 0 && transform.localScale.x == -1) || (i == 1 && transform.localScale.x == 1)) && (distance > 4 || 
+                player.transform.position.y > transform.position.y + offset || player.transform.position.y < transform.position.y - offset))
+            {
+                ChangeDirection();
+            }
             transform.position = Vector2.MoveTowards(transform.position, movPoints[i].transform.position, enemyVelocity * Time.deltaTime);
+
+            if(player.transform.position.y <= transform.position.y + offset && player.transform.position.y >= transform.position.y - offset)
+            {
+                if (transform.localScale.x == 1 && player.transform.position.x < transform.position.x && distance < 4)
+                {
+                    Invoke("ChangeDirection", delayToChangeDirection);
+                }
+                else if (transform.localScale.x == -1 && player.transform.position.x > transform.position.x && distance < 4)
+                {
+                    Invoke("ChangeDirection", delayToChangeDirection);
+                }
+            }
         }
 
         //Carga 
         if (agressive == true && charging == true && attack == false)
         {
             transform.position = transform.position;
-            
-            /*if (transform.right == Vector3.left && player.transform.position.x > transform.position.x)
+
+            /*if (transform.localScale.x == 1 && player.transform.position.x < transform.position.x && distance < 4)
             {
                 Invoke("ChangeDirection", delayToChangeDirection);
+                playerPos = new Vector2(player.transform.position.x, transform.position.y);
             }
-            else if (transform.right == Vector3.right && player.transform.position.x < transform.position.x)
+            else if (transform.localScale.x == -1 && player.transform.position.x > transform.position.x && distance < 4)
             {
                 Invoke("ChangeDirection", delayToChangeDirection);
+                playerPos = new Vector2(player.transform.position.x, transform.position.y);
             }*/
         }
 
         //Ataque
-        if (attack == true && charging == false && agressive == false && distance <= 4)
+        if (attack == true && charging == false && agressive == false)// && distance
         {
-            if((playerPos.x > transform.position.x && transform.localScale.x == 1) || (playerPos.x < transform.position.x && transform.localScale.x == -1))
+            transform.position = Vector2.MoveTowards(transform.position, playerPos, enemyVelocity * 3 * Time.deltaTime);
+            if ((transform.localScale.x == 1 && transform.position.x >= playerPos.x) || (transform.localScale.x == -1 && transform.position.x <= playerPos.x))
             {
-                transform.position = Vector2.MoveTowards(transform.position, playerPos, enemyVelocity * 3 * Time.deltaTime);
-                if (transform.position.x == playerPos.x)
-                {
-                    attack = false;
-                    agressive = charging = true;
-                }
+                attack = false;
+                //agressive = charging = true;
             }
-            else
+            /*if ((playerPos.x > transform.position.x && transform.localScale.x == 1) || (playerPos.x < transform.position.x && transform.localScale.x == -1))
+            {
+                
+            }*/
+            /*else
             {
                 attack = charging = agressive = false;
-            }
+            }*/
             
         }
 
@@ -105,7 +125,8 @@ public class SWAT : MonoBehaviour
                 i = 0;
             }
             right = Mathf.Sign(movPoints[i].transform.position.x - transform.position.x);
-            Turn(right);
+            //Turn(right);
+            ChangeDirection();
         }
     }
 
@@ -117,7 +138,8 @@ public class SWAT : MonoBehaviour
         Instantiate(swatRadio);
         agressive = charging = true;
         attack = false;
-        
+
+        playerPos = new Vector2(player.transform.position.x, transform.position.y);
         Invoke("Attack", 1.5f);
         
     }
@@ -126,7 +148,7 @@ public class SWAT : MonoBehaviour
     {
         attack = true;
         charging = agressive = false;
-        playerPos = new Vector2(player.transform.position.x, transform.position.y);
+        //playerPos = new Vector2(player.transform.position.x, transform.position.y);
 
         /*if (Vector2.Distance(transform.position, movPoints[i].transform.position) < 0.5f)
         {
@@ -152,19 +174,25 @@ public class SWAT : MonoBehaviour
     /// El GO asociado cambia su dirección hacia la del GO asociado
     private void ChangeDirection()
     {
+        Debug.Log("a");
         //Dependiendo de la posición del jugador respecto al SWAT, este último girará su transform right a derecha o izquierda
-        if (player.transform.position.x < transform.position.x)
-        {
-            transform.right = Vector3.right;
-        }
-        else if (player.transform.position.x >= transform.position.x)
+        /*if (player.transform.position.x < transform.position.x)
         {
             transform.right = Vector3.left;
         }
+        else if (player.transform.position.x >= transform.position.x)
+        {
+            transform.right = Vector3.right;
+        }*/
+        transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+        CancelInvoke();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        parent.transform.GetChild(2).gameObject.SetActive(false);
+        parent.transform.GetChild(0).gameObject.SetActive(true);
+
         //Puntos específicos de colisión
         Vector2 hitSide = collision.contacts[0].normal;
 
@@ -186,10 +214,13 @@ public class SWAT : MonoBehaviour
             }
 
             //Colisión trasera
-            if ((side.y < 0 && transform.localScale.x == -1) || (side.y > 0 && transform.localScale.x == 1))
+            else if ((side.y < 0 && transform.localScale.x == -1) || (side.y > 0 && transform.localScale.x == 1))
             {
-                right = Mathf.Sign(movPoints[i].transform.position.x - transform.position.x);
-                Turn(right);
+                //right = Mathf.Sign(movPoints[i].transform.position.x - transform.position.x);
+                ChangeDirection();
+                attack = false;
+                charging = agressive = true;
+                //Turn(right);
                 //tempScale.x *= -1;
                 //Invoke("ChangeDirection", delayToChangeDirection);
                 i++;
