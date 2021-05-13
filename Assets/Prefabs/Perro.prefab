@@ -137,6 +137,7 @@ MonoBehaviour:
     type: 3}
   barkSound: {fileID: 6305700814409408336, guid: 7e92bb1a9c56628469f0868051928670,
     type: 3}
+  animator: {fileID: 1821131789172583671}
 --- !u!1 &6115712152138043601
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,7 +222,7 @@ Transform:
   m_GameObject: {fileID: 8962466087424438306}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.87, y: -0.28, z: 0}
-  m_LocalScale: {x: 17.699099, y: 15.9179125, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2626728432134457924}
   m_RootOrder: 1
@@ -265,7 +266,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e92ea6652076bb24a9f7a357001f1e24, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c18ee7aba50729d40b3e738288cf01c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -286,7 +287,7 @@ Animator:
   m_GameObject: {fileID: 8962466087424438306}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8e849917d7bb7b446b2144c0af2ed016, type: 2}
+  m_Controller: {fileID: 9100000, guid: 402856a403f96194296199bdda44702c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

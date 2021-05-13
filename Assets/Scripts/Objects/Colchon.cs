@@ -8,6 +8,7 @@ public class Colchon : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<PlayerController>() != null)
         {
+            GetComponentInChildren<Animator>().enabled = true;
             collision.GetComponent<Respawn>().Llegado(transform.position.x, transform.position.y);
         }
     }

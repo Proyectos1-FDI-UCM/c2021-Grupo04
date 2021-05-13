@@ -199,4 +199,16 @@ public class Herropea : MonoBehaviour
     {
         return maxDistance;
     }
+
+    public void MulDamage(float mulDamage)
+    {
+        damage *= mulDamage;
+        Debug.Log("Daño actual de la herropea" + damage);
+    }
+
+    public void ResetDamage(float mulDamage)
+    {
+        damage /= mulDamage;
+        Debug.Log("Daño actual de la herropea" + damage);
+    }
 }

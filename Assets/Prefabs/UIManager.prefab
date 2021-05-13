@@ -514,6 +514,10 @@ MonoBehaviour:
   panelHearts: {fileID: 3944806587840956107}
   heartsIconPrefab: {fileID: 6480141704496979002, guid: 25a8a180dfdb9b54aa6fddeaa14263d0,
     type: 3}
+  leftHeartIcon: {fileID: 7622853067244023452, guid: 15fb6948536ad8142b674c263ebde191,
+    type: 3}
+  rightHeartIcon: {fileID: 1950909493751701497, guid: 67e81b146665f8e4bb4f18d07ad5e975,
+    type: 3}
 --- !u!1 &8514305153428934872
 GameObject:
   m_ObjectHideFlags: 0
