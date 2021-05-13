@@ -139,7 +139,6 @@ public class GameManager : MonoBehaviour
         }
         Debug.Log(active);
         Debug.Log(myPowerUp);
-
     }
 
     public void HeartDestroyed()
@@ -147,16 +146,6 @@ public class GameManager : MonoBehaviour
         theUIManager.RemoveHeart();
         
     }
-
-
-
-
-
-
-
-
-
-
 
     public void ChangeScene(string sceneName)
     {
@@ -167,10 +156,6 @@ public class GameManager : MonoBehaviour
     {
         ChangeScene(menu);
     }
-
-
-
-
 
     //para detener ejecución de Unity
     public void ExitGame()
