@@ -72,7 +72,7 @@ public class Herropea : MonoBehaviour
             transform.SetParent(scenario);
         }
         //El jugador lanza si está agarrando y pulsa ctrl
-        else if (Input.GetButton("Fire1") && agarrando)
+        else if (Input.GetButtonDown("Fire1") && agarrando)
         {
             
             Debug.Log("Lanzamiento");                   
@@ -176,6 +176,11 @@ public class Herropea : MonoBehaviour
                 lanzamiento = false;
                 agarrando = false;
             }
+        }
+
+        if(clavado && !scriptFakeHerropea.IsColliderSet())
+        {
+            scriptFakeHerropea.SetCollider(true);
         }
     }
 

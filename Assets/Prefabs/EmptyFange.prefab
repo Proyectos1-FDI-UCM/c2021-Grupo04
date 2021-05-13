@@ -128,8 +128,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2077414841
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9b548b6540c9b5b45a8fa15757544edb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vRun: 4
-  vJump: 7.5
+  vJump: 2
   vRunReduction: 0.8
   vJumpReduction: 0.8
   herropea: {fileID: 1957414244645281057, guid: fb7f82022fcfd1d4da6c9d8bf8307dad,
