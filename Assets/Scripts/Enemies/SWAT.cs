@@ -38,6 +38,7 @@ public class SWAT : MonoBehaviour
 
         distance = Vector2.Distance(transform.position, player.transform.position);
 
+        //Movimiento
         if ((agressive == false && charging == false && attack == false) || (distance > 4))
         {
             parent.transform.GetChild(0).gameObject.SetActive(false);
@@ -45,6 +46,7 @@ public class SWAT : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, movPoints[i].transform.position, enemyVelocity * Time.deltaTime);
         }
 
+        //Carga 
         if (agressive == true && charging == true && attack == false)
         {
             transform.position = transform.position;
@@ -59,6 +61,7 @@ public class SWAT : MonoBehaviour
             }*/
         }
 
+        //Ataque
         if (attack == true && charging == false && agressive == false && distance <= 4)
         {
             if((playerPos.x > transform.position.x && transform.localScale.x == 1) || (playerPos.x < transform.position.x && transform.localScale.x == -1))
@@ -77,7 +80,8 @@ public class SWAT : MonoBehaviour
             
         }
 
-        if (timer <= 0 && distance <= 4 && distance > 1f)
+        //Percibe al jugador
+        if (timer <= 0 && distance <= 4f && distance > 1f)
         {
             if(player.transform.position.y <= transform.position.y + offset && player.transform.position.y >= transform.position.y - offset)
             {
@@ -179,6 +183,16 @@ public class SWAT : MonoBehaviour
 
                 attack = false;
                 charging = agressive = true;
+            }
+
+            //Colisión trasera
+            if ((side.y < 0 && transform.localScale.x == -1) || (side.y > 0 && transform.localScale.x == 1))
+            {
+                right = Mathf.Sign(movPoints[i].transform.position.x - transform.position.x);
+                Turn(right);
+                //tempScale.x *= -1;
+                //Invoke("ChangeDirection", delayToChangeDirection);
+                i++;
             }
         }  
     }
