@@ -20,10 +20,11 @@ public class PauseMenu : MonoBehaviour
             if (!menuPanel.activeSelf)
             {
                 menuPanel.SetActive(true);
+                PauseGameTime();
             }
             else if (menuPanel.activeSelf && !surePanel.activeSelf)
             {
-                menuPanel.SetActive(false);
+                ContinueGame();
             }  
             else if (surePanel.activeSelf)
             {
@@ -32,11 +33,23 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-     public void ContinueGame()
-     {
-        menuPanel.SetActive(false);
-        surePanel.SetActive(false);
-     }
+    public void PauseGameTime()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public void ResumeGameTime()
+    {
+        Time.timeScale = 1f;
+    }
+
+    //Oculta el menu y despausa el juego
+    public void ContinueGame()
+    {
+       menuPanel.SetActive(false);
+       surePanel.SetActive(false);
+       ResumeGameTime();
+    }
 
     public void ExitMenu()
     {
