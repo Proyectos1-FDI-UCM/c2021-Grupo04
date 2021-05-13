@@ -27,6 +27,7 @@ public class HealthPlayer : MonoBehaviour
     public void InstanceHearts()
     {
         GameManager.GetInstance().ReDrawHearts(health);
+       
     }
         
     
