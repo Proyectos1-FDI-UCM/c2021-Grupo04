@@ -14,9 +14,9 @@ public class Herropea : MonoBehaviour
     public Transform chainZone;
     public Transform scenario;
     public Rigidbody2D rbMakt;
-    public GameObject maktFange;
-    public GameObject recogerCadena;
-    public GameObject soltarHerropea;
+    public UnityEngine.GameObject maktFange;
+    public UnityEngine.GameObject recogerCadena;
+    public UnityEngine.GameObject soltarHerropea;
 
     [SerializeField] private float distance; //Distancia bola jugador
     private bool agarrando = false; //Si Makt Fange esta agarrando la bola

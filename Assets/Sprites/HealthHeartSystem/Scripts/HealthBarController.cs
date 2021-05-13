@@ -7,16 +7,16 @@ using UnityEngine.UI;
 
 public class HealthBarController : MonoBehaviour
 {
-    private GameObject[] heartContainers;
+    private UnityEngine.GameObject[] heartContainers;
     private Image[] heartFills;
 
     public Transform heartsParent;
-    public GameObject heartContainerPrefab;
+    public UnityEngine.GameObject heartContainerPrefab;
 
     private void Start()
     {
         // Should I use lists? Maybe :)
-        heartContainers = new GameObject[(int)PlayerStats.Instance.MaxTotalHealth];
+        heartContainers = new UnityEngine.GameObject[(int)PlayerStats.Instance.MaxTotalHealth];
         heartFills = new Image[(int)PlayerStats.Instance.MaxTotalHealth];
 
         PlayerStats.Instance.onHealthChangedCallback += UpdateHeartsHUD;
@@ -70,7 +70,7 @@ public class HealthBarController : MonoBehaviour
     {
         for (int i = 0; i < PlayerStats.Instance.MaxTotalHealth; i++)
         {
-            GameObject temp = Instantiate(heartContainerPrefab);
+            UnityEngine.GameObject temp = Instantiate(heartContainerPrefab);
             temp.transform.SetParent(heartsParent, false);
             heartContainers[i] = temp;
             heartFills[i] = temp.transform.Find("HeartFill").GetComponent<Image>();

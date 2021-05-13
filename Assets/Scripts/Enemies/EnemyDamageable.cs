@@ -12,9 +12,9 @@ public class EnemyDamageable : MonoBehaviour
     public int life = 30;
     public float impulseAfterDamageX = 0.2f;
     public float impulseAfterDamageY = 0.2f;
-    public GameObject whetstone;
-    public GameObject sandwich;
-    public GameObject refresco;
+    public UnityEngine.GameObject whetstone;
+    public UnityEngine.GameObject sandwich;
+    public UnityEngine.GameObject refresco;
     public int probDrop = 7;
 
     private float health;

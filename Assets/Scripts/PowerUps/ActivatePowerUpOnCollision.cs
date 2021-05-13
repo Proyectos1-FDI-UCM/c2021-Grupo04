@@ -50,8 +50,8 @@ public class ActivatePowerUpOnCollision : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D info)
     {
-        
-        GameObject other = info.gameObject;
+
+        UnityEngine.GameObject other = info.gameObject;
 
         if (other.layer != playerLayer)
         {
@@ -62,7 +62,7 @@ public class ActivatePowerUpOnCollision : MonoBehaviour
 
         PowerUpManager pum = other.GetComponent<PowerUpManager>();
        
-        if (GameManager.GetInstance().IsEmpty())
+        if (GameObject.GetInstance().IsEmpty())
         {
             
 
@@ -73,7 +73,7 @@ public class ActivatePowerUpOnCollision : MonoBehaviour
             }
             else
             {
-            GameManager.GetInstance().ChangePowerUp(powerUpName, pum);
+            GameObject.GetInstance().ChangePowerUp(powerUpName, pum);
                  
             }
             

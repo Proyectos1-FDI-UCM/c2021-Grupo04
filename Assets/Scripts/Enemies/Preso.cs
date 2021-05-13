@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Preso : MonoBehaviour
 {
-    public GameObject player;
+    public UnityEngine.GameObject player;
     public float velocityScale = 3;
     public int damage = 2;
     public float initCooldown = 100;

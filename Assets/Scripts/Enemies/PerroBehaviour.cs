@@ -8,7 +8,7 @@ public class PerroBehaviour : MonoBehaviour
     public float velocidad;
     public int damage;
 
-    private GameObject objetivo;
+    private UnityEngine.GameObject objetivo;
     private float distancia;
     private float initCooldown = 2;
 

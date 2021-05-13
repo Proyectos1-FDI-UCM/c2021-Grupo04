@@ -6,15 +6,15 @@ public class SWAT : MonoBehaviour
 {
     [SerializeField] private Transform[] movPoints;
     private int i = 0;
-    public GameObject player;
-    public GameObject parent;
+    public UnityEngine.GameObject player;
+    public UnityEngine.GameObject parent;
     [SerializeField] private float enemyVelocity = 1f;
     [SerializeField] private float delayToChangeDirection = 1f;
     [SerializeField] private float distance;
     [SerializeField] bool charging = false;
     [SerializeField] bool attack = false;
     [SerializeField] bool agressive = false;
-    public GameObject swatRadio;
+    public UnityEngine.GameObject swatRadio;
     private Vector3 iniScale, tempScale;
     Vector2 playerPos;
     private float right = 1;

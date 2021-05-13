@@ -7,7 +7,7 @@ public class NewPerro : MonoBehaviour
     public float velocity = 3f;
     public float maxDistanceToChase = 8f;
     public Transform objetivo;
-    public GameObject barkSound;
+    public UnityEngine.GameObject barkSound;
 
     Rigidbody2D rb;
     float distance;

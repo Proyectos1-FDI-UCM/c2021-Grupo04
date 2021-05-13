@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class GameManager : MonoBehaviour
+public class GameObject : MonoBehaviour
 {
     public string menu;
     
@@ -12,10 +12,10 @@ public class GameManager : MonoBehaviour
     public enum powerUp { IncreaseDamage, Sandwich, ExtraVelocity, Empty }
     public powerUp myPowerUp = powerUp.Empty;
     private UIManager theUIManager;
-    private static GameManager instance;
+    private static GameObject instance;
     PowerUpManager pum;
 
-    public static GameManager GetInstance()
+    public static GameObject GetInstance()
     {
         return instance;
     }

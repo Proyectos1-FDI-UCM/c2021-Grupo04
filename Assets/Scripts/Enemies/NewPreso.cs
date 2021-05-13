@@ -9,9 +9,8 @@ public class NewPreso : MonoBehaviour
     public Transform objetivo;
 
     Rigidbody2D rb;
-    float distance;
     public bool follow = false;
-    bool peaceFull = true;
+    public bool peacefull = true;
     int movementDir = 1;
     // Start is called before the first frame update
     void Start()
@@ -23,23 +22,17 @@ public class NewPreso : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (distance < visionDistance)
-        {
-            follow = true;
-
-            Debug.Log("vision distance: " + visionDistance);
-            Debug.Log("Distance: " + distance);
-            Debug.Log("follow: " + follow);
-        }
+        
     }
     void FixedUpdate()
     {
-        distance = Vector2.Distance(transform.position, objetivo.transform.position);
 
+        if (peacefull)
+        {
+            rb.velocity = new Vector2(movementDir * velocity, 0);
+        }
         if (follow)
         {
-            peaceFull = false;
-            //Si el jugador está demasiado cerca, lo persigue
             if (objetivo.position.x < transform.position.x)
             {               
                 transform.right = Vector2.left;
@@ -52,10 +45,6 @@ public class NewPreso : MonoBehaviour
             }
 
         }
-        else if(peaceFull)
-        {
-            rb.velocity = new Vector2(movementDir * velocity, 0);
-        }
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -66,8 +55,7 @@ public class NewPreso : MonoBehaviour
         }
         else if (collision.GetComponent<Herropea>())
         {
-            //if(!follow)
-                //follow = true;
+            Follow();
         }
         else
         {
@@ -89,5 +77,13 @@ public class NewPreso : MonoBehaviour
             transform.right = Vector2.left;
         else if (movementDir == 1)
             transform.right = Vector2.right;
+    }
+    public void Follow()
+    {
+        if(peacefull)
+        {
+            peacefull = false;
+            follow = true;
+        }
     }
 }

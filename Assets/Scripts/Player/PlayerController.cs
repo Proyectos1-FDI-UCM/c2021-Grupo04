@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public float vJump = 5;
     public float vRunReduction = 0.8f;
     public float vJumpReduction = 0.8f;
-    public GameObject herropea;
+    public UnityEngine.GameObject herropea;
 
     Rigidbody2D rb;
     Animator anim;
@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Fire2"))
         {
-            GameManager.GetInstance().ActivatePowerUp();
+            GameObject.GetInstance().ActivatePowerUp();
         }
 
     }
