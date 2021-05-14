@@ -41,14 +41,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Herropea
+    uniqueID: 4256420817
+    locked: 0
+  - name: Tilemap
+    uniqueID: 2963332917
+    locked: 0
   - name: Colchon
     uniqueID: 4066902037
     locked: 0
   - name: Player
     uniqueID: 2217552455
-    locked: 0
-  - name: Herropea
-    uniqueID: 4256420817
     locked: 0
   - name: Menu
     uniqueID: 2693382123
