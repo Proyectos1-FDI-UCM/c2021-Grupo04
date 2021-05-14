@@ -31,6 +31,7 @@ public class Herropea : MonoBehaviour
     {
         scriptFakeHerropea = GetComponentInChildren<DestroyFakeHerropea>();
         playerController = maktFange.GetComponent<PlayerController>();
+        transform.position = chainZone.position;
     }
 
     void Update()
@@ -186,8 +187,7 @@ public class Herropea : MonoBehaviour
 
     public void SetWallContact(bool triggered)
     {
-        wallContact = triggered;
-        
+        wallContact = triggered;        
     }
 
     public bool AgarrandoHerropea()
@@ -216,4 +216,5 @@ public class Herropea : MonoBehaviour
         damage /= mulDamage;
         Debug.Log("Daño actual de la herropea" + damage);
     }
+
 }
