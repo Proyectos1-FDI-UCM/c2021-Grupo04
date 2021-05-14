@@ -194,6 +194,11 @@ public class Herropea : MonoBehaviour
     {
         return agarrando;
     }
+
+    public bool Lanzamiento()
+    {
+        return lanzamiento;
+    }
     
     public float GetDistanceHerropea()
     {
