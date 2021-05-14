@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyVision : MonoBehaviour
 {
     private NewPreso scriptPreso;
-    public GameObject preso;
+
 
     private void Start()
     {
@@ -17,7 +17,6 @@ public class EnemyVision : MonoBehaviour
         if(collision.gameObject.GetComponent<PlayerController>())
         {
             scriptPreso.Follow();
-            Debug.Log("visto :)");
         }
 
     }

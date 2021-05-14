@@ -16,10 +16,7 @@ public class Respawn : MonoBehaviour
        
     }
 
-    void Update()
-    {
-        
-    }
+
     public void Llegado(float x, float y)
     {
         PlayerPrefs.SetFloat("posicionColchonX", x);

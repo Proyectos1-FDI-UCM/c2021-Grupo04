@@ -9,9 +9,9 @@ public class UIManager : MonoBehaviour
 
     //relativo a inventario
     
-    public UnityEngine.GameObject panelRefresco;
-    public UnityEngine.GameObject panelSandwich;
-    public UnityEngine.GameObject panelWhetstone;
+    public GameObject panelRefresco;
+    public GameObject panelSandwich;
+    public GameObject panelWhetstone;
    
     //relativo a corazones
     private int heartsLeft;
@@ -68,10 +68,6 @@ public class UIManager : MonoBehaviour
             }
                 
         }
-    }
-    private void Update()
-    {
-        
     }
 
    

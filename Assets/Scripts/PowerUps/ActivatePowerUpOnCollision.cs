@@ -73,7 +73,7 @@ public class ActivatePowerUpOnCollision : MonoBehaviour
             }
             else
             {
-                GameManager.GetInstance().ChangePowerUp(powerUpName, pum);
+            GameManager.GetInstance().ChangePowerUp(powerUpName, pum);
                  
             }
             
