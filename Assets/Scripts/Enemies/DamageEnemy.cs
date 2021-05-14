@@ -23,11 +23,11 @@ public class DamageEnemy : MonoBehaviour
         {
             if(shield != null && player != null)
             {
-                player.LoseHearts(damage * 2);
+                player.LoseHearts(damage * 3);
             }
             else if(shield == null && player != null)
             {
-                player.LoseHearts(damage);
+                player.LoseHearts(damage * 2);
             }
         }
         else
