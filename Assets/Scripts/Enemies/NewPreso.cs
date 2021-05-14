@@ -5,9 +5,7 @@ using UnityEngine;
 public class NewPreso : MonoBehaviour
 {
     public float velocity = 3f;
-    public float visionDistance = 1f;
     public Transform objetivo;
-
     Rigidbody2D rb;
     public bool follow = false;
     public bool peacefull = true;

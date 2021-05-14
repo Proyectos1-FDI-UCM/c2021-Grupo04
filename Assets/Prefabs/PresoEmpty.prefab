@@ -210,8 +210,8 @@ GameObject:
   - component: {fileID: 9172402182872378240}
   - component: {fileID: 9172402182872378243}
   - component: {fileID: 829714726191456372}
-  - component: {fileID: 834335341356380545}
   - component: {fileID: 8931294987062293258}
+  - component: {fileID: 6826858754176226443}
   m_Layer: 13
   m_Name: Preso
   m_TagString: Untagged
@@ -330,22 +330,6 @@ MonoBehaviour:
   refresco: {fileID: 8606084057748724069, guid: a62a4558eab982e4f92610d92c6fd981,
     type: 3}
   probDrop: 7
---- !u!114 &834335341356380545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9172402182872378268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d51652376aff474fa748be5cdb21c8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 5987134724130359097, guid: 900830ef84c8c1749bbe4741f1954146, type: 3}
-  velocityScale: 3
-  damage: 2
-  initCooldown: 100
 --- !u!61 &8931294987062293258
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -372,6 +356,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.8395824, y: 1.836627}
   m_EdgeRadius: 0
+--- !u!114 &6826858754176226443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9172402182872378268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f056874dc5ec82e478afff7a222e9f4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: 3
+  visionDistance: 1
+  objetivo: {fileID: 0}
+  follow: 0
+  peacefull: 1
 --- !u!1 &9172402184121003926
 GameObject:
   m_ObjectHideFlags: 0
