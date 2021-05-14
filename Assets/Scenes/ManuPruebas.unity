@@ -6570,6 +6570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mulDamage: 1.5
+  disableDelay: 3
   herropea: {fileID: 1028246629}
 --- !u!114 &5987134723597630167
 MonoBehaviour:
@@ -6583,6 +6584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ebd91d8209de384aa14896cc9e4723c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lives: 2
 --- !u!114 &5987134723597630168
 MonoBehaviour:
   m_ObjectHideFlags: 0

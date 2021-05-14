@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
    
     void Start()
     {
-        GameObject.GetInstance().SetUIManager(this);
+        GameManager.GetInstance().SetUIManager(this);
         
     }
 

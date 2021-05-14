@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class GameObject : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     public string menu;
     
@@ -12,10 +12,10 @@ public class GameObject : MonoBehaviour
     public enum powerUp { IncreaseDamage, Sandwich, ExtraVelocity, Empty }
     public powerUp myPowerUp = powerUp.Empty;
     private UIManager theUIManager;
-    private static GameObject instance;
+    private static GameManager instance;
     PowerUpManager pum;
 
-    public static GameObject GetInstance()
+    public static GameManager GetInstance()
     {
         return instance;
     }
@@ -96,7 +96,6 @@ public class GameObject : MonoBehaviour
             myPowerUp = powerUp.Empty;
         }
            
-        Debug.Log("g");
         
     }
     public bool IsEmpty()
@@ -147,15 +146,6 @@ public class GameObject : MonoBehaviour
         theUIManager.RemoveHeart();
         
     }
-
-
-
-
-
-
-
-
-
 
 
     public void ChangeScene(string sceneName)

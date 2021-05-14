@@ -62,7 +62,7 @@ public class ActivatePowerUpOnCollision : MonoBehaviour
 
         PowerUpManager pum = other.GetComponent<PowerUpManager>();
        
-        if (GameObject.GetInstance().IsEmpty())
+        if (GameManager.GetInstance().IsEmpty())
         {
             
 
@@ -73,7 +73,7 @@ public class ActivatePowerUpOnCollision : MonoBehaviour
             }
             else
             {
-            GameObject.GetInstance().ChangePowerUp(powerUpName, pum);
+                GameManager.GetInstance().ChangePowerUp(powerUpName, pum);
                  
             }
             
