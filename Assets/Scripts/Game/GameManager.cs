@@ -30,8 +30,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(this);
-        }
-        
+        }     
     }
 
     public void SetUIManager(UIManager uim)
@@ -150,6 +149,8 @@ public class GameManager : MonoBehaviour
     public void ChangeScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+        //Activamos el power up para vaciar su contenido
+        ActivatePowerUp();
     }
 
     public void ChargeMenu()
