@@ -16,7 +16,6 @@ public class Follow : MonoBehaviour
 
     }
 
-    
     void LateUpdate()
     {
         transform.position = maktFange.position + difference;//actualizamos la posición para siempre guardar la misma distancia

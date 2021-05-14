@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿//Trigger del lado dereh de la herropea
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerWall : MonoBehaviour
+public class RightTriggerWall : MonoBehaviour
 {
     Herropea herropea;
 
@@ -17,6 +18,7 @@ public class TriggerWall : MonoBehaviour
         {
             //Avisa a Herropea de que está en contacto con ningún muro
             herropea.SetWallContact(true);
+            herropea.DontMoveRight();
         }
     }
 
@@ -26,6 +28,7 @@ public class TriggerWall : MonoBehaviour
         {
             //Avisa a Herropea de que no está en contacto con ningún muro
             herropea.SetWallContact(false);
+            herropea.MoveRight();
         }
     }
 }

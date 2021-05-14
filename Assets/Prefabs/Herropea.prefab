@@ -235,7 +235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7232883633779057080}
   - component: {fileID: 7466750416894984064}
-  - component: {fileID: 8640721044877919142}
+  - component: {fileID: 3548385384880996690}
   m_Layer: 16
   m_Name: LeftTrigger
   m_TagString: Untagged
@@ -270,7 +270,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.35203856, y: 0.12536275}
+  m_Offset: {x: -0.3858557, y: 0.2077756}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -281,9 +281,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.18896031, y: 0.152601}
+  m_Size: {x: 0.2565946, y: 0.072801545}
   m_EdgeRadius: 0
---- !u!114 &8640721044877919142
+--- !u!114 &3548385384880996690
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -292,7 +292,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5487851507456318759}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3d01c79f8f38524090db36b7ae9c208, type: 3}
+  m_Script: {fileID: 11500000, guid: 6964cde39630f264cb69b7ef311b25ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8234399785766632573
@@ -340,7 +340,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.37203085, y: 0.14015862}
+  m_Offset: {x: 0.39811844, y: 0.21140462}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -351,7 +351,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1450505, y: 0.13581079}
+  m_Size: {x: 0.2320089, y: 0.06288546}
   m_EdgeRadius: 0
 --- !u!114 &5411261576448636957
 MonoBehaviour:
@@ -433,7 +433,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -38546479
-  m_SortingLayer: 3
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3c1df47d174625047822604e25c2b0ac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

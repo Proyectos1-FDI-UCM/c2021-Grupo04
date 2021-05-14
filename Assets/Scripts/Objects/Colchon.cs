@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Colchon : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
@@ -12,4 +13,6 @@ public class Colchon : MonoBehaviour
             collision.GetComponent<Respawn>().Llegado(transform.position.x, transform.position.y);
         }
     }
+
+    
 }

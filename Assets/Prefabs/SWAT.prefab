@@ -436,7 +436,6 @@ GameObject:
   - component: {fileID: 5289677477567112844}
   - component: {fileID: 8094391382089319800}
   - component: {fileID: 8512826095101119413}
-  - component: {fileID: 5859245879667291970}
   - component: {fileID: 1649496848549900782}
   m_Layer: 0
   m_Name: SWAT
@@ -554,21 +553,6 @@ MonoBehaviour:
   sandwich: {fileID: 0}
   refresco: {fileID: 0}
   probDrop: 7
---- !u!114 &5859245879667291970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5488147978478500811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f0fa47c8db8e3545b3b0351f9a08bfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menu: 
-  sandwich: 2
-  myPowerUp: 3
 --- !u!114 &1649496848549900782
 MonoBehaviour:
   m_ObjectHideFlags: 0

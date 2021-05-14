@@ -26,6 +26,9 @@ public class Herropea : MonoBehaviour
     private bool wallContact = false;
     private PlayerController playerController;
     private DestroyFakeHerropea scriptFakeHerropea;
+    //Variables para inhibilitar el movimiento de Makt Fange
+    private bool dontMoveRight = false;
+    private bool dontMoveLeft = false;
 
     private void Start()
     {
@@ -40,6 +43,11 @@ public class Herropea : MonoBehaviour
 
         //Guardamos la distancia entre Makt y la herropea
         distance = Vector2.Distance(chainZone.transform.position, transform.position);
+        
+        if(!wallContact && !lanzamiento)
+        {
+            transform.right = maktFange.transform.right;
+        }
 
         if (distance >= maxDistance)
         {
@@ -107,28 +115,12 @@ public class Herropea : MonoBehaviour
             scriptFakeHerropea.SetCollider(false);
         }
 
-        if (wallContact && distance > (maxDistance - 0.36f))
+        CheckIfPlayerCanMove();
+
+        //Comprobamos que la herropea se clave
+        if (clavado && !scriptFakeHerropea.IsColliderSet())
         {
-            //Si el jugador está a la derecha de la herropea
-            if (chainZone.position.x > transform.position.x)
-            {
-                //Impide al jugador moverse hacia la derecha
-                playerController.SetMovRight(false);
-                //Permite al jugador moverse hacia la izquierda
-                playerController.SetMovLeft(true);
-            }
-            else
-            {
-                //Permite al jugador moverse hacia la derecha
-                playerController.SetMovRight(true);
-                //Impide al jugador moverse hacia la izquierda
-                playerController.SetMovLeft(false);
-            }
-        }
-        else
-        {
-            playerController.SetMovRight(true);
-            playerController.SetMovLeft(true);
+            scriptFakeHerropea.SetCollider(true);
         }
     }
 
@@ -157,12 +149,11 @@ public class Herropea : MonoBehaviour
         if (collision.GetComponent<CompositeCollider2D>() != null)
         {
             if (lanzamiento)
-            {
-                scriptFakeHerropea.SetCollider(true);
+            {                
+                clavado = true;                
                 lanzamiento = false;
                 agarrando = false;
-                flotando = false;
-                clavado = true;
+                flotando = false;              
             }
             flotando = false; //Deja de afectarle la gravedad
             Debug.Log("Suelo");
@@ -187,7 +178,8 @@ public class Herropea : MonoBehaviour
 
     public void SetWallContact(bool triggered)
     {
-        wallContact = triggered;        
+        wallContact = triggered;
+        clavado = triggered;
     }
 
     public bool AgarrandoHerropea()
@@ -222,4 +214,54 @@ public class Herropea : MonoBehaviour
         Debug.Log("Daño actual de la herropea" + damage);
     }
 
+    public void DontMoveRight()
+    {
+        dontMoveRight = true;
+    }
+
+    public void DontMoveLeft()
+    {
+        dontMoveLeft = true;
+    }
+
+    public void MoveRight()
+    {
+        dontMoveRight = false;
+    }
+
+    public void MoveLeft()
+    {
+        dontMoveLeft = false;
+    }
+
+    /// <summary>
+    /// Comprueba si los triggers de la herropea estan en contacto con un muro y
+    /// permite o impide el movimiento del jugador en función del trigger en contacto.
+    /// </summary>
+    public void CheckIfPlayerCanMove()
+    {
+        if (wallContact && distance > (maxDistance - 0.36f))
+        {
+            if (dontMoveRight && !dontMoveLeft)
+            {
+                playerController.SetMovRight(false);
+                playerController.SetMovLeft(true);
+            }
+            else if (!dontMoveRight && dontMoveLeft)
+            {
+                playerController.SetMovRight(true);
+                playerController.SetMovLeft(false);
+            }
+            else
+            {
+                playerController.SetMovRight(false);
+                playerController.SetMovLeft(false);
+            }
+        }
+        else
+        {
+            playerController.SetMovRight(true);
+            playerController.SetMovLeft(true);
+        }
+    }
 }
