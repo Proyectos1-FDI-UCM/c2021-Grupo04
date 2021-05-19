@@ -6,8 +6,8 @@ public class SWAT : MonoBehaviour
 {
     [SerializeField] private Transform[] movPoints;
     private int i = 0;
-    public UnityEngine.GameObject player;
-    public UnityEngine.GameObject parent;
+    public GameObject player;
+    public GameObject parent;
     [SerializeField] private float enemyVelocity = 1f;
     [SerializeField] private float delayToChangeDirection = 1f;
     [SerializeField] private float distance;
