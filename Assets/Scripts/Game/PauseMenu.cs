@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
+    //Miguel y Adrián
+
     //Botones del menu de pausa y de confirmación de salida
     public GameObject menuPanel, surePanel;
-
+    public GameObject selectOptionsMenu;
+    public GameObject selectControlsPanel;
     void Start()
     {
         ContinueGame();
@@ -64,5 +67,21 @@ public class PauseMenu : MonoBehaviour
     public void GoBackToMainMenu()
     {
         GameManager.GetInstance().ChargeMenu();
+    }
+    public void OpenOptionsMenu()
+    {
+        selectOptionsMenu.SetActive(true);
+    }
+    public void BackOptionsMenu()
+    {
+        selectOptionsMenu.SetActive(false);
+    }
+    public void OpenControlsPanel()
+    {
+        selectControlsPanel.SetActive(true);
+    }
+    public void CloseControlsPanel()
+    {
+        selectControlsPanel.SetActive(false);
     }
 }
