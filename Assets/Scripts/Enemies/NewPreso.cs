@@ -60,10 +60,7 @@ public class NewPreso : MonoBehaviour
                 Follow();
             }
         }
-        else
-        {
-            ChangeDir();
-        }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
