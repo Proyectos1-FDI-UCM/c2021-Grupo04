@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
+    //Miguel y Adrián
     public GameObject selectScene;
     public GameObject selectOptionsMenu;
+    public GameObject selectControlsPanel;
 
     private void Start()
     {
@@ -28,5 +30,13 @@ public class MainMenu : MonoBehaviour
     public void BackOptionsMenu()
     {
         selectOptionsMenu.SetActive(false);
+    }
+    public void OpenControlsPanel()
+    {
+        selectControlsPanel.SetActive(true);
+    }
+    public void CloseControlsPanel()
+    {
+        selectControlsPanel.SetActive(false);
     }
 }
