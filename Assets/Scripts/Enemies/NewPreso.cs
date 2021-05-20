@@ -11,7 +11,6 @@ public class NewPreso : MonoBehaviour
     public bool peacefull = true;
     int movementDir = 1;
     private Herropea scriptHerropea;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -52,7 +51,6 @@ public class NewPreso : MonoBehaviour
         if (collision.GetComponent<PlayerController>())
         {
             follow = false;
-
         }
         else if (collision.GetComponent<Herropea>())
         {

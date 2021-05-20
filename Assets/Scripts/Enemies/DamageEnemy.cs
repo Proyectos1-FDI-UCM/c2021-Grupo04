@@ -8,13 +8,10 @@ public class DamageEnemy : MonoBehaviour
 
     SWAT swat;
     Shield shield;
-    NewPreso preso;
-    public Animator animator;
 
     private void Start()
     {
         swat = GetComponent<SWAT>();
-        preso = GetComponentInParent<NewPreso>();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -33,15 +30,6 @@ public class DamageEnemy : MonoBehaviour
                 player.LoseHearts(damage * 2);
             }
         }
-        else if (preso != null)
-        {
-            if (player != null)
-            {
-                animator.SetBool("Atizando", true);
-                player.LoseHearts(damage);
-            }
-
-        }
         else
         {
             //Si colisiona con el jugador
@@ -49,14 +37,7 @@ public class DamageEnemy : MonoBehaviour
             {
                 player.LoseHearts(damage);
             }
-        }        
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (preso != null)
-        {
-            animator.SetBool("Atizando", false);
         }
+        
     }
 }
