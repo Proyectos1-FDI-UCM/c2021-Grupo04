@@ -115,7 +115,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  animator: {fileID: 0}
 --- !u!61 &43815114145195386
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -297,7 +296,6 @@ GameObject:
   - component: {fileID: 8931294987062293258}
   - component: {fileID: 6826858754176226443}
   - component: {fileID: 1857801448489408336}
-  - component: {fileID: 2898543178580843869}
   m_Layer: 13
   m_Name: Preso
   m_TagString: Untagged
@@ -478,19 +476,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2898543178580843869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9172402182872378268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73b789c48f4a55f4fb2bc57977d8ca43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cambiocolor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &9172402184121003926
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,14 +11,15 @@ public class HealthPlayer : MonoBehaviour
     private int health;
    
     Respawn spawn;
-    ChangeColor color;
-
+    
+    
 
     private void Start()
     {
+       
         spawn = GetComponent<Respawn>();
         health = maxHealth;
-        color = GetComponent<ChangeColor>();
+
         Invoke("InstanceHearts", 0.1f);
        
     }
@@ -35,7 +36,6 @@ public class HealthPlayer : MonoBehaviour
         if (health > 0 && Time.time >= time + inmunityCooldown)
         {
             health -= damage;
-            color.CambiaColor();
             Debug.Log("Vidas restante del jugador " + health);
             time = Time.time;
             for (int i = 0; i < damage; i++)

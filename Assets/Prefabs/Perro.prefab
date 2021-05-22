@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4601023251610965482}
   - component: {fileID: 4601023251610965489}
   - component: {fileID: 6203434555737797017}
-  - component: {fileID: 5509783778201259332}
   m_Layer: 13
   m_Name: Perro
   m_TagString: Untagged
@@ -120,7 +119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  animator: {fileID: 0}
 --- !u!114 &6203434555737797017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,19 +138,6 @@ MonoBehaviour:
   barkSound: {fileID: 6305700814409408336, guid: 7e92bb1a9c56628469f0868051928670,
     type: 3}
   animator: {fileID: 2547592370929825465}
---- !u!114 &5509783778201259332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4601023251610965483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 958686c441edf744f9e4a21043629729, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cambiocolor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &5079562429879478892
 GameObject:
   m_ObjectHideFlags: 0

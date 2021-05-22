@@ -19,12 +19,11 @@ public class EnemyDamageable : MonoBehaviour
 
     private float health;
     Rigidbody2D rb;
-    ChangeColor color;
+
     private void Start()
     {
         health = life;
         rb = GetComponent<Rigidbody2D>();
-        color = GetComponent<ChangeColor>();
     }
 
     private void Update()
@@ -42,7 +41,6 @@ public class EnemyDamageable : MonoBehaviour
     public void GetDamage(float damage)
     {
         health -= damage;
-        color.CambiaColor();
         //rb.AddForce(new Vector2(impulseAfterDamageX, impulseAfterDamageY));
         if (health <= 0)
         {
