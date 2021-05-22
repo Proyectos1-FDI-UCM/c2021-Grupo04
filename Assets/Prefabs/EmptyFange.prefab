@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: -6996569664634752650}
   - component: {fileID: 7907508211236104130}
   - component: {fileID: 3963210605265846029}
+  - component: {fileID: 1591777756358268675}
   m_Layer: 9
   m_Name: EmptyFange
   m_TagString: Untagged
@@ -230,10 +231,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2620e1e43b57334d910057ca93e3080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vRun: 4
-  vJump: 2
-  vRunReduction: 0.8
-  vJumpReduction: 0.8
+  vRun: 5
+  vJump: 7
+  vRunReduction: 0.45
+  vJumpReduction: 0.75
   herropea: {fileID: 1957414244645281057, guid: fb7f82022fcfd1d4da6c9d8bf8307dad,
     type: 3}
   saltoFange: {fileID: 117706865629327899, guid: a01148f67789e7540ab56c64272c0203,
@@ -273,7 +274,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.262301, y: 1.8343325}
+  m_Offset: {x: 0.045318842, y: 0.033951163}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -284,7 +285,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8562517, y: 1.5549666}
+  m_Size: {x: 0.90579176, y: 1.4896562}
   m_EdgeRadius: 0
 --- !u!61 &5987134724130359096
 BoxCollider2D:
@@ -299,7 +300,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.2794304, y: 1.0441017}
+  m_Offset: {x: 0.057935774, y: -0.73812747}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -310,7 +311,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7817135, y: 0.0001}
+  m_Size: {x: 0.76865745, y: 0.038923025}
   m_EdgeRadius: 0
 --- !u!114 &5987134724130359094
 MonoBehaviour:
@@ -338,7 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8e2865de251cc54c8ee776c453be6ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mulVelocity: 2
+  mulVelocity: 1.5
 --- !u!114 &6579004303100968881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,9 +388,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5987134724130359097}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ebd91d8209de384aa14896cc9e4723c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 2
+--- !u!114 &1591777756358268675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5987134724130359097}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba01fe8f3df55e144a9282bc71298153, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mulDamage: 1.5
+  disableDelay: 3
+  herropea: {fileID: 1957414244645280989, guid: fb7f82022fcfd1d4da6c9d8bf8307dad,
+    type: 3}

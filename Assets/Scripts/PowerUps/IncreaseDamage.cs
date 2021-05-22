@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class IncreaseDamage : MonoBehaviour
 {
+    //Adrián y Miguel
     public float mulDamage = 1.5f;
     public float disableDelay = 3f;
      [SerializeField] Herropea herropea;

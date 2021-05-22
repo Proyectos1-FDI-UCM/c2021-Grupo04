@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HealthPlayer : MonoBehaviour
 {
+    //Adrián,Miguel 
     public int maxHealth = 8;
     public float inmunityCooldown = 1f;
 

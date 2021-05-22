@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ImprovedJump : MonoBehaviour
 {
+    //Miguel
     public float mediumJumpForce = 1f;
     public float fastDescending = 1.5f;
     Rigidbody2D rb;

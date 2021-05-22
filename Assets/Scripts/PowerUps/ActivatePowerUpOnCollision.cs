@@ -25,7 +25,7 @@ using UnityEngine.Audio;
 /// el componente que gestiona los power-ups (PowerUpManager)
 public class ActivatePowerUpOnCollision : MonoBehaviour
 {
-
+    //Manu y Adri
     [SerializeField]
     string powerUpName = null;
 

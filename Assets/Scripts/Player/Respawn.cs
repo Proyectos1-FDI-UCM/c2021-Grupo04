@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Respawn : MonoBehaviour
 {
+    //Eduardo y Miguel
     public bool respawn=true;
     private float posicionColchonX, posicionColchonY;
     int lives;

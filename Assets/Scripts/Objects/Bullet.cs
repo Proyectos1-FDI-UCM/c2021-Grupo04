@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    //Adrián 
     public float velocityScale;
     public int  damage = 1;
     Rigidbody2D rb;

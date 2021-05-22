@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Colchon : MonoBehaviour
 {
+    //Eduardo y Adrián
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<PlayerController>() != null)

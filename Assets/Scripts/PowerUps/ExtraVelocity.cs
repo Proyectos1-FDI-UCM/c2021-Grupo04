@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ExtraVelocity : MonoBehaviour
 {
+    //Adrián y Miguel
     public float mulVelocity = 2;
 
     PlayerController playerController;

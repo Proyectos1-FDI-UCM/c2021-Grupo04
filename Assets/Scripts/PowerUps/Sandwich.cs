@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Sandwich : MonoBehaviour
 {
+    //Miguel y Adrián
     HealthPlayer healthPlayer;
     public int lives = 2;
 

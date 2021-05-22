@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NewPreso : MonoBehaviour
 {
+    //Manu
     public float velocity = 3f;
     public Transform objetivo;
     Rigidbody2D rb;
