@@ -417,6 +417,7 @@ MonoBehaviour:
   refresco: {fileID: 8606084057748724069, guid: a62a4558eab982e4f92610d92c6fd981,
     type: 3}
   probDrop: 7
+  sangre: {fileID: 5139910120628629401, guid: 4e5f8ab7f97ecdf47ba88821ad3ab55f, type: 3}
 --- !u!61 &8931294987062293258
 BoxCollider2D:
   m_ObjectHideFlags: 0

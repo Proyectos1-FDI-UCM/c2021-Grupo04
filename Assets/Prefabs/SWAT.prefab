@@ -161,6 +161,7 @@ MonoBehaviour:
   sandwich: {fileID: 0}
   refresco: {fileID: 0}
   probDrop: 0
+  sangre: {fileID: 0}
 --- !u!114 &6909591595862229347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -581,6 +582,7 @@ MonoBehaviour:
   sandwich: {fileID: 0}
   refresco: {fileID: 0}
   probDrop: 7
+  sangre: {fileID: 5139910120628629401, guid: 4e5f8ab7f97ecdf47ba88821ad3ab55f, type: 3}
 --- !u!114 &1649496848549900782
 MonoBehaviour:
   m_ObjectHideFlags: 0
