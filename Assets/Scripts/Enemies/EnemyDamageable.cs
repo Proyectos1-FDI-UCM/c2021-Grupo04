@@ -18,6 +18,7 @@ public class EnemyDamageable : MonoBehaviour
     public int probDrop = 7;
 
     private float health;
+    public GameObject sangre;
     Rigidbody2D rb;
     ChangeColor color;
     NewPerro perro;
@@ -58,8 +59,8 @@ public class EnemyDamageable : MonoBehaviour
         //rb.AddForce(new Vector2(impulseAfterDamageX, impulseAfterDamageY));
         if (health <= 0)
         {
+            Instantiate(sangre, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
-
             SpawnPowerUp();
         }
     }
