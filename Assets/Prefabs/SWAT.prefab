@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 6541305717341230777}
   - component: {fileID: 6909591595862229347}
   - component: {fileID: 5140022285467533188}
+  - component: {fileID: 7474841423814592418}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -193,6 +194,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7474841423814592418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653741617156348582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b789c48f4a55f4fb2bc57977d8ca43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cambiocolor: {r: 0.37254903, g: 0.37254903, b: 0.37254903, a: 1}
 --- !u!1 &1656998546946495323
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,6 +247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 179833130301561575}
   - component: {fileID: 1304313786287702221}
+  - component: {fileID: 624177662130444076}
   m_Layer: 0
   m_Name: Stop
   m_TagString: Untagged
@@ -304,6 +319,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &624177662130444076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2574200901152047686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b789c48f4a55f4fb2bc57977d8ca43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cambiocolor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &3841309097439056124
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,6 +594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  animator: {fileID: 0}
 --- !u!1 &6856700706628966888
 GameObject:
   m_ObjectHideFlags: 0
