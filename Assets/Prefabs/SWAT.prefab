@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 6541305717341230777}
   - component: {fileID: 6909591595862229347}
   - component: {fileID: 5140022285467533188}
+  - component: {fileID: 6948049865491800797}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -193,6 +194,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6948049865491800797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653741617156348582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b789c48f4a55f4fb2bc57977d8ca43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cambiocolor: {r: 0.37254903, g: 0.37254903, b: 0.37254903, a: 1}
 --- !u!1 &1656998546946495323
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,6 +451,7 @@ GameObject:
   - component: {fileID: 8094391382089319800}
   - component: {fileID: 8512826095101119413}
   - component: {fileID: 1649496848549900782}
+  - component: {fileID: 8520237615025164779}
   m_Layer: 0
   m_Name: SWAT
   m_TagString: Untagged
@@ -566,6 +581,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  animator: {fileID: 0}
+--- !u!114 &8520237615025164779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5488147978478500811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 958686c441edf744f9e4a21043629729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cambiocolor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &6856700706628966888
 GameObject:
   m_ObjectHideFlags: 0

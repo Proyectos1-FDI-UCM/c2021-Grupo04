@@ -129,7 +129,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2077414841
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9b548b6540c9b5b45a8fa15757544edb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -180,6 +180,7 @@ GameObject:
   - component: {fileID: -6996569664634752650}
   - component: {fileID: 7907508211236104130}
   - component: {fileID: 3963210605265846029}
+  - component: {fileID: 2810670593307858989}
   m_Layer: 9
   m_Name: EmptyFange
   m_TagString: Untagged
@@ -379,3 +380,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 2
+--- !u!114 &2810670593307858989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5987134724130359097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b789c48f4a55f4fb2bc57977d8ca43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cambiocolor: {r: 1, g: 0, b: 0, a: 1}
