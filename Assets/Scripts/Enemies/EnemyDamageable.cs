@@ -20,11 +20,22 @@ public class EnemyDamageable : MonoBehaviour
     private float health;
     Rigidbody2D rb;
     ChangeColor color;
+    NewPerro perro;
+    SWAT swat;
     private void Start()
     {
         health = life;
         rb = GetComponent<Rigidbody2D>();
-        color = GetComponent<ChangeColor>();
+        perro = GetComponent<NewPerro>();
+        swat = GetComponent<SWAT>();
+        if (swat != null || perro != null)
+        {
+            color = GetComponentInChildren<ChangeColor>();
+        }
+        else
+        {
+            color = GetComponent<ChangeColor>();
+        }
     }
 
     private void Update()
@@ -43,6 +54,7 @@ public class EnemyDamageable : MonoBehaviour
     {
         health -= damage;
         color.CambiaColor();
+        
         //rb.AddForce(new Vector2(impulseAfterDamageX, impulseAfterDamageY));
         if (health <= 0)
         {

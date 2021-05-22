@@ -18,7 +18,7 @@ public class HealthPlayer : MonoBehaviour
     {
         spawn = GetComponent<Respawn>();
         health = maxHealth;
-        color = GetComponent<ChangeColor>();
+        color = GetComponentInChildren<ChangeColor>();
         Invoke("InstanceHearts", 0.1f);
        
     }
