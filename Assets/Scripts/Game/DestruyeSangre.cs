@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DestruyeSangre : MonoBehaviour
 {
+    //Edu
     // Start is called before the first frame update
     void Start()
     {

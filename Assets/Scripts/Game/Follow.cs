@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Follow : MonoBehaviour
 {
+    //Adrián,Miguel
     public Transform maktFange;// transform público editable desde unity (metemos a MaktFange en el hueco)
     public float cameraOffSetX=0;
     public float cameraOffSetY = 0;

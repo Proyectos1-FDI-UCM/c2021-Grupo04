@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DamageEnemy : MonoBehaviour
 {
+    //Miguel
     public int damage = 1;
 
     SWAT swat;

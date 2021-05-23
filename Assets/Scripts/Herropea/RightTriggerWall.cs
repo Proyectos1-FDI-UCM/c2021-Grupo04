@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class RightTriggerWall : MonoBehaviour
 {
+    //Miguel
     Herropea herropea;
 
     private void Start()

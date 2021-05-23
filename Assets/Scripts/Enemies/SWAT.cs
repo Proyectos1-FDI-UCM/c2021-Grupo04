@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SWAT : MonoBehaviour
 {
+    //Alejandro
     [SerializeField] private Transform[] movPoints;
     private int i = 0;
     public GameObject player;

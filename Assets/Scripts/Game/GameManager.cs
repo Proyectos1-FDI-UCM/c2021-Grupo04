@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    //Adrián,Manuel y Miguel
     public string menu;
     
     public int sandwich = 1;
@@ -168,6 +169,6 @@ public class GameManager : MonoBehaviour
      #endif
     }
 
-
+   
 
 }

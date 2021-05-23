@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour
     public GameObject panelRefresco;
     public GameObject panelSandwich;
     public GameObject panelWhetstone;
-   
+    public GameObject panelInfo;
     //relativo a corazones
     private int heartsLeft;
     public RectTransform panelHearts;
@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         GameManager.GetInstance().SetUIManager(this);
-        
+        Invoke("DisableInfoText", 8f);
     }
 
     public void DrawHearts(int numHearts)
@@ -107,7 +107,10 @@ public class UIManager : MonoBehaviour
         }
     }
 
-
+    public void DisableInfoText()
+    {
+        panelInfo.SetActive(false);
+    }
 }
 
 

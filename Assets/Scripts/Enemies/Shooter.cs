@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 public class Shooter : MonoBehaviour
 {
-
+    //Adrián,Miguel(animación)
     //variables
 
     public bool shoot = true; //Dispara si está a true
@@ -24,7 +24,7 @@ public class Shooter : MonoBehaviour
     private void Start()
     {
         spriteRenderer = GetComponentInParent<SpriteRenderer>();
-        //Guardamos el spite idle
+        //Guardamos el sprite idle
         orSprite = spriteRenderer.sprite;
     }
 

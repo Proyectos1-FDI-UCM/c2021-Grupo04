@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyDamageable : MonoBehaviour
 {
+    //Miguel, Edu(animación sangre)
     /*Script asociado a los enemigos que detecta si la bola ha colisionado con el.
      * Para evitar errores a la hora de hacer daño a los enemigos, se pretende que la detección del
      * ataque solo sea posible cuando Makt Fange lanza la bola
