@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ChangeColor : MonoBehaviour
 {
+    //Edu
     private Renderer rend;
 
     [SerializeField]

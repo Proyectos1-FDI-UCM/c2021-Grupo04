@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Herropea : MonoBehaviour
 {
+    //Miguel
     public float velLanzamiento = 5;
     public float gravity = 1;
     public float maxDistance;

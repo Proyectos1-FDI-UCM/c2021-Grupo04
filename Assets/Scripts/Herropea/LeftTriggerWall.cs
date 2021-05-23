@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LeftTriggerWall : MonoBehaviour
 {
+    //Miguel
     Herropea herropea;
 
     private void Start()

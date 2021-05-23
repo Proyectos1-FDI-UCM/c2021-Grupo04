@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DestroyFakeHerropea : MonoBehaviour
 {
+    //Miguel y Manuel
     CircleCollider2D circleCollider;
     private void Start()
     {

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NewPerro : MonoBehaviour
 {
+    //Miguel y Edu
     public float velocity = 3f;
     public float maxDistanceToChase = 8f;
     public Transform objetivo;
