@@ -3429,6 +3429,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 3.5
       objectReference: {fileID: 0}
+    - target: {fileID: 248886307331598337, guid: dce0be7cb72554147b5155fec1e9c78a,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2574200901152047686, guid: dce0be7cb72554147b5155fec1e9c78a,
         type: 3}
       propertyPath: m_IsActive
@@ -3489,6 +3494,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3893423867607277176, guid: dce0be7cb72554147b5155fec1e9c78a,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4377605475020251156, guid: dce0be7cb72554147b5155fec1e9c78a,
         type: 3}
       propertyPath: m_Name
@@ -3503,6 +3513,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BodyType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7474841423814592418, guid: dce0be7cb72554147b5155fec1e9c78a,
+        type: 3}
+      propertyPath: cambiocolor.r
+      value: 0.18867922
+      objectReference: {fileID: 0}
+    - target: {fileID: 7474841423814592418, guid: dce0be7cb72554147b5155fec1e9c78a,
+        type: 3}
+      propertyPath: cambiocolor.g
+      value: 0.10946955
+      objectReference: {fileID: 0}
+    - target: {fileID: 7474841423814592418, guid: dce0be7cb72554147b5155fec1e9c78a,
+        type: 3}
+      propertyPath: cambiocolor.b
+      value: 0.10946955
       objectReference: {fileID: 0}
     - target: {fileID: 8094391382089319800, guid: dce0be7cb72554147b5155fec1e9c78a,
         type: 3}

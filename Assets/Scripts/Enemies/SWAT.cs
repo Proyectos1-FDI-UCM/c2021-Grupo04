@@ -191,42 +191,51 @@ public class SWAT : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        parent.transform.GetChild(1).GetChild(2).gameObject.SetActive(false);
-        parent.transform.GetChild(1).GetChild(0).gameObject.SetActive(true);
-
-        //Puntos específicos de colisión
-        Vector2 hitSide = collision.contacts[0].normal;
-
-        //Ángulo de colisión
-        float angle = Vector2.Angle(hitSide, Vector3.up);
-
-        //Colisión en el eje X
-        if (Mathf.Approximately(angle, 90))
+        if(collision.gameObject.GetComponent<PlayerController>() != null)
         {
-            Vector3 side = Vector3.Cross(Vector3.forward, hitSide);
+            parent.transform.GetChild(1).GetChild(2).gameObject.SetActive(false);
+            parent.transform.GetChild(1).GetChild(0).gameObject.SetActive(true);
 
-            //Colisión frontal
-            if ((side.y < 0 && transform.localScale.x == 1) || (side.y > 0 && transform.localScale.x == -1))
+            //Puntos específicos de colisión
+            Vector2 hitSide = collision.contacts[0].normal;
+
+            //Ángulo de colisión
+            float angle = Vector2.Angle(hitSide, Vector3.up);
+
+            //Colisión en el eje X
+            if (Mathf.Approximately(angle, 90))
             {
-                rbplayer.AddForce(new Vector2(0, 4), ForceMode2D.Impulse);
+                Vector3 side = Vector3.Cross(Vector3.forward, hitSide);
 
-                attack = false;
-                charging = agressive = true;
-            }
+                //Colisión frontal
+                if ((side.y < 0 && transform.localScale.x == 1) || (side.y > 0 && transform.localScale.x == -1))
+                {
+                    Debug.Log("a");
+                    //rbplayer.AddForce(new Vector2(0, 4), ForceMode2D.Impulse);
 
-            //Colisión trasera
-            else if ((side.y < 0 && transform.localScale.x == -1) || (side.y > 0 && transform.localScale.x == 1))
-            {
-                //right = Mathf.Sign(movPoints[i].transform.position.x - transform.position.x);
-                ChangeDirection();
-                attack = false;
-                charging = agressive = true;
-                //Turn(right);
-                //tempScale.x *= -1;
-                //Invoke("ChangeDirection", delayToChangeDirection);
-                i++;
+                    attack = false;
+                    charging = agressive = true;
+                }
+
+                //Colisión trasera
+                else if ((side.y < 0 && transform.localScale.x == -1) || (side.y > 0 && transform.localScale.x == 1))
+                {
+                    //right = Mathf.Sign(movPoints[i].transform.position.x - transform.position.x);
+                    ChangeDirection();
+                    attack = false;
+                    charging = agressive = true;
+                    //Turn(right);
+                    //tempScale.x *= -1;
+                    //Invoke("ChangeDirection", delayToChangeDirection);
+                    i++;
+                }
             }
         }
+        else
+        {
+
+        }
+        
     }
 
     private void OnCollisionExit2D(Collision2D collision)
