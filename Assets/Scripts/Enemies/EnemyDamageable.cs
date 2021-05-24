@@ -60,9 +60,17 @@ public class EnemyDamageable : MonoBehaviour
         //rb.AddForce(new Vector2(impulseAfterDamageX, impulseAfterDamageY));
         if (health <= 0)
         {
-            Instantiate(sangre, transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
-            SpawnPowerUp();
+            if (gameObject.GetComponent<Shield>() == null)
+            {
+                Instantiate(sangre, transform.position, Quaternion.identity);
+                SpawnPowerUp();
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
+            
         }
     }
     public void SpawnPowerUp()

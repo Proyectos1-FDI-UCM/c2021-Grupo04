@@ -161,7 +161,7 @@ public class Herropea : MonoBehaviour
             //Si además la bola ha sido lanzada por MaktFange, se queda clavada en la pared   
             
         }
-        else if (enemigo)
+        else if (enemigo && collision.GetComponent<Shield>() == null && collision.GetComponent<SWAT>() == null)
         {
             if (lanzamiento)
             {
@@ -171,9 +171,24 @@ public class Herropea : MonoBehaviour
             }
         }
 
+        
+
         if(clavado && !scriptFakeHerropea.IsColliderSet())
         {
             scriptFakeHerropea.SetCollider(true);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.GetComponent<Shield>() != null || collision.GetComponent<SWAT>() != null)
+        {
+            if (lanzamiento)
+            {
+                collision.GetComponent<EnemyDamageable>().GetDamage(damage);
+                lanzamiento = false;
+                agarrando = false;
+            }
         }
     }
 
