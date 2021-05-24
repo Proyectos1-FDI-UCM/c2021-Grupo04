@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shoot: 1
   coolingDownSecs: 1.5
-  distanceToShoot: 10
+  distanceToShoot: 15
   Player: {fileID: 5987134724130359092, guid: 900830ef84c8c1749bbe4741f1954146, type: 3}
   Policeman: {fileID: 4972793974569073940}
   copShoot: {fileID: 21300000, guid: 6e9b98d31fc75c049bebc0233dd39f5c, type: 3}
