@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class SkipCutscene : MonoBehaviour
 {
-
+    public float timeToSkip = 12f;
     void Start()
     {
-        Invoke("SkipScene", 12f);
+        Invoke("SkipScene", timeToSkip);
     }
 
     private void SkipScene()
