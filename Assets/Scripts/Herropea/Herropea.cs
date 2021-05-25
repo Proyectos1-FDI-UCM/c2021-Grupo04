@@ -188,6 +188,11 @@ public class Herropea : MonoBehaviour
                 collision.GetComponent<EnemyDamageable>().GetDamage(damage);
                 lanzamiento = false;
                 agarrando = false;
+                if (collision.GetComponent<SWAT>() != null && ((collision.transform.localScale.x > 0 && this.transform.position.x < collision.transform.position.x) 
+                    || (collision.transform.localScale.x < 0 && this.transform.position.x > collision.transform.position.x)))
+                {
+                    collision.GetComponent<SWAT>().ChangeDir();
+                }
             }
         }
     }

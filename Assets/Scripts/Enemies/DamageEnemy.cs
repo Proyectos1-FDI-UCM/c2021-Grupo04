@@ -20,21 +20,8 @@ public class DamageEnemy : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        shield = GetComponent<Shield>();
-
         HealthPlayer player = collision.GetComponent<HealthPlayer>();
-        if (swat != null)
-        {
-            if(shield != null && player != null)
-            {
-                player.LoseHearts(damage * 3);
-            }
-            else if(shield == null && player != null)
-            {
-                player.LoseHearts(damage * 2);
-            }
-        }
-        else if (preso != null)
+        if (preso != null)
         {
             if (player != null)
             {
@@ -51,6 +38,24 @@ public class DamageEnemy : MonoBehaviour
                 player.LoseHearts(damage);
             }
         }        
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        shield = GetComponent<Shield>();
+        Debug.Log("collision stay");
+        HealthPlayer player = collision.collider.GetComponent<HealthPlayer>();
+        if (swat != null)
+        {
+            if (shield != null && player != null)
+            {
+                player.LoseHearts(damage * 3);
+            }
+            else if (shield == null && player != null)
+            {
+                player.LoseHearts(damage * 2);
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

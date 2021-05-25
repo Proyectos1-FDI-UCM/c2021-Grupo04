@@ -55,6 +55,7 @@ public class EnemyDamageable : MonoBehaviour
     public void GetDamage(float damage)
     {
         health -= damage;
+        Debug.Log(health);
         color.CambiaColor();
         
         //rb.AddForce(new Vector2(impulseAfterDamageX, impulseAfterDamageY));
@@ -63,6 +64,7 @@ public class EnemyDamageable : MonoBehaviour
             if (gameObject.GetComponent<Shield>() == null)
             {
                 Instantiate(sangre, transform.position, Quaternion.identity);
+                Debug.Log("sangre");
                 SpawnPowerUp();
                 Destroy(this.gameObject);
             }
