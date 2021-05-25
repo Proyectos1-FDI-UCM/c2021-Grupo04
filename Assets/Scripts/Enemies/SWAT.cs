@@ -5,8 +5,6 @@ using UnityEngine;
 public class SWAT : MonoBehaviour
 {
     //Alejandro
-    [SerializeField] private Transform[] movPoints;
-    private int i = 0;
     public GameObject player;
     public GameObject parent;
     [SerializeField] private float enemyVelocity = 1f;
@@ -31,6 +29,7 @@ public class SWAT : MonoBehaviour
         rbplayer = player.GetComponent<Rigidbody2D>();
         iniScale = transform.localScale;
         playerController = GetComponent<PlayerController>();
+
     }
 
     void Update()
@@ -42,14 +41,20 @@ public class SWAT : MonoBehaviour
         //Movimiento
         if ((agressive == false && charging == false && attack == false))//distance
         {
-            parent.transform.GetChild(1).GetChild(0).gameObject.SetActive(false);
-            parent.transform.GetChild(1).GetChild(2).gameObject.SetActive(true);
-            if (((i == 0 && transform.localScale.x == -1) || (i == 1 && transform.localScale.x == 1)) && (distance > 4 ||
+            parent.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
+            parent.transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
+            if (((enemyVelocity > 0 && transform.localScale.x == -1) || (enemyVelocity < 0 && transform.localScale.x == 1)) && (distance > 4 ||
                 player.transform.position.y > transform.position.y + offset || player.transform.position.y < transform.position.y - offset))
             {
                 ChangeDirection();
             }
-            transform.position = Vector2.MoveTowards(transform.position, movPoints[i].transform.position, enemyVelocity * Time.deltaTime);
+            //Solo cambia la velocidad del rb cuando no coincide con enemyVelocity
+            if(rb.velocity.x != enemyVelocity)
+            {
+                rb.velocity = new Vector2(enemyVelocity, 0);
+            }
+
+            //transform.position = Vector2.MoveTowards(transform.position, movPoints[i].transform.position, enemyVelocity * Time.deltaTime);
 
             if (player.transform.position.y <= transform.position.y + offset && player.transform.position.y >= transform.position.y - offset)
             {
@@ -67,7 +72,9 @@ public class SWAT : MonoBehaviour
         //Carga 
         if (agressive == true && charging == true && attack == false)
         {
-            transform.position = transform.position;
+            rb.velocity = new Vector2(0, 0);
+
+            //transform.position = transform.position;
 
             /*if (transform.localScale.x == 1 && player.transform.position.x < transform.position.x && distance < 4)
             {
@@ -84,9 +91,10 @@ public class SWAT : MonoBehaviour
         //Ataque
         if (attack == true && charging == false && agressive == false)// && distance
         {
-            parent.transform.GetChild(1).GetChild(0).gameObject.SetActive(false);
-            parent.transform.GetChild(1).GetChild(2).gameObject.SetActive(true);
-            transform.position = Vector2.MoveTowards(transform.position, playerPos, enemyVelocity * 3 * Time.deltaTime);
+            parent.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
+            parent.transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
+            //rb.velocity = new Vector2(0, 0);
+            transform.position = Vector2.MoveTowards(transform.position, playerPos, Mathf.Abs(enemyVelocity) * 3 * Time.deltaTime);
             if ((transform.localScale.x == 1 && transform.position.x >= playerPos.x) || (transform.localScale.x == -1 && transform.position.x <= playerPos.x))
             {
                 attack = false;
@@ -117,7 +125,7 @@ public class SWAT : MonoBehaviour
             }
         }
 
-        if (Vector2.Distance(transform.position, movPoints[i].transform.position) < 0.1f)
+        /*if (Vector2.Distance(transform.position, movPoints[i].transform.position) < 0.1f)
         {
             if (movPoints[i] != movPoints[movPoints.Length - 1])
             {
@@ -130,14 +138,14 @@ public class SWAT : MonoBehaviour
             right = Mathf.Sign(movPoints[i].transform.position.x - transform.position.x);
             //Turn(right);
             ChangeDirection();
-        }
+        }*/
     }
 
     private void Charge()
     {
         //Cambio de sprites
-        parent.transform.GetChild(1).GetChild(2).gameObject.SetActive(false);
-        parent.transform.GetChild(1).GetChild(0).gameObject.SetActive(true);
+        parent.transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
+        parent.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
         Instantiate(swatRadio);
         agressive = charging = true;
         attack = false;
@@ -186,47 +194,58 @@ public class SWAT : MonoBehaviour
             transform.right = Vector3.right;
         }*/
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+        enemyVelocity *= -1;
         CancelInvoke();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        parent.transform.GetChild(1).GetChild(2).gameObject.SetActive(false);
-        parent.transform.GetChild(1).GetChild(0).gameObject.SetActive(true);
-
-        //Puntos específicos de colisión
-        Vector2 hitSide = collision.contacts[0].normal;
-
-        //Ángulo de colisión
-        float angle = Vector2.Angle(hitSide, Vector3.up);
-
-        //Colisión en el eje X
-        if (Mathf.Approximately(angle, 90))
+        Debug.Log("colision");
+        if(collision.gameObject.GetComponent<PlayerController>() != null)
         {
-            Vector3 side = Vector3.Cross(Vector3.forward, hitSide);
+            parent.transform.GetChild(1).GetChild(2).gameObject.SetActive(false);
+            parent.transform.GetChild(1).GetChild(0).gameObject.SetActive(true);
 
-            //Colisión frontal
-            if ((side.y < 0 && transform.localScale.x == 1) || (side.y > 0 && transform.localScale.x == -1))
+            //Puntos específicos de colisión
+            Vector2 hitSide = collision.contacts[0].normal;
+
+            //Ángulo de colisión
+            float angle = Vector2.Angle(hitSide, Vector3.up);
+
+            //Colisión en el eje X
+            if (Mathf.Approximately(angle, 90))
             {
-                rbplayer.AddForce(new Vector2(0, 4), ForceMode2D.Impulse);
+                Vector3 side = Vector3.Cross(Vector3.forward, hitSide);
 
-                attack = false;
-                charging = agressive = true;
-            }
+                //Colisión frontal
+                if ((side.y < 0 && transform.localScale.x == 1) || (side.y > 0 && transform.localScale.x == -1))
+                {
+                    //rbplayer.AddForce(new Vector2(0, 4), ForceMode2D.Impulse);
 
-            //Colisión trasera
-            else if ((side.y < 0 && transform.localScale.x == -1) || (side.y > 0 && transform.localScale.x == 1))
-            {
-                //right = Mathf.Sign(movPoints[i].transform.position.x - transform.position.x);
-                ChangeDirection();
-                attack = false;
-                charging = agressive = true;
-                //Turn(right);
-                //tempScale.x *= -1;
-                //Invoke("ChangeDirection", delayToChangeDirection);
-                i++;
+                    attack = false;
+                    charging = agressive = true;
+                }
+
+                //Colisión trasera
+                else if ((side.y < 0 && transform.localScale.x == -1) || (side.y > 0 && transform.localScale.x == 1))
+                {
+                    //right = Mathf.Sign(movPoints[i].transform.position.x - transform.position.x);
+                    ChangeDirection();
+                    attack = false;
+                    charging = agressive = true;
+
+                    //Turn(right);
+                    //tempScale.x *= -1;
+                    //Invoke("ChangeDirection", delayToChangeDirection);
+                    //i++;
+                }
             }
         }
+        else
+        {
+            ChangeDirection();
+        }
+        
     }
 
     private void OnCollisionExit2D(Collision2D collision)

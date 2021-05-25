@@ -1,37 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &759271278490852337
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7743208885871137908}
-  m_Layer: 13
-  m_Name: Patrol
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7743208885871137908
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 759271278490852337}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2.7651098}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 8654544001215150697}
-  - {fileID: 72195518351619786}
-  m_Father: {fileID: 3734703843379849462}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1653741617156348582
 GameObject:
   m_ObjectHideFlags: 0
@@ -48,7 +16,7 @@ GameObject:
   - component: {fileID: 6909591595862229347}
   - component: {fileID: 5140022285467533188}
   - component: {fileID: 7474841423814592418}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +150,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653741617156348582}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -207,37 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73b789c48f4a55f4fb2bc57977d8ca43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cambiocolor: {r: 0.37254903, g: 0.37254903, b: 0.37254903, a: 1}
---- !u!1 &1656998546946495323
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8654544001215150697}
-  m_Layer: 13
-  m_Name: Origin
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8654544001215150697
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1656998546946495323}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7743208885871137908}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  cambiocolor: {r: 0.18867922, g: 0.10946955, b: 0.10946955, a: 1}
 --- !u!1 &2574200901152047686
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,13 +187,13 @@ GameObject:
   - component: {fileID: 179833130301561575}
   - component: {fileID: 1304313786287702221}
   - component: {fileID: 624177662130444076}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Stop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &179833130301561575
 Transform:
   m_ObjectHideFlags: 0
@@ -333,36 +271,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cambiocolor: {r: 1, g: 0, b: 0, a: 1}
---- !u!1 &3841309097439056124
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 72195518351619786}
-  m_Layer: 13
-  m_Name: Destination
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &72195518351619786
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3841309097439056124}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7743208885871137908}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4377605475020251156
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,7 +280,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3734703843379849462}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SWAT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -390,7 +298,6 @@ Transform:
   m_LocalPosition: {x: 4, y: -1.2, z: -2.7651098}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7743208885871137908}
   - {fileID: 5265882451151113406}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -405,7 +312,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7841455687778409553}
   - component: {fileID: 3893423867607277176}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: colliderSWAT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -466,7 +373,7 @@ GameObject:
   - component: {fileID: 8094391382089319800}
   - component: {fileID: 8512826095101119413}
   - component: {fileID: 1649496848549900782}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SWAT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -489,7 +396,7 @@ Transform:
   - {fileID: 3623181184405153733}
   - {fileID: 7841455687778409553}
   m_Father: {fileID: 3734703843379849462}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &248886307331598337
 BoxCollider2D:
@@ -515,7 +422,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7876634, y: 1.558387}
+  m_Size: {x: 0.7876634, y: 1.4}
   m_EdgeRadius: 0
 --- !u!50 &5289677477567112844
 Rigidbody2D:
@@ -527,7 +434,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 5488147978478500811}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 100
   m_LinearDrag: 0
@@ -537,7 +444,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 5
+  m_Constraints: 4
 --- !u!114 &8094391382089319800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -550,11 +457,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 233326ce751a9084d9c72fee884bc9df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movPoints:
-  - {fileID: 0}
-  - {fileID: 0}
   player: {fileID: 0}
-  parent: {fileID: 0}
+  parent: {fileID: 4377605475020251156}
   enemyVelocity: 1.5
   delayToChangeDirection: 1
   distance: 0
@@ -608,7 +512,7 @@ GameObject:
   - component: {fileID: 3623181184405153733}
   - component: {fileID: 6717528742223225818}
   - component: {fileID: 2561115813546923512}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Walk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
