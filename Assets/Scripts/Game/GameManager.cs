@@ -95,10 +95,9 @@ public class GameManager : MonoBehaviour
             pum.ActivatePowerUp(newPowerUp);
             myPowerUp = powerUp.Empty;
         }
-           
-        Debug.Log("g");
-        
     }
+
+
     public bool IsEmpty()
     {
         
