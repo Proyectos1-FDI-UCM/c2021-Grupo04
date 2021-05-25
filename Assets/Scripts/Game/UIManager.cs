@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
     public Image heartsIconPrefab;
     public Image leftHeartIcon;
     public Image rightHeartIcon;
+    private PauseMenu pauseMenu;
    
     void Start()
     {
@@ -70,6 +71,11 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void ActivateGOPanel()
+    {
+        pauseMenu = GetComponent<PauseMenu>();
+        pauseMenu.ActivateGameOverPanel();
+    }
    
 
     public void PanelRefesco(bool active)

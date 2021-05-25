@@ -99,10 +99,7 @@ public class GameManager : MonoBehaviour
 
 
     public bool IsEmpty()
-    {
-        
-      
-            
+    {          
         return (myPowerUp==powerUp.Empty);
     }
 
@@ -146,16 +143,32 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void ChangeScene(string sceneName)
+    public void ChangeScene(int scene)
     {
-        SceneManager.LoadScene(sceneName);
         //Activamos el power up para vaciar su contenido
         ActivatePowerUp();
+        SceneManager.LoadScene(scene);     
+    }
+
+    //carga la siguiente escena de la Build
+    public void ChargeNextScene()
+    {
+        ChangeScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void ChargeMenu()
     {
-        ChangeScene(menu);
+        ChangeScene(0);
+    }
+
+    public void ActivateGameOverPanel()
+    {
+        theUIManager.ActivateGOPanel();
+    }
+
+    public void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     //para detener ejecución de Unity

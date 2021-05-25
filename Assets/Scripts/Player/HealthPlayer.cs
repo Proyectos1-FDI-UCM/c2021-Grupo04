@@ -49,14 +49,13 @@ public class HealthPlayer : MonoBehaviour
 
         else if (health <= 0)
         {
-            GameManager.GetInstance().ChargeMenu();
+            GameManager.GetInstance().ActivateGameOverPanel();
             
-            
-
         }
 
 
     }
+
     public void AddLife()
     {
         health++;
