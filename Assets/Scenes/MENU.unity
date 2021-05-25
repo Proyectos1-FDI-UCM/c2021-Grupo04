@@ -351,8 +351,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1687643710}
-        m_MethodName: ActivateMenu
+      - m_Target: {fileID: 95405583585237999, guid: 61b186e312d39f64aba643ae958e90fe,
+          type: 3}
+        m_MethodName: ChargeNextScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1783,7 +1784,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SELECT ZONE
+  m_Text: 'PLAY GAME
+
+'
 --- !u!222 &692040315
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5861,7 +5864,7 @@ GameObject:
   - component: {fileID: 2122809839}
   - component: {fileID: 2122809838}
   m_Layer: 5
-  m_Name: Background
+  m_Name: MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
