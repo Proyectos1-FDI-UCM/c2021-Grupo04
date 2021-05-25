@@ -454,8 +454,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 395.00015, y: 500.4169}
+  m_AnchoredPosition: {x: -5, y: -136}
+  m_SizeDelta: {x: 647.8347, y: 994.1044}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1754879005
 MonoBehaviour:
@@ -489,9 +489,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "PROGRAMMERS\n\nMiguel Gonz\xE1lez P\xE9rez\n\nAdri\xE1n Montero Castrillo\n\nManuel
-    Prada M\xEDnguez\n\nEduardo de Orellana S\xE1nchez\n\nAlejandro Segarra Chac\xF3n\n\n\nSPECIAL
-    THANKS\n"
+  m_Text: "MAKT FANGE\n\nPROGRAMMERS\n\nMiguel Gonz\xE1lez P\xE9rez\n\nAdri\xE1n
+    Montero Castrillo\n\nManuel Prada M\xEDnguez\n\nEduardo de Orellana S\xE1nchez\n\nAlejandro
+    Segarra Chac\xF3n\n\n\nSPECIAL THANKS\n\nadarshs.itch.io\n\nopengameart.org\n\nzapsplat.com\n\ncupheadgame.com\n\nPONETI\n\nBLACKSPIRE\n\nZHIVKO
+    MINCHEV\n\nANGELINA AVGUSTOVA\n\nANSIMUZ\n\nGuillermo J\xEDmenez D\xEDaz\n\nJes\xFAs
+    Eugenio Luengo Rico\n\n"
 --- !u!222 &1754879006
 CanvasRenderer:
   m_ObjectHideFlags: 0

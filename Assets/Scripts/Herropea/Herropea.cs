@@ -11,22 +11,28 @@ public class Herropea : MonoBehaviour
     public float damage = 15;
     public float emergeVelocity = 1;
     public float velocidadRecogida = 0.3f;
+
     public Transform pickUpPosition;
     public Transform chainZone;
     public Transform scenario;
+
     public Rigidbody2D rbMakt;
-    public UnityEngine.GameObject maktFange;
-    public UnityEngine.GameObject recogerCadena;
-    public UnityEngine.GameObject soltarHerropea;
+
+    public GameObject maktFange;
+    public GameObject recogerCadena;
+    public GameObject soltarHerropea;
 
     [SerializeField] private float distance; //Distancia bola jugador
+
     private bool agarrando = false; //Si Makt Fange esta agarrando la bola
     private bool flotando = true; //True si es afectada por la gravedad
     private bool lanzamiento = false; //Si la bola está viajando por un lanzamento de Makt Fange
     private bool clavado = false; //True cuando hay una herropea falsa instanciada a la que subirse
     private bool wallContact = false;
+
     private PlayerController playerController;
     private DestroyFakeHerropea scriptFakeHerropea;
+
     //Variables para inhibilitar el movimiento de Makt Fange
     private bool dontMoveRight = false;
     private bool dontMoveLeft = false;
@@ -153,8 +159,7 @@ public class Herropea : MonoBehaviour
             {                
                 clavado = true;                
                 lanzamiento = false;
-                agarrando = false;
-                flotando = false;              
+                agarrando = false;            
             }
             flotando = false; //Deja de afectarle la gravedad
             Debug.Log("Suelo");
