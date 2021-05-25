@@ -8,6 +8,7 @@ public class SWAT : MonoBehaviour
     public GameObject player;
     public GameObject parent;
     public GameObject swatRadio;
+    public float gravity = 5f;
 
     [SerializeField] private float enemyVelocity = 1f;
     [SerializeField] private float delayToChangeDirection = 1f;
@@ -19,6 +20,7 @@ public class SWAT : MonoBehaviour
     [SerializeField] bool charging = false;
     [SerializeField] bool attack = false;
     [SerializeField] bool agressive = false;
+    [SerializeField] bool flotando = true;
 
     Vector2 playerPos;
     
@@ -106,6 +108,11 @@ public class SWAT : MonoBehaviour
         }
     }
 
+    public bool IsCharging()
+    {
+        return charging;
+    }
+
     //Carga
     private void Charge()
     {
@@ -134,7 +141,7 @@ public class SWAT : MonoBehaviour
     }
 
     //Cambio de dirección
-    private void ChangeDirection()
+    public void ChangeDirection()
     {
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         enemyVelocity *= -1;
@@ -183,15 +190,28 @@ public class SWAT : MonoBehaviour
         }
 
         //Si colisiona con las paredes
-        else
+        else if (collision.gameObject.GetComponent<CompositeCollider2D>() != null)
         {
             ChangeDirection();
         }
         
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if(collision.gameObject.GetComponent<CompositeCollider2D>() && flotando)
+        {
+            flotando = false;
+        }
+    }
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         attack = charging = agressive = false;
+
+        if (collision.gameObject.GetComponent<CompositeCollider2D>() && flotando)
+        {
+            flotando = true;
+        }
     }
 }

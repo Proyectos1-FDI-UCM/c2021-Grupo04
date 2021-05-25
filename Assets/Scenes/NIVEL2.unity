@@ -80014,6 +80014,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SWAT
       objectReference: {fileID: 0}
+    - target: {fileID: 8094391382089319800, guid: dce0be7cb72554147b5155fec1e9c78a,
+        type: 3}
+      propertyPath: gravity
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8654544001215150697, guid: dce0be7cb72554147b5155fec1e9c78a,
         type: 3}
       propertyPath: m_LocalPosition.x

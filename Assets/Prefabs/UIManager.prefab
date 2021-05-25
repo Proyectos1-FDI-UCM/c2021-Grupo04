@@ -2411,7 +2411,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 26.600037, y: -28.100037}
+  m_AnchoredPosition: {x: 26.600098, y: -28.100037}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3686389166051856599
@@ -2447,7 +2447,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 26.600037, y: -28.100037}
+  m_AnchoredPosition: {x: 26.600098, y: -28.100037}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3831032159660251038
@@ -5584,7 +5584,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 26.600037, y: -28.100037}
+  m_AnchoredPosition: {x: 26.600098, y: -28.100037}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7656807207111205249
@@ -5735,7 +5735,7 @@ MonoBehaviour:
   surePanel: {fileID: 1002812170419738526}
   selectOptionsMenu: {fileID: 1209556910050077858}
   selectControlsPanel: {fileID: 7120291557910866064}
-  gameOverPanel: {fileID: 0}
+  gameOverPanel: {fileID: 8585594615942380733}
 --- !u!1 &7974850017214189269
 GameObject:
   m_ObjectHideFlags: 0
@@ -6101,7 +6101,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 26.200012, y: -28.600037}
+  m_AnchoredPosition: {x: 26.199951, y: -28.600037}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8585594615942380733
