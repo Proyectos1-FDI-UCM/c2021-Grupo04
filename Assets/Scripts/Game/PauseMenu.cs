@@ -10,9 +10,11 @@ public class PauseMenu : MonoBehaviour
     public GameObject menuPanel, surePanel;
     public GameObject selectOptionsMenu;
     public GameObject selectControlsPanel;
+    public GameObject gameOverPanel;
     void Start()
     {
         ContinueGame();
+        gameOverPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -34,6 +36,16 @@ public class PauseMenu : MonoBehaviour
                 DontQuit();
             }
         }
+    }
+
+    /// <summary>
+    /// Hace visible el panel de Game Over que permite 
+    /// reiniciar nivel o volver al menu principal
+    /// </summary>
+    public void ActivateGameOverPanel()
+    {
+        gameOverPanel.SetActive(true);
+        PauseGameTime();
     }
 
     public void PauseGameTime()

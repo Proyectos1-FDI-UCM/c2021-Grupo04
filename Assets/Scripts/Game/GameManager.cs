@@ -100,10 +100,7 @@ public class GameManager : MonoBehaviour
         
     }
     public bool IsEmpty()
-    {
-        
-      
-            
+    {          
         return (myPowerUp==powerUp.Empty);
     }
 
@@ -157,6 +154,16 @@ public class GameManager : MonoBehaviour
     public void ChargeMenu()
     {
         ChangeScene(menu);
+    }
+
+    public void ActivateGameOverPanel()
+    {
+        theUIManager.ActivateGOPanel();
+    }
+
+    public void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     //para detener ejecución de Unity

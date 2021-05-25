@@ -4413,6 +4413,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &827143941 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8585594615942380733, guid: fc44c54606ac13e49ad5d9607f86234e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1505442457}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &846864582
 GameObject:
   m_ObjectHideFlags: 0
@@ -79205,6 +79211,11 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.4538982
       objectReference: {fileID: 0}
+    - target: {fileID: 3820626849450577263, guid: fc44c54606ac13e49ad5d9607f86234e,
+        type: 3}
+      propertyPath: gameOverPanel
+      value: 
+      objectReference: {fileID: 827143941}
     - target: {fileID: 4253863618516074676, guid: fc44c54606ac13e49ad5d9607f86234e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
