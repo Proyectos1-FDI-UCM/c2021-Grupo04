@@ -17,7 +17,7 @@ public class SWATGroundCheck : MonoBehaviour
         {
             if (!swat.IsCharging())
             {
-                swat.ChangeDirection();
+                swat.ChangeDir();
             }
         }
     }

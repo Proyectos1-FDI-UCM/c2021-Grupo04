@@ -18,7 +18,7 @@ public class EnemyDamageable : MonoBehaviour
     public UnityEngine.GameObject refresco;
     public int probDrop = 7;
 
-    private float health;
+    [SerializeField] public float health;
     public GameObject sangre;
     Rigidbody2D rb;
     ChangeColor color;
@@ -64,9 +64,9 @@ public class EnemyDamageable : MonoBehaviour
             if (gameObject.GetComponent<Shield>() == null)
             {
                 Instantiate(sangre, transform.position, Quaternion.identity);
-                Debug.Log("sangre");
                 SpawnPowerUp();
-                Destroy(this.gameObject);
+                Destroy(gameObject);
+                Debug.Log("a");
             }
             else
             {
