@@ -158,7 +158,7 @@ public class GameManager : MonoBehaviour
 
     public void ChargeMenu()
     {
-        ChangeScene(0);
+        ChangeScene(1);
     }
 
     public void ActivateGameOverPanel()
