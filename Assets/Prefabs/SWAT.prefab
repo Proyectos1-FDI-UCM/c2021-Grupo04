@@ -80,7 +80,6 @@ GameObject:
   m_Component:
   - component: {fileID: 926980684}
   - component: {fileID: 926980685}
-  - component: {fileID: 1229953576}
   - component: {fileID: 1118070501}
   m_Layer: 16
   m_Name: WallCheck
@@ -129,18 +128,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.06510162, y: 1.1153007}
   m_EdgeRadius: 0
---- !u!114 &1229953576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 926980683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0061a795dcfb99347bbe80b3810ecced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1118070501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,6 +269,7 @@ MonoBehaviour:
   sandwich: {fileID: 0}
   refresco: {fileID: 0}
   probDrop: 0
+  health: 0
   sangre: {fileID: 0}
 --- !u!114 &6909591595862229347
 MonoBehaviour:
@@ -471,7 +459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7841455687778409553
 Transform:
   m_ObjectHideFlags: 0
@@ -646,6 +634,7 @@ MonoBehaviour:
   sandwich: {fileID: 0}
   refresco: {fileID: 0}
   probDrop: 7
+  health: 0
   sangre: {fileID: 5139910120628629401, guid: 4e5f8ab7f97ecdf47ba88821ad3ab55f, type: 3}
 --- !u!114 &1649496848549900782
 MonoBehaviour:

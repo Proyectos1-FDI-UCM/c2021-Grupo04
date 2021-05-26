@@ -14,7 +14,7 @@ public class DamageEnemy : MonoBehaviour
 
     private void Start()
     {
-        swat = GetComponent<SWAT>();
+        swat = GetComponentInChildren<SWAT>();
         preso = GetComponentInParent<NewPreso>();
     }
 
@@ -42,7 +42,7 @@ public class DamageEnemy : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        shield = GetComponent<Shield>();
+        shield = GetComponentInChildren<Shield>();
         Debug.Log("collision stay");
         HealthPlayer player = collision.collider.GetComponent<HealthPlayer>();
         if (swat != null)
@@ -55,6 +55,7 @@ public class DamageEnemy : MonoBehaviour
             {
                 player.LoseHearts(damage * 2);
             }
+            Debug.Log(damage);
         }
     }
 
