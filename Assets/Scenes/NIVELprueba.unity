@@ -4295,11 +4295,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SWAT
       objectReference: {fileID: 0}
-    - target: {fileID: 4688270042409095368, guid: dce0be7cb72554147b5155fec1e9c78a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8094391382089319800, guid: dce0be7cb72554147b5155fec1e9c78a,
         type: 3}
       propertyPath: player

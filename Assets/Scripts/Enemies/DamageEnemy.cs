@@ -49,13 +49,12 @@ public class DamageEnemy : MonoBehaviour
         {
             if (shield != null && player != null)
             {
-                player.LoseHearts(damage * 3);
+                player.LoseHearts(damage);
             }
             else if (shield == null && player != null)
             {
-                player.LoseHearts(damage * 2);
+                player.LoseHearts(damage);
             }
-            Debug.Log(damage);
         }
     }
 
