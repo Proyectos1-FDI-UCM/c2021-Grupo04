@@ -89,8 +89,7 @@ public class Herropea : MonoBehaviour
         }
         //El jugador lanza si está agarrando y pulsa ctrl
         else if (Input.GetButtonDown("Fire1") && agarrando)
-        {
-            
+        {           
             Debug.Log("Lanzamiento");                   
             lanzamiento = true;
             transform.SetParent(scenario);
@@ -119,15 +118,20 @@ public class Herropea : MonoBehaviour
         if (scriptFakeHerropea.IsColliderSet() && !clavado)
         {
             Debug.LogWarning("Bug del collider FakeHerropea salvado");
-            scriptFakeHerropea.SetCollider(false);
+            scriptFakeHerropea.DisableCollider();
         }
 
         CheckIfPlayerCanMove();
 
-        //Comprobamos que la herropea se clave
-        if (clavado && !scriptFakeHerropea.IsColliderSet())
+        if(wallContact && !clavado)
         {
-            scriptFakeHerropea.SetCollider(true);
+            clavado = true;
+        }
+
+        //Comprobamos que la herropea se clave
+        if (clavado)
+        {
+            scriptFakeHerropea.SetCollider();
         }
     }
 
@@ -142,7 +146,7 @@ public class Herropea : MonoBehaviour
             flotando = true;
             if (clavado)
             {
-                scriptFakeHerropea.SetCollider(false);
+                scriptFakeHerropea.DisableCollider();
                 clavado = false;
             }           
         }      
@@ -176,11 +180,9 @@ public class Herropea : MonoBehaviour
             }
         }
 
-        
-
-        if(clavado && !scriptFakeHerropea.IsColliderSet())
+        if(clavado)
         {
-            scriptFakeHerropea.SetCollider(true);
+            scriptFakeHerropea.SetCollider();
         }
     }
 

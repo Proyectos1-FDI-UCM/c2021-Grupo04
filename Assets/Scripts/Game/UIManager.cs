@@ -113,10 +113,6 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void DisableInfoText()
-    {
-        panelInfo.SetActive(false);
-    }
 }
 
 

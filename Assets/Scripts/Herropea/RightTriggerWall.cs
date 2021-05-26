@@ -1,4 +1,4 @@
-﻿//Trigger del lado dereh de la herropea
+﻿//Trigger del lado derecha de la herropea
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +13,7 @@ public class RightTriggerWall : MonoBehaviour
         herropea = GetComponentInParent<Herropea>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.GetComponent<CompositeCollider2D>() != null)
         {

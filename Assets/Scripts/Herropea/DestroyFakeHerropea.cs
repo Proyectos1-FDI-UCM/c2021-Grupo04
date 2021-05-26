@@ -12,9 +12,14 @@ public class DestroyFakeHerropea : MonoBehaviour
         transform.localPosition = new Vector3(0, 0, 0);
     }
 
-    public void SetCollider(bool collisionable)
+    public void SetCollider()
     {
-        circleCollider.enabled = collisionable;
+        circleCollider.enabled = true;        
+    }
+
+    public void DisableCollider()
+    {
+        circleCollider.enabled = false;
     }
 
     /// <summary>

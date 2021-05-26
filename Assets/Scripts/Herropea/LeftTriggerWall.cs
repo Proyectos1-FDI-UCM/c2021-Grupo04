@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿//Trigger del lado izquierdo de la herropea
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,11 +13,11 @@ public class LeftTriggerWall : MonoBehaviour
         herropea = GetComponentInParent<Herropea>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.GetComponent<CompositeCollider2D>() != null)
         {
-            //Avisa a Herropea de que está en contacto con ningún muro
+            //Avisa a Herropea de que está en contacto con ùn muro
             herropea.SetWallContact(true);
             herropea.DontMoveLeft();
         }
