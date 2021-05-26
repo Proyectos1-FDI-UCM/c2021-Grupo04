@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CutscenePrueba.unity
     guid: 4a34e6ea37cb67742987d968c0849719
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/NIVEL1FINAL.unity
     guid: 261440f679308614aabc14012d38422e
   - enabled: 1
