@@ -19,9 +19,13 @@ Descarga el juego en nuestra página de itch.io mencionada anteriormente. Extrae
 
 ## DEVELOPERS
 Adrián Montero Castrillo
+
 Miguel González Pérez
+
 Manuel Prada Mínguez
+
 Eduardo de Orellana Sánchez
+
 Alejandro Segarra Chacón
 
 
