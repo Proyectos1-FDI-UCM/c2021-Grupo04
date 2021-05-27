@@ -26,14 +26,14 @@ public class UIManager : MonoBehaviour
         GameManager.GetInstance().SetUIManager(this);
         Invoke("DisableInfoText", 8f);
     }
-
+//para pintar los corazones
     public void DrawHearts(int numHearts)
     {
         heartsLeft = numHearts;
         
         for (int cont=0; cont < numHearts;cont++)
         {
-            if (cont % 2 != 0)
+            if (cont % 2 != 0) //si las vidas no son pares, instanciamos mitad derecha, si son pares, la mitad izquierda
             {
                 Instantiate(rightHeartIcon, panelHearts);
             }
@@ -45,6 +45,7 @@ public class UIManager : MonoBehaviour
             
         }
     }
+    //método auxiliar para el sándwich
     public void DrawHeartBySandwich()
     {
         if (heartsLeft % 2 != 0)
@@ -57,9 +58,10 @@ public class UIManager : MonoBehaviour
         }
         heartsLeft++;
     }
-
+    //para borrar corazones
     public void RemoveHeart()
     {
+        //si seguimos teniendo corazones, borramos el que está más a la derecha en panel hearts
         if (heartsLeft >= 0)
         {
             if (panelHearts != null)
@@ -77,7 +79,7 @@ public class UIManager : MonoBehaviour
         pauseMenu.ActivateGameOverPanel();
     }
    
-
+    //relativo a inventario
     public void PanelRefesco(bool active)
     {
         if (active)
