@@ -153,6 +153,8 @@ public class GameManager : MonoBehaviour
     //carga la siguiente escena de la Build
     public void ChargeNextScene()
     {
+        //Activamos el power up para vaciar su contenido
+        ActivatePowerUp();
         ChangeScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

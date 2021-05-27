@@ -339,7 +339,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 12
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -383,7 +383,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: eb8a9e92109d9df40b668eac04219287, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -417,6 +417,7 @@ MonoBehaviour:
   refresco: {fileID: 8606084057748724069, guid: a62a4558eab982e4f92610d92c6fd981,
     type: 3}
   probDrop: 7
+  health: 0
   sangre: {fileID: 5139910120628629401, guid: 4e5f8ab7f97ecdf47ba88821ad3ab55f, type: 3}
 --- !u!61 &8931294987062293258
 BoxCollider2D:

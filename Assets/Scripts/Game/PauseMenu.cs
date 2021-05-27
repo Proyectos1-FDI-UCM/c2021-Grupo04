@@ -76,10 +76,6 @@ public class PauseMenu : MonoBehaviour
         surePanel.SetActive(false);
     }
 
-    public void GoBackToMainMenu()
-    {
-        GameManager.GetInstance().ChargeMenu();
-    }
     public void OpenOptionsMenu()
     {
         selectOptionsMenu.SetActive(true);
