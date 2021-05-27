@@ -120,11 +120,12 @@ public class GameManager : MonoBehaviour
         
     }
 
+    //Activamos power up para segurar que se vacía entre escenas
     public void ChangeScene(int scene)
     {
         //Activamos el power up para vaciar su contenido
         ActivatePowerUp();
-        SceneManager.LoadScene(scene);     
+        SceneManager.LoadScene(scene);
     }
 
     //carga la siguiente escena de la Build
@@ -137,17 +138,20 @@ public class GameManager : MonoBehaviour
 
     public void ChargeMenu()
     {
+        ActivatePowerUp();
         ChangeScene(1);
     }
 
     public void ActivateGameOverPanel()
     {
+        ActivatePowerUp();
         theUIManager.ActivateGOPanel();
     }
 
     public void RestartScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        ActivatePowerUp();
+        ChangeScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     //para detener ejecución de Unity

@@ -25,6 +25,8 @@ public class PowerUpManager : MonoBehaviour
     //Adrián y Manu
     MonoBehaviour currentPowerUp;
     public AudioSource soundPowerUp;
+
+   
     public void ActivatePowerUp(string powerUpName)
     {
 

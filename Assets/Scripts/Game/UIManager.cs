@@ -12,7 +12,6 @@ public class UIManager : MonoBehaviour
     public GameObject panelRefresco;
     public GameObject panelSandwich;
     public GameObject panelWhetstone;
-    public GameObject panelInfo;
     //relativo a corazones
     private int heartsLeft;
     public RectTransform panelHearts;
