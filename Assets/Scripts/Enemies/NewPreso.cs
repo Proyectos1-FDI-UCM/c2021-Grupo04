@@ -13,25 +13,26 @@ public class NewPreso : MonoBehaviour
     int movementDir = 1;
     private Herropea scriptHerropea;
 
-    // Start is called before the first frame update
     void Start()
     {
 
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
     void FixedUpdate()
     {
+        //estados del preso
 
+        //si está pacifico se mueve de manera normal
         if (peacefull)
         {
             rb.velocity = new Vector2(movementDir * velocity, 0);
         }
+        // si ha visto al jugador lo perseguira indefinidamente
         if (follow)
         {
             if (objetivo.position.x < transform.position.x)
@@ -39,22 +40,26 @@ public class NewPreso : MonoBehaviour
                 transform.right = Vector2.left;
                 rb.velocity = new Vector2(-velocity, rb.velocity.y);
             }
+
             else
             {
                 transform.right = Vector2.right;
-                rb.velocity = new Vector2(velocity, 0);
+                rb.velocity = new Vector2(velocity, rb.velocity.y);
             }
 
         }
 
     }
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // mejora del movimiento cuando el preso esta en contacto con el jugador
         if (collision.GetComponent<PlayerController>())
         {
             follow = false;
 
         }
+        // deteccion de la herropea
         else if (collision.GetComponent<Herropea>())
         {
             scriptHerropea = collision.GetComponent<Herropea>();
@@ -73,6 +78,7 @@ public class NewPreso : MonoBehaviour
             follow = true;
         }
     }
+    // metodo para cambiar la dirección de movimiento
     public void ChangeDir()
     {
         movementDir = movementDir * -1;

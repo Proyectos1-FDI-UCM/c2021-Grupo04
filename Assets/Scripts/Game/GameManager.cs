@@ -52,72 +52,49 @@ public class GameManager : MonoBehaviour
         theUIManager.DrawHeartBySandwich();
     }
 
+    // Metodo para cambiar el powerUp activo del inventario
     public void ChangePowerUp(string newPowerUp, PowerUpManager pum1)
     {
         pum = pum1;
+        // si el powerUp está vacío se selecciona el nuevo y se muestra en el hud
         if (myPowerUp == powerUp.Empty)
         {
             if (newPowerUp == "IncreaseDamage")
             {
                 myPowerUp = powerUp.IncreaseDamage;
-               
-
             }
             else if (newPowerUp == "Sandwich")
             {
-                myPowerUp = powerUp.Sandwich;
-                
+                myPowerUp = powerUp.Sandwich;   
             }
             else if (newPowerUp == "ExtraVelocity")
             {
-                myPowerUp = powerUp.ExtraVelocity;
-                
+                myPowerUp = powerUp.ExtraVelocity;                
             }
             else Debug.Log("nombre erroneo de power up");
             PowerUpAppears(true);
         }
-        else Debug.Log("no hay hueco en el inventario");
-
-        Debug.Log(myPowerUp);
     }
+    // metodo que llama al powerUp manager para activar el powerUp
     public void ActivatePowerUp()
     {
-        string newPowerUp = "Empty";
-        if (myPowerUp == powerUp.Empty)
-        {
-            Debug.Log("no hay power up");
-        }
-        else
-        {
-            
+        string newPowerUp;
+
+        if (!IsEmpty())
+        {           
             newPowerUp = myPowerUp.ToString();
             PowerUpAppears(false);
             pum.ActivatePowerUp(newPowerUp);
             myPowerUp = powerUp.Empty;
         }
     }
-
-
+    // metodo que devuelve true si el powerUp está vacío
     public bool IsEmpty()
     {          
         return (myPowerUp==powerUp.Empty);
     }
 
-    public void RefrescoAppears(bool active)
-    {
-        theUIManager.PanelRefesco(active);
-
-    }
-    public void SandwichAppears(bool active)
-    {
-        theUIManager.PanelSandwich(active);
-
-    }
-    public void WhetstoneAppears(bool active)
-    {
-        theUIManager.PanelWhetstone(active);
-
-    }
+    // Metodo que detecta que powerUp está activo 
     public void PowerUpAppears(bool active)
     {
         if (myPowerUp == powerUp.IncreaseDamage)
