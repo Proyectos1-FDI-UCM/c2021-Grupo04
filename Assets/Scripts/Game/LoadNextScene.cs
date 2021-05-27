@@ -8,6 +8,7 @@ public class LoadNextScene : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Pasa a la siguiente escena si el jugador entra
         if(collision.GetComponent<PlayerController>() != null)
         {
             GameManager.GetInstance().ChargeNextScene();
