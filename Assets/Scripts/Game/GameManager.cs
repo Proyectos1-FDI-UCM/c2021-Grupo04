@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public powerUp myPowerUp = powerUp.Empty;
     private UIManager theUIManager;
     private static GameManager instance;
+    private int returnLives = 8;
     PowerUpManager pum;
 
     public static GameManager GetInstance()
@@ -152,6 +153,21 @@ public class GameManager : MonoBehaviour
     {
         ActivatePowerUp();
         ChangeScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public int ActualSceneIndex()
+    {
+        return SceneManager.GetActiveScene().buildIndex;
+    }
+
+    public void SaveLives(int lives)
+    {
+        returnLives = lives;
+    }
+
+    public int ReturnLivesBetweenScenes()
+    {
+        return returnLives;
     }
 
     //para detener ejecución de Unity

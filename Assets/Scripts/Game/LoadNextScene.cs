@@ -11,7 +11,14 @@ public class LoadNextScene : MonoBehaviour
         //Pasa a la siguiente escena si el jugador entra
         if(collision.GetComponent<PlayerController>() != null)
         {
-            GameManager.GetInstance().ChargeNextScene();
+            //Hacemos que el jugador guarde su vida en el GM
+            collision.GetComponent<HealthPlayer>().SaveLives();
+            Invoke("NextScene", 0.25f);
         }
+    }
+
+    private void NextScene()
+    {
+        GameManager.GetInstance().ChargeNextScene();
     }
 }

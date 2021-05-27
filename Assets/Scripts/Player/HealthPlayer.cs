@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Áún sabiendo que es poco práctico, se va a consultar las vidas al GameManager
+/// si estamos en la escena adecuada, asumiendo orden correcto en la build index
+/// </summary>
 public class HealthPlayer : MonoBehaviour
 {
     //Adrián,Miguel 
@@ -18,10 +21,18 @@ public class HealthPlayer : MonoBehaviour
     private void Start()
     {
         spawn = GetComponent<Respawn>();
+        //Consultamos al GM las vidas que tenemos si estamos en la escena correcta
         health = maxHealth;
         color = GetComponentInChildren<ChangeColor>();
+        //Sabemos que este método es poco eficaz, pero funciona, pretendemos cambiarlo en un futuro
+        //Comprobamos la escena en la que estamos, y guardamos los datos
+        if(GameManager.GetInstance().ActualSceneIndex() == 4)
+        {
+            health = GameManager.GetInstance().ActualSceneIndex();
+        }
+
         Invoke("InstanceHearts", 0.1f);
-       
+        
     }
    
     public void InstanceHearts()
@@ -51,8 +62,7 @@ public class HealthPlayer : MonoBehaviour
 
         if (health <= 0)
         {
-            GameManager.GetInstance().ActivateGameOverPanel();
-            
+            GameManager.GetInstance().ActivateGameOverPanel();          
         }
 
 
@@ -67,6 +77,13 @@ public class HealthPlayer : MonoBehaviour
         return health;
     }
 
+    public void SaveLives()
+    {
+        if (GameManager.GetInstance().ActualSceneIndex() == 3)
+        {
+            GameManager.GetInstance().SaveLives(health);
+        }
     }
+}
    
 
