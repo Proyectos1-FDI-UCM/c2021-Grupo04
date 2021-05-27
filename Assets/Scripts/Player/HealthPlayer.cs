@@ -47,7 +47,7 @@ public class HealthPlayer : MonoBehaviour
            
         }
 
-        else if (health <= 0)
+        if (health <= 0)
         {
             GameManager.GetInstance().ActivateGameOverPanel();
             
