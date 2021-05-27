@@ -11,7 +11,7 @@ public class IncreaseDamage : MonoBehaviour
     private float orDamage;
     
         
-    
+    //cogemos la variable de daño de herropea y la multiplicamos
     private void OnEnable()
     {
         herropea.MulDamage(mulDamage);
@@ -24,7 +24,7 @@ public class IncreaseDamage : MonoBehaviour
     {
         this.enabled = false;
     }
-
+    //restablecemos daño
     private void OnDisable()
     {
         herropea.ResetDamage(mulDamage);

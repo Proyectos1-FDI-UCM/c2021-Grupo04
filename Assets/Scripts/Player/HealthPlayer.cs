@@ -30,11 +30,13 @@ public class HealthPlayer : MonoBehaviour
        
     }
         
-    
+//Metodo para restar vidas    
     public void LoseHearts(int damage)
     {       
+        //metemos un cooldown de inmunidad
         if (health > 0 && Time.time >= time + inmunityCooldown)
         {
+            //restamos la referencia damage (editable desde el inspector) a las vidas
             health -= damage;
             color.CambiaColor();
             Debug.Log("Vidas restante del jugador " + health);
