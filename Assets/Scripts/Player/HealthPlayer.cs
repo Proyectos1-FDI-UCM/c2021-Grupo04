@@ -68,10 +68,25 @@ public class HealthPlayer : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Cura toda la vida del jugador
+    /// </summary>
+    public void HealAllLife()
+    {
+        while(health < maxHealth)
+        {
+            health++;
+            GameManager.GetInstance().AddOneHeartBySandwich();
+        }
+    }
+
+    //Añade medio corazón
     public void AddLife()
     {
         health++;
+        GameManager.GetInstance().AddOneHeartBySandwich();
     }
+
     public int LivesRemaining()
     {
         return health;

@@ -19,7 +19,6 @@ public class Sandwich : MonoBehaviour
             if (healthPlayer.LivesRemaining() < healthPlayer.maxHealth)
             {
                 healthPlayer.AddLife();
-                GameManager.GetInstance().AddOneHeartBySandwich();
             }
         }
         Debug.Log("vidas tras curarte"+healthPlayer.LivesRemaining());

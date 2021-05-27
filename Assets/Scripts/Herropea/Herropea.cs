@@ -41,7 +41,7 @@ public class Herropea : MonoBehaviour
     {
         scriptFakeHerropea = GetComponentInChildren<DestroyFakeHerropea>();
         playerController = maktFange.GetComponent<PlayerController>();
-        transform.position = chainZone.position;
+        Invoke("SetTransformHerropea", 0.05f);
     }
 
     void Update()
@@ -133,6 +133,12 @@ public class Herropea : MonoBehaviour
         {
             scriptFakeHerropea.SetCollider();
         }
+    }
+
+    public void SetTransformHerropea()
+    {
+        transform.position = new Vector2(chainZone.position.x + 1, chainZone.position.y);
+        
     }
 
     

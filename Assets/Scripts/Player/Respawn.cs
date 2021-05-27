@@ -8,9 +8,11 @@ public class Respawn : MonoBehaviour
     //Eduardo y Miguel
     public bool respawn=true;
     private float posicionColchonX, posicionColchonY;
-    int lives;
+    
+    private HealthPlayer vidas;
     void Start()
     {
+        vidas = GetComponent<HealthPlayer>();
         if (respawn)
         {
             Spawn();
@@ -35,6 +37,7 @@ public class Respawn : MonoBehaviour
             if(PlayerPrefs.GetInt("ActiveScene") == SceneManager.GetActiveScene().buildIndex)
             {
                 transform.position = new Vector2(PlayerPrefs.GetFloat("posicionColchonX"), PlayerPrefs.GetFloat("posicionColchonY"));
+                vidas.HealAllLife();
             }
             //Si es otra escena, borra las coordenadas
             else
