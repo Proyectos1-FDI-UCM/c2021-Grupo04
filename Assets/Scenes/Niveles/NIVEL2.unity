@@ -78294,8 +78294,8 @@ Transform:
   - {fileID: 1149203827}
   - {fileID: 779283682}
   - {fileID: 1341637207}
-  - {fileID: 170410985}
   - {fileID: 836808267}
+  - {fileID: 170410985}
   - {fileID: 1628894257}
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -79770,6 +79770,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UIManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585594615942380733, guid: fc44c54606ac13e49ad5d9607f86234e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc44c54606ac13e49ad5d9607f86234e, type: 3}

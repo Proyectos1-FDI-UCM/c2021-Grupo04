@@ -31,7 +31,7 @@ public class UIManager : MonoBehaviour
     {
         heartsLeft = numHearts;
         
-       for (int cont=0; cont < numHearts;cont++)
+        for (int cont=0; cont < numHearts;cont++)
         {
             if (cont % 2 != 0) //si las vidas no son pares, instanciamos mitad derecha, si son pares, la mitad izquierda
             {

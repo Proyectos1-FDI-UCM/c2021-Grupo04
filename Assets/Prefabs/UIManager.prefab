@@ -733,8 +733,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3820626849450577263}
-        m_MethodName: GoBackToMainMenu
+      - m_Target: {fileID: 95405583585237999, guid: 61b186e312d39f64aba643ae958e90fe,
+          type: 3}
+        m_MethodName: ChargeMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
