@@ -37,7 +37,7 @@ public class Respawn : MonoBehaviour
             if(PlayerPrefs.GetInt("ActiveScene") == SceneManager.GetActiveScene().buildIndex)
             {
                 transform.position = new Vector2(PlayerPrefs.GetFloat("posicionColchonX"), PlayerPrefs.GetFloat("posicionColchonY"));
-                vidas.HealAllLife();
+                Invoke("HealPlayer", 1.2f);
             }
             //Si es otra escena, borra las coordenadas
             else
@@ -46,6 +46,11 @@ public class Respawn : MonoBehaviour
                 PlayerPrefs.DeleteKey("posicionColchonY");
             }
         }
+    }
+
+    private void HealPlayer()
+    {
+        vidas.HealAllLife();
     }
 
     public void SaveScene()

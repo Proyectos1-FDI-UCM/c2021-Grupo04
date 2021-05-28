@@ -28,7 +28,7 @@ public class HealthPlayer : MonoBehaviour
         //Comprobamos la escena en la que estamos, y guardamos los datos
         if(GameManager.GetInstance().ActualSceneIndex() == 4)
         {
-            health = GameManager.GetInstance().ActualSceneIndex();
+            health = GameManager.GetInstance().ReturnLivesBetweenScenes();
         }
 
         Invoke("InstanceHearts", 0.1f);
@@ -75,8 +75,7 @@ public class HealthPlayer : MonoBehaviour
     {
         while(health < maxHealth)
         {
-            health++;
-            GameManager.GetInstance().AddOneHeartBySandwich();
+            AddLife();
         }
     }
 
