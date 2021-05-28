@@ -68,6 +68,7 @@ public class Herropea : MonoBehaviour
             Instantiate(recogerCadena);
             //Animamoss al personaje y recogemos herropea
             playerController.SetPickUpAnimation(true);
+            scriptFakeHerropea.DisableCollider();
             transform.position = Vector2.MoveTowards(transform.position, chainZone.transform.position, velocidadRecogida * Time.deltaTime);
             if (transform.position == chainZone.transform.position)
             {
