@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         GameManager.GetInstance().SetUIManager(this);
-        
+        Invoke("DisableInfoText", 8f);
     }
 //para pintar los corazones
     public void DrawHearts(int numHearts)

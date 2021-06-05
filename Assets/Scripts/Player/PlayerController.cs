@@ -33,12 +33,10 @@ public class PlayerController : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         scriptHerropea = herropea.GetComponent<Herropea>();
     }
-
     //detectamos cuando entra en contacto el collider de los pies de Maktfange con el escenario 
-    //Para solucionar errores en la build, ahora hacemos una comprobación continua
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if((collision.GetComponent<CompositeCollider2D>() || collision.GetComponent<DestroyFakeHerropea>()) && contact == false)
+        if(collision.GetComponent<CompositeCollider2D>() || collision.GetComponent<DestroyFakeHerropea>())
         {
             contact = true;
             anim.SetBool("Floating", !contact);
