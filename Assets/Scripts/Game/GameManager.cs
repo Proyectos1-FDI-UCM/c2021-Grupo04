@@ -149,12 +149,19 @@ public class GameManager : MonoBehaviour
         theUIManager.ActivateGOPanel();
     }
 
+    /// <summary>
+    /// Reinicia la escena actual
+    /// </summary>
     public void RestartScene()
     {
         ActivatePowerUp();
         ChangeScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    /// <summary>
+    /// Devuelve el ordinal correspondiente a la escena actual
+    /// </summary>
+    /// <returns></returns>
     public int ActualSceneIndex()
     {
         return SceneManager.GetActiveScene().buildIndex;
